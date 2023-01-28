@@ -46,13 +46,13 @@ const MobileSidebar = () => {
         >
           <div className="mobile-content mb-auto">
             <div className="logo-sidenav p-2">
-              <a href="/">
+              <Link href="/">
                 <img
                   src="uploads/SSDO_Logo.png"
                   className="img-fluid"
                   alt="logo"
                 />
-              </a>
+              </Link>
             </div>
 
             <div className="sidenav-menu">
@@ -71,7 +71,7 @@ const MobileSidebar = () => {
                             </Link>
                           </li>
                         ) : (
-                          <li className="menu-item menu-item-has-children dropdown mega-dropdown nav-item">
+                          <li className="menu-item menu-item-has-children dropdown mega-dropdown nav-item"  key={nav.id}>
                             <Link
                               href={nav.path}
                               className="dropdown-toggle nav-link"
@@ -91,7 +91,7 @@ const MobileSidebar = () => {
                                 {nav.items.map((item) => {
                                   return (
                                     <>
-                                      <li className="menu-item nav-item">
+                                      <li className="menu-item nav-item"  key={item.id}>
                                         <Link
                                           className="dropdown-item"
                                           href={item.path}

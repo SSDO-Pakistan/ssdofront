@@ -5,6 +5,7 @@ import ModalHeader from "react-bootstrap/ModalHeader";
 import Carousel from "react-multi-carousel";
 import { API_URL } from "./../config/index";
 import Link from "next/link";
+import Image from 'next/image'
 const PublicationModal = (props) => {
   console.log("publication", props);
   const responsive = {
@@ -51,12 +52,13 @@ const PublicationModal = (props) => {
             return (
               <Link
                 href={`${
-                  API_URL + publication.attributes.File?.data?.attributes.url
+                  publication.attributes.File?.data?.attributes.url
                 } `}
-              >
-                <img
+               key ={publication.id}>
+                <Image
+                width={500}
                   src={
-                    API_URL + publication.attributes.cover.data.attributes.url
+                     publication.attributes.cover.data.attributes.url
                   }
                   key={publication.attributes.id}
                   style={{

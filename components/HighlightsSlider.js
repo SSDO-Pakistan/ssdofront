@@ -12,7 +12,7 @@ function HighlightsSlider({ PressReleases, SliderHighlights }) {
           {SliderHighlights.data.map((sliderhighlight) => {
             console.log(sliderhighlight);
             return (
-              <Carousel.Item key={sliderhighlight.attributes.id}>
+              <Carousel.Item key={sliderhighlight.id}>
                 <Image
                 width={750}
                   src={
@@ -40,7 +40,7 @@ function HighlightsSlider({ PressReleases, SliderHighlights }) {
             <div style={{ marginTop: "10px" }}>
               {PressReleases.data.map((pressrelease) => {
                 return (
-                  <p style={{ paddingLeft: "10px" }}><strong>
+                  <p style={{ paddingLeft: "10px" }} key={pressrelease.id}><strong>
                     {moment(pressrelease.attributes.createdAt).format(
                       "Do MMMM YYYY"
                     )}{" "}</strong>

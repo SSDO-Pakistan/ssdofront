@@ -44,7 +44,7 @@ const UiNav = () => {
                 return (
                   <>
                     {nav.items.length === 0 ? (
-                      <li>
+                      <li key={nav.id}>
                         <a
                           className="nav-link active text-dark"
                           href={nav.path}
@@ -53,7 +53,7 @@ const UiNav = () => {
                         </a>
                       </li>
                     ) : (
-                      <li className="nav-item dropdown">
+                      <li className="nav-item dropdown" key={nav.id}>
                         <Link
                           className="nav-link active dropdown-toggle text-dark"
                           href={nav.path}
@@ -69,7 +69,7 @@ const UiNav = () => {
                             {nav.items.map((item) => {
                               return (
                                 <>
-                                  <li>
+                                  <li key={item.id}>
                                     <Link
                                       className="dropdown-item"
                                       href={item.path}

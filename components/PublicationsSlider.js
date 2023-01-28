@@ -2,6 +2,7 @@ import React from "react";
 import PublicationModal from "./PublicationModal";
 import { useState } from "react";
 import { API_URL } from "./../config/index";
+import Image from 'next/image'
 import Link from "next/link";
 
 const PublicationsSlider = ({ Publications }) => {
@@ -26,7 +27,7 @@ const PublicationsSlider = ({ Publications }) => {
               console.log(publication);
               return (
                 <article
-                  className="col-12 col-sm-6 col-lg-4 me-2"
+                  className="col-12 col-sm-6 col-lg-4 me-2" key={publication.id}
                   onClick={() => {
                     setmodalShow(true);
                   }}
@@ -35,10 +36,11 @@ const PublicationsSlider = ({ Publications }) => {
                     <div className="card card-full hover-a">
                       <div className="ratio_327-278 image-wrapper">
                         <a href="#">
-                          <img
-                            className="img-fluid "
+                          <Image
+                          width = {400}
+                          height={340}
                             src={
-                              API_URL +
+                           
                               publication.attributes.cover.data.attributes.url
                             }
                             data-src="../../assets/img/400x340/img1.jpg"

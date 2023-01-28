@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { API_URL } from "@/config/index";
 import AlbumModal from "./AlbumModal";
 import Link from "next/link";
+import Image from "next/image";
 const AlbumsSlider = ({ Galleries }) => {
   console.log("Galleries", Galleries);
   const [showGallery, setshowGallery] = useState({});
@@ -28,14 +29,17 @@ const AlbumsSlider = ({ Galleries }) => {
                   setshowGallery(gallery);
                   setmodalShow(true);
                 }}
+                key={gallery.id}
               >
                 <div className="col-12 mb-4 ">
                   <div className="card card-full hover-a ">
                     <div className="ratio_327-278 image-wrapper">
-                      <img
+                      <Image
+                        width= {400}
+                        height ={340}
                         className="img-fluid "
                         src={
-                          API_URL +
+                        
                           gallery.attributes.images.data[0].attributes.url
                         }
                         data-src="../../assets/img/400x340/img1.jpg"
