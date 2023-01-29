@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from 'next/image';
 import { API_URL } from "@/config/index";
 const FinancialReports = ({ data }) => {
   return (
@@ -16,10 +17,10 @@ const FinancialReports = ({ data }) => {
               return (
                 <Link
                   href={`${
-                    API_URL + publication.attributes.File?.data?.attributes.url
+                     publication.attributes.File?.data?.attributes.url
                   } `}
                   target="_blank"
-                >
+                  key={publication.attributes.id} >
                   <article
                     style={{
                       width: "430px",
@@ -28,11 +29,11 @@ const FinancialReports = ({ data }) => {
                     }}
                   >
                     <div className="mb-2">
-                      <img
-                        width="100%"
-                        height="350px"
+                      <Image
+                        width={500}
+                        height={350}
                         src={
-                          API_URL +
+                        
                           publication.attributes.cover.data.attributes.url
                         }
                         alt=""
