@@ -28,13 +28,13 @@ const UiNav = () => {
             className="collapse navbar-collapse hover-mode"
           >
             <div className="logo-showbacktop">
-              <a href="index.html">
+              <link href="/" as ="/">
                 <img
                   className="img-fluid"
                   src="../../assets/img/logo/default-logo.png"
                   alt="Logo site"
                 />
-              </a>
+              </link>
             </div>
             <ul
               id="start-main"
