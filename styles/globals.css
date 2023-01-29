@@ -1,10 +1,5 @@
-.overflow{
-  overflow-x: hidden;
-}
+
 .block-title-6 {
   position: relative;
   margin-bottom: 0.5rem !important;
-}
-:root{
---bs-body-font-size: 0.95rem;
 }
