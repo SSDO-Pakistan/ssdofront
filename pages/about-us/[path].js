@@ -26,7 +26,7 @@ const Profile = ({ data }) => {
                 setshowProfile(profile);
                 setmodalShow(true);
               }}
-            >
+             key ={profile.attributes.id}>
               <div class="w-sm-65 text-center mx-auto ">
                 <img
                   class="img-fluid rounded-3 mb-4"
