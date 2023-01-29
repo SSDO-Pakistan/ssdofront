@@ -132,13 +132,13 @@ const Header = () => {
                   id="main-logo"
                   className="main-logo my-2 my-lg-4 d-none d-lg-block"
                 >
-                  <a href="/" className="navbar-brand">
-                     <img
+                  <Link className="navbar-brand" href={"/"} as={`/`}>
+                    <img
                       className="img-fluid"
                       src="/uploads/SSDO_Logo.png"
                       alt="Logo site"
                     />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
