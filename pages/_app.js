@@ -4,7 +4,7 @@ import Head from "next/head";
 import Script from "next/script";
 import "@etchteam/next-pagination/dist/index.css";
 import "react-multi-carousel/lib/styles.css";
-import MainNav from "@/components/MainNav";
+
 
 import Header from "@/components/Header";
 import UiNav from "./../components/UiNav";

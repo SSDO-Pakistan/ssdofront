@@ -5,7 +5,7 @@ import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import Layout from "./../components/Layout";
 import HighlightsSlider from "./../components/HighlightsSlider";
-import MainNav from "../components/MainNav";
+
 import Header from "../components/Header";
 import PublicationsSlider from "../components/PublicationsSlider";
 import { API_URL } from "@/config/index";
