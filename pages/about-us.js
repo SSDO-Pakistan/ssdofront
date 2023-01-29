@@ -31,7 +31,7 @@ const AboutUs = ({ data }) => {
                   marginLeft: "7px",
                   marginBottom: "20px",
                 }}
-              />
+               key={img.id} />
             );
           })}
         </div>
