@@ -65,7 +65,7 @@ const Reports = () => {
                   href={`${
                     API_URL + publication.attributes.File?.data?.attributes.url
                   } `}
-                >
+                key={publication.attributes.id}>
                   <article
                     style={{
                       width: "430px",
