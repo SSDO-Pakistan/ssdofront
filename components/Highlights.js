@@ -18,13 +18,12 @@ const Highlights = ({ Highlights }) => {
               <article className="card card-full hover-a py-4" key={highlight.id}>
                 <div className="row">
                   <div className="col-sm-6 col-md-12 col-lg-6">
-                    <div className="ratio_360-202 image-wrapper">
-                      <img
+                    <div className="">
+                      <Image
+                       width={360}
+                       height={202}
                         className="img-fluid"
-                        src={
-                       
-                          highlight.attributes.image.data
-                        }
+                        src={ highlight.attributes.image.data.url}
                         data-src="../../assets/img/360x202/img17.jpg"
                         alt="Image description"
                       />
