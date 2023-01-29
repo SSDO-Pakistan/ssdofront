@@ -14,7 +14,7 @@ const Policies = ({ data }) => {
         <section className="d-flex flex-wrap">
           {data.Policies.data.map((policy) => {
             return (
-              <Card style={{ width: "30rem", margin: "20px" }}>
+              <Card style={{ width: "30rem", margin: "20px" }} key={policy.attributes.id}>
                 <Card.Body>
                   <Card.Title>{policy.attributes.title}</Card.Title>
                   <Card.Subtitle className="mb-2 text-muted">

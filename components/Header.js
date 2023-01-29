@@ -7,7 +7,7 @@ const Header = () => {
         <div className="mobile-sticky fs-6 bg-black">
           <div className="container">
             <nav className="navbar navbar-expand-lg navbar-dark px-0 py-0">
-              <a
+              <Link
                 id="showStartPush"
                 aria-label="sidebar menu"
                 className="navbar-toggler sidebar-menu-trigger side-hamburger border-0 px-0"
@@ -19,15 +19,15 @@ const Header = () => {
                   <span></span>
                   <span></span>
                 </span>
-              </a>
+              </Link>
 
-              <a href="/">
+              <Link href="/">
                 <img
                   className="mobile-logo img-fluid d-lg-none mx-auto"
                   src="/uploads/SSDO_Logo.webp"
                   alt="Logo site"
                 />
-              </a>
+              </Link>
 
               <button
                 className="navbar-toggler px-0"
@@ -132,13 +132,13 @@ const Header = () => {
                   id="main-logo"
                   className="main-logo my-2 my-lg-4 d-none d-lg-block"
                 >
-                  <a className="navbar-brand" href="/">
+                  <Link className="navbar-brand" href="/">
                     <img
                       className="img-fluid"
                       src="/uploads/SSDO_Logo.png"
                       alt="Logo site"
                     />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

@@ -14,7 +14,7 @@ const Awards = ({ data }) => {
       <div className="d-flex flex-row">
         {data.Award.data[0].attributes.award.map((award) => {
           return (
-            <Link href={award.href} target={award.target}>
+            <Link href={award.href} target={award.target} key={award.id}>
               <Card style={{ width: "30rem", margin: "20px" }}>
                 <Card.Body>
                   <Card.Title className="text-center">{award.label}</Card.Title>

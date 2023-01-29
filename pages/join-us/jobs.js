@@ -54,7 +54,7 @@ const Jobs = () => {
         {items &&
           items.data?.map((job) => {
             return (
-              <Card style={{ width: "30rem", margin: "20px" }}>
+              <Card style={{ width: "30rem", margin: "20px" }} key={job.attributes.id}>
                 <Card.Body>
                   <Card.Title>{job.attributes.title}</Card.Title>
                   <Card.Subtitle className="mb-2 text-muted">

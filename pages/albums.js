@@ -66,7 +66,7 @@ const Albums = ({ data }) => {
                     setshowGallery(gallery);
                     setmodalShow(true);
                   }}
-                >
+                  key={gallery.attributes.id}>
                   <div className="mb-2">
                   <Image
                      width={245}
@@ -104,7 +104,7 @@ const Albums = ({ data }) => {
         <div className="d-flex flex-column gap-3  " style={{ height: "100vh" }}>
           {data.Categories.data.map((category) => {
             return (
-              <Link href={`/thematicarea/` + category.attributes.slug}>
+              <Link href={`/thematicarea/` + category.attributes.slug} key={category.attributes.id}>
                 <div
                   className=" d-flex justify-content-left "
                 

@@ -61,7 +61,7 @@ const MediaClippings = () => {
                   clip.attributes.image.data.attributes.formats?.thumbnail.url
                 }
                 target="_blank"
-              >
+               key={clip.attributes.id}>
                 <div
                   style={{
                     margin: "5px",

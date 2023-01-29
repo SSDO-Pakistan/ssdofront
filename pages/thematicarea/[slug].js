@@ -25,7 +25,7 @@ const ThematicArea = ({ data }) => {
                     setshowGallery(gallery);
                     setmodalShow(true);
                   }}
-                >
+                  key={gallery.attributes.id} >
                   <div className="mb-2">
                     <img
                       width="100%"
@@ -73,7 +73,7 @@ const ThematicArea = ({ data }) => {
         <div className="d-flex flex-column gap-3  " style={{ height: "100vh" }}>
           {data.Categories.data.map((category) => {
             return (
-              <Link href={`/thematicarea/` + category.attributes.slug}>
+              <Link href={`/thematicarea/` + category.attributes.slug} key={category.attributes.id}>
                 <div
                   className="bg-primary d-flex justify-content-center "
                   style={{

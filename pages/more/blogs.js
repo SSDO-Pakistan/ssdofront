@@ -55,7 +55,7 @@ const Blogs = () => {
         {items &&
           items.data?.map((blog) => {
             return (
-              <Card style={{ width: "30rem", margin: "20px" }}>
+              <Card style={{ width: "30rem", margin: "20px" }} key={blog.attributes.id}>
                 <Card.Body>
                   <Card.Title style={{ cursor: "pointer" }}>
                     {blog.attributes.title}

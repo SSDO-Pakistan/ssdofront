@@ -59,7 +59,7 @@ const AlbumModal = (props) => {
           {props.data.attributes &&
             props.data.attributes.images.data.map((image) => {
               return (
-                <Link href={ image.attributes.url}>
+                <Link href={ image.attributes.url} key={image.attributes.id}>
                 <div style={{ position: 'relative', overflow: 'hidden', height: '500px' }}>
                 <Image
                    src={image.attributes.url}    

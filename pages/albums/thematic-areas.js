@@ -16,7 +16,7 @@ const TheamticArea = ({ data }) => {
       <div className="d-flex flex-col flex-wrap" style={{ marginTop: "45px" }}>
         {data.ThematicAreas.data.attributes.categories.data.map((cat) => {
           return (
-            <div className="bg-primary p-3 d-flex justify-content-center align-items-center ms-3 mb-3">
+            <div className="bg-primary p-3 d-flex justify-content-center align-items-center ms-3 mb-3" key={cat.attributes.id}>
               <p className="text-white p-1 ">
                 <Link
                   className="text-white"

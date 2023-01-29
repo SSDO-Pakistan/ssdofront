@@ -3,6 +3,7 @@ import { API_URL } from "@/config/index";
 import Link from "next/link";
 import ReactPaginate from "react-paginate";
 import moment from "moment";
+import Image from 'next/image'
 const HighLights = () => {
   const [items, setItems] = useState([]);
 
@@ -55,7 +56,7 @@ const HighLights = () => {
           {items &&
             items.data?.map((highlight) => {
               return (
-                <article className="card card-full hover-a py-4">
+                <article className="card card-full hover-a py-4" key={highlight.attributes.id}>
                   <div className="row">
                     <div className="col-sm-4">
                       <div className="ratio_360-202 ">
