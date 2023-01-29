@@ -1,6 +1,7 @@
 import React from "react";
 import { API_URL } from "./../config/index";
 import moment from "moment";
+import Image from 'next/image'
 import Link from "next/link";
 const Highlights = ({ Highlights }) => {
   console.log("Highlights", Highlights);
