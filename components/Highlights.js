@@ -24,7 +24,7 @@ const Highlights = ({ Highlights }) => {
                        width={360}
                        height={202}
                         className="img-fluid"
-                        src={ highlight.attributes.image.data.url}
+                        src={ highlight.attributes.image.data.attributes.url}
                         data-src="../../assets/img/360x202/img17.jpg"
                         alt="Image description"
                       />
