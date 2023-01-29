@@ -24,7 +24,7 @@ const Registration = ({ data }) => {
                 background: "rgb(15 80 138)",
                 color: "white",
               }}
-            >
+             key={reg.id}>
               <div class="card-body">
                 <div class="mb-3">
                   <i class="bi-person-circle fs-1 text-dark"></i>
@@ -41,7 +41,7 @@ const Registration = ({ data }) => {
                 <div class="d-grid mb-3 text-white">
                   <Link
                     class="btn btn-white text-white"
-                    href="mailto:support@site.com"
+                    // href="mailto:support@site.com"
                     href={API_URL + reg.attributes.file?.data[0].attributes.url}
                     style={{ textDecoration: "underline", cursor: "pointer" }}
                     target="_blank"
