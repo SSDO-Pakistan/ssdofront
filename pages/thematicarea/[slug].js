@@ -75,7 +75,7 @@ const ThematicArea = ({ data }) => {
             return (
               <Link href={`/thematicarea/` + category.attributes.slug} key={category.attributes.id}>
                 <div
-                  className="bg-primary d-flex justify-content-center "
+                  className=" d-flex justify-content-left "
                   style={{
                     width: " 100%",
                     height: "100px",
