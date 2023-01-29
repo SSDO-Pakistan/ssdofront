@@ -1,6 +1,9 @@
 import React from "react";
 import Link from "next/link";
 const Header = () => {
+  const reload = () => {
+    router.push('/', null, { shallow: true })
+  }
   return (
     <>
       <header className="header">
@@ -132,7 +135,7 @@ const Header = () => {
                   id="main-logo"
                   className="main-logo my-2 my-lg-4 d-none d-lg-block"
                 >
-                  <Link className="navbar-brand" href={"/"} as={`/`}>
+                  <Link className="navbar-brand" href={"/"} as={`/`} onClick={reload}>
                     <img
                       className="img-fluid"
                       src="/uploads/SSDO_Logo.png"
