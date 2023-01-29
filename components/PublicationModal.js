@@ -54,7 +54,7 @@ const PublicationModal = (props) => {
                 href={`${
                   publication.attributes.File?.data?.attributes.url
                 } `}
-               key ={publication.id}>
+               key ={publication.attributes.id}>
                 <Image
                 width={500}
                   src={
