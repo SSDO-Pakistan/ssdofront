@@ -60,7 +60,7 @@ const Albums = ({ data }) => {
           {items &&
             items.data?.map((gallery) => {
               return (
-                <article
+                <article class="shadow-sm p-2 mb-3 bg-body rounded"
                   style={{ width: "30%", height: "auto", cursor: "pointer" }}
                   onClick={() => {
                     setshowGallery(gallery);
@@ -77,18 +77,13 @@ const Albums = ({ data }) => {
                       alt=""
                     /> 
                   </div>
-                  <div
-                    style={{ display: "flex", flexDirection: "column" }}
-                    class=""
-                  >
-                    <h6 class="card-title ">
+                  <div>
+                    <h6 >
                       {gallery.attributes.title}
                     </h6>
                     <p class="card-text">{gallery.attributes.description}</p>
-                
-                    <div className="mt-1 small">
-                      <small>Pictures : {gallery.attributes.images.data.length}</small>
-                    </div>
+                    <p><small>Images : {gallery.attributes.images.data.length}</small></p>
+                   
                   </div>
                 </article>
               );
