@@ -11459,7 +11459,7 @@ textarea.form-control-lg {
     margin-bottom: 1rem !important;
   }
   .my-lg-4 {
-    margin-top: 1.0rem !important;
+    margin-top: 1.5rem !important;
     margin-bottom: 1.5rem !important;
   }
   .my-lg-5 {
@@ -13426,9 +13426,9 @@ p {
 	Main Nav
 ------------------------------------*/
 .main-logo img {
-  /* margin-top: 1rem; */
+  margin-top: 1rem;
   margin-bottom: 1rem;
-  max-width: 7.875rem;
+  max-width: 14.875rem;
 }
 
 .logo-six {
@@ -14832,7 +14832,7 @@ p {
 }
 
 .footer-page-list li {
-  display: block;
+  display: inline;
   margin-right: 1rem;
 }
 
@@ -14841,8 +14841,8 @@ p {
 }
 
 .bg-footer {
-  margin-top : "100px";
-  background-image: url("../public/assets/img/background/bg-footer.jpg");
+  background-image: url(../public/assets/img/background/bg-footer.jpg);
+  
   position: relative;
   background-repeat: no-repeat;
   background-position: center;
@@ -14850,13 +14850,13 @@ p {
 }
 
 .bg-footer::before {
-  position: absolute; 
+  position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   content: "";
-  background-color: rgb(45 83 141 / 96%);
+  background-color: rgba(27, 27, 27, 0.96);
 }
 
 @media (max-width: 575.98px) {
@@ -19233,13 +19233,13 @@ h1 > a:hover, h2 > a:hover, h3 > a:hover, h4 > a:hover, h5 > a:hover, h6 > a:hov
     padding: 0.125rem !important;
   }
   .px-md-05, .ps-md-05 {
-    /* padding-left: 0.125rem !important; */
+    padding-left: 0.125rem !important;
   }
   .px-md-05, .pe-md-05 {
     padding-right: 0.125rem !important;
   }
   .py-md-05, .pt-md-05 {
-    /* padding-top: 0.125rem !important; */
+    padding-top: 0.125rem !important;
   }
   .py-md-05, .pb-md-05 {
     padding-bottom: 0.125rem !important;
