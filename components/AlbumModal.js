@@ -31,7 +31,7 @@ const AlbumModal = (props) => {
   return (
     <Modal
       {...props}
-      style={{ height: "800px", borderRadius: "0px 10px 0px 0px" }}
+      style={{ height: "500px", borderRadius: "0px 10px 0px 0px" }}
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
@@ -44,7 +44,7 @@ const AlbumModal = (props) => {
       </Modal.Header>
       <Modal.Body>
         <Carousel
-          responsive={responsive}
+         // responsive={responsive}
           ssr={true}
           infinite={true}
           autoPlaySpeed={10000}

@@ -1,8 +1,9 @@
 import React from "react";
 import Link from "next/link";
+import Router from "next/router";
 const Header = () => {
   const reload = () => {
-    router.push('/', null, { shallow: true })
+    Router.push('/', null)
   }
   return (
     <>
@@ -124,10 +125,7 @@ const Header = () => {
           </div>
         </div>
 
-        <div
-          className="second-header"
-          style={{ width: "1351px", height: "90px" }}
-        >
+        <div className="second-header" >
           <div className="container">
             <div className="row">
               <div className="col-lg-4">
