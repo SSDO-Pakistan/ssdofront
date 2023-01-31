@@ -1,9 +1,10 @@
 import React from "react";
 import Link from "next/link";
-import Router from "next/router";
+import {useRouter} from "next/router";
 const Header = () => {
-  const reload = () => {
-    Router.push('/', null)
+  const router =useRouter();
+  const forceReload = () => {
+    router.reload()
   }
   return (
     <>
@@ -133,7 +134,7 @@ const Header = () => {
                   id="main-logo"
                   className="main-logo my-2 my-lg-4 d-none d-lg-block"
                 >
-                  <Link className="navbar-brand" href={"/"} as={`/`} onClick={reload}>
+                  <Link className="navbar-brand" href={"/"} as={`/`} onClick={forceReload}>
                     <img
                       className="img-fluid"
                       src="/uploads/SSDO_Logo.png"

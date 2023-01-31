@@ -50,7 +50,7 @@ const Albums = ({ data }) => {
   };
   return (
     <div className="row mt-3 p-3 ">
-      <div className="col-sm-8 h-auto mb-2">
+      <div className="col-md-8">
         <div className="block-title-6">
           <h4 className="h5 border-primary">
             <span className="bg-primary text-white">Albums</span>
@@ -60,8 +60,8 @@ const Albums = ({ data }) => {
           {items &&
             items.data?.map((gallery) => {
               return (
-                <article class="shadow-sm p-2 mb-3 bg-body rounded"
-                  style={{ width: "30%", height: "auto", cursor: "pointer" }}
+                <article className="card card-full hover-a mb-4"
+                
                   onClick={() => {
                     setshowGallery(gallery);
                     setmodalShow(true);
@@ -69,8 +69,8 @@ const Albums = ({ data }) => {
                   key={gallery.attributes.id}>
                   <div className="mb-2">
                   <Image
-                     width={245}
-                     height={155}
+                     width={380}
+                     height={210}
                       src={  
                         gallery.attributes.images.data[0].attributes.formats.thumbnail.url
                       }
@@ -90,7 +90,7 @@ const Albums = ({ data }) => {
             })}
         </div>
       </div>
-      <div className="col-sm-4   ">
+      <div className="col-md-4   ">
         <div className="block-title-6">
           <h4 className="h5 border-primary">
             <span className="bg-primary text-white">Thematic Areas</span>

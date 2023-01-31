@@ -3,6 +3,10 @@
   position: relative;
   margin-bottom: 0.5rem !important;
 }
-.main-logo img {
-  margin-top: -0.9rem !important
+
+
+
+.my-lg-4 {
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
 }
