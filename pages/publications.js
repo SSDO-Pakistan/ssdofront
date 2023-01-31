@@ -61,7 +61,7 @@ const Publications = () => {
                     API_URL + publication.attributes.File?.data?.attributes.url
                   } `}
                  key ={publication.attributes.id}>
-                  <article className="card shadow-sm">     
+                  <article className="card shadow-sm ratio_327-278 image-wrapper">     
                       <Image className="card-img-top"
                         width={450}
                         height={350}
