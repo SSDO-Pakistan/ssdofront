@@ -12,7 +12,7 @@ const AboutUs = ({ data }) => {
       </div>
       <div className=" w-100 d-flex flex-column ">
         <div className=" w-100">
-          <h5 className="text-start">
+          <h5 className="text-start " style={{textAlign:"justify"}}>
             {data.About.data.attributes.description}
           </h5>
           {/* <img
@@ -24,8 +24,8 @@ const AboutUs = ({ data }) => {
           {data.About.data.attributes.images.data.map((img) => {
             return (
               <Image
-                src={attributes.url}
-                width={300}
+                src={img.attributes.url}
+                width={400}
                 height={280}
                 style={{
                   marginLeft: "7px",
