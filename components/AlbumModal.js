@@ -32,8 +32,7 @@ const AlbumModal = (props) => {
     <Modal
       {...props}
       style={{ height: "500px", borderRadius: "0px 10px 0px 0px" }}
-      aria-labelledby="contained-modal-title-vcenter"
-      centered
+     className=  "modal"
     >
       <Modal.Header closeButton>
         {props && props.data && props.data.attributes && (
@@ -44,7 +43,7 @@ const AlbumModal = (props) => {
       </Modal.Header>
       <Modal.Body>
         <Carousel
-         // responsive={responsive}
+          responsive={responsive}
           ssr={true}
           infinite={true}
           autoPlaySpeed={10000}
@@ -60,14 +59,17 @@ const AlbumModal = (props) => {
             props.data.attributes.images.data.map((image) => {
               return (
                 <Link href={ image.attributes.url} key={image.attributes.id}>
-                <div style={{ position: 'relative', overflow: 'hidden', height: '500px' }}>
+               
                 <Image
-                   src={image.attributes.url}    
-                   fill
+                   src={image.attributes.url}  
+                   width={500}  
+                   height={400}
+                 
                     alt="Image" 
-                    style={{ objectFit: 'fill' }}
+                   
                 />
-                </div></Link>
+                
+                </Link>
               );
             })}
         </Carousel>
