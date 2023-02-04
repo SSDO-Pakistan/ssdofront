@@ -24,7 +24,7 @@ const AboutUs = ({ data }) => {
           {data.About.data.attributes.images.data.map((img) => {
             return (
               <Image
-                src={img.attributes.url}
+                src={attributes.url}
                 width={300}
                 height={280}
                 style={{
