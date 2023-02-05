@@ -48,7 +48,7 @@ const PublicationModal = (props) => {
           dotListClass="custom-dot-list-style"
           itemClass="carousel-item-padding-40-px"
         >
-          {props.data.data.map((publication) => {
+          {props.data?.map((publication) => {
             return (
               <Link
                 href={`${
@@ -58,7 +58,7 @@ const PublicationModal = (props) => {
                 <Image
                 width={500}
                   src={
-                     publication.attributes.cover.data.attributes.url
+                     publication.attributes.cover?.data?.attributes.url
                   }
                   key={publication.attributes.id}
                   style={{

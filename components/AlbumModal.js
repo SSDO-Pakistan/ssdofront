@@ -64,8 +64,12 @@ const AlbumModal = (props) => {
                    src={image.attributes.url}  
                    width={500}  
                    height={400}
-                 
                     alt="Image" 
+                    style={{
+                      height: "100%",
+                      width: "100%",
+                      objectFit: "cover",
+                    }}
                    
                 />
                 
