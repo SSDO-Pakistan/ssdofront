@@ -7,7 +7,9 @@ import { API_URL } from "./../config/index";
 import Link from "next/link";
 import Image from 'next/image'
 const PublicationModal = (props) => {
-  console.log("publication", props);
+
+  console.log("publication id is", props);
+ // return false;
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -29,7 +31,7 @@ const PublicationModal = (props) => {
     <Modal
       {...props}
       style={{ height: "700px", borderRadius: "0px 10px 0px 0px" }}
-      aria-labelledby="contained-modal-title-vcenter"
+      aria-ariaLabel="contained-modal-title-vcenter"
       centered
     >
       <Modal.Header closeButton>
@@ -48,29 +50,26 @@ const PublicationModal = (props) => {
           dotListClass="custom-dot-list-style"
           itemClass="carousel-item-padding-40-px"
         >
-          {props.data.data.map((publication) => {
-            return (
-              <Link
-                href={`${
-                  publication.attributes.File?.data?.attributes.url
-                } `}
-               key ={publication.attributes.id}>
-                <Image
-                width={500}
-                height={500}
-                  src={
-                     publication.attributes.cover?.data?.attributes.url
-                  }
-                  key={publication.attributes.id}
-                  style={{
-                    height: "100%",
-                    width: "100%",
-                    objectFit: "cover",
-                  }}
-                />
-              </Link>
-            );
-          })}
+          <Link
+            href={API_URL + `${props.data.attributes.File.data.attributes.url
+              } `}
+            key={props.id}>
+            <Image
+              width={500}
+              height={500}
+              src={
+                props.data.attributes.cover.data.attributes.url
+              }
+              key={props.id}
+              style={{
+                height: "100%",
+                width: "100%",
+                objectFit: "cover",
+              }}
+            />
+          </Link>
+
+
         </Carousel>
       </Modal.Body>
     </Modal>

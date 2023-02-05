@@ -6,7 +6,6 @@ import Image from "next/image";
 const AlbumsSlider = ({ Galleries }) => {
   console.log("Galleries", Galleries);
   const [showGallery, setshowGallery] = useState({});
-  console.log(showGallery);
   const [modalShow, setmodalShow] = useState(false);
   return (
     <div className="col-12 mb-4 ">

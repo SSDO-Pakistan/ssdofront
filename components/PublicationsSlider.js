@@ -6,7 +6,9 @@ import Image from 'next/image'
 import Link from "next/link";
 
 const PublicationsSlider = ({ Publications }) => {
-  const [modalShow, setmodalShow] = useState(false);
+  console.log("Publications in slider",Publications)
+ // const [modalShow, setmodalShow] = useState(false);
+  const [showPublication, setshowPublication] = useState({});
   return (
     <div className="col-12 mb-4  ">
       <div className="block-area p-4 border bg-light-black">
@@ -24,30 +26,26 @@ const PublicationsSlider = ({ Publications }) => {
         >
           {Publications &&
             Publications.data.map((publication) => {
-              console.log(publication);
+              console.log("My publication",publication);
               return (
+                <>
                 <article
                   className="col-12 col-sm-6 col-lg-4 me-2" key={publication.id}
-                  onClick={() => {
-                    setmodalShow(true);
-                  }}
+                 
                 >
                   <div className="col-12 mb-4">
                     <div className="card card-full hover-a">
                       <div className="ratio_327-278 image-wrapper">
-                        <a href="#">
+                        <Link  href={publication.attributes.File.data.attributes.url
+                      } >
                           <Image
                           width = {400}
                           height={340}
-                            src={
-                           
-                              publication.attributes.cover.data.attributes.url
-                            }
+                            src={  publication.attributes.cover.data.attributes.url }
                             data-src="../../assets/img/400x340/img1.jpg"
                             alt="Image description"
                           />
-                        </a>
-
+                        </Link>
                         <div className="position-absolute p-3 b-0 w-100 bg-shadow">
                           <h4 className="h3 h4-sm h3-md card-title"></h4>
                         </div>
@@ -55,14 +53,12 @@ const PublicationsSlider = ({ Publications }) => {
                     </div>
                   </div>
                 </article>
+                
+                 </>
               );
             })}
 
-          <PublicationModal
-            show={modalShow}
-            onHide={() => setmodalShow(false)}
-            data={Publications}
-          />
+        
         </div>
 
         <p

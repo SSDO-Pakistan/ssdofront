@@ -7,7 +7,7 @@ import Image from 'next/image'
 import { API_URL } from "./../config/index";
 import Link from "next/link";
 const AlbumModal = (props) => {
-  console.log("props", props);
+  console.log("props of album", props);
   if (props && props.data && props.data.attributes) {
     console.log("title", props.data.attributes.title);
   }
