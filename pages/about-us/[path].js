@@ -27,7 +27,7 @@ const Profile = ({ data }) => {
                 setmodalShow(true);
               }}
              key ={profile.attributes.id}>
-             <div class="card" style={{width: "20rem;"}}>
+             <div class="card" >
                 <Image
                   class="card-img-top"
                   width={286}
