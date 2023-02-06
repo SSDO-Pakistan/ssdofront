@@ -9,27 +9,27 @@ const Profile = ({ data }) => {
 
   return (
     <div
-      class="container content-space-1 p-4 mt-20"
+      className="container content-space-1 p-4 mt-20"
       style={{ overflowX: "hidden" }}
     >
-      <div class="w-lg-100 text-center mx-lg-auto mb-5 mb-sm-7 mb-lg-10">
+      <div className="w-lg-100 text-center mx-lg-auto mb-5 mb-sm-7 mb-lg-10">
         <h2>Our leadership</h2>
       </div>
 
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3">
+      <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3">
         {data.Profiles.data.map((profile) => {
           return (
             <div
-              class="col mb-10 mt-10"
+              className="col mb-10 mt-10"
               style={{ marginTop: "30px", cursor: "pointer" }}
               onClick={() => {
                 setshowProfile(profile);
                 setmodalShow(true);
               }}
              key ={profile.attributes.id}>
-             <div class="card" >
+             <div className="card shadow-sm p-3 mb-5 bg-white rounded">
                 <Image
-                  class="card-img-top"
+                
                   width={286}
                   height={180}
                   src={
@@ -38,9 +38,9 @@ const Profile = ({ data }) => {
                   }
                   alt="Image Description"
                 />
-                 <div class="card-body">
+                 <div className="card-body">
                 <h5 class="mb-1">{profile.attributes.name}</h5>
-                <span class="d-block">
+                <span className="d-block">
                   {profile.attributes.Profile[0].title}
                 </span>
               </div>
