@@ -27,7 +27,7 @@ const Profile = ({ data }) => {
                 setmodalShow(true);
               }}
              key ={profile.attributes.id}>
-             <div className="card shadow-sm p-3 mb-5 bg-white rounded" style={{width:"18rem"}}>
+             <div className="card shadow-sm p-3 mb-5 bg-white rounded" style={{width:"20rem"}}>
                 <Image
                 
                   width={286}
@@ -39,8 +39,8 @@ const Profile = ({ data }) => {
                   alt="Image Description"
                 />
                  <div className="card-body">
-                <h5 class="mb-1">{profile.attributes.name}</h5>
-                <span className="d-block">
+                <h5 className="mb-1 text-center">{profile.attributes.name}</h5>
+                <span className="d-block text-center">
                   {profile.attributes.Profile[0].title}
                 </span>
               </div>
