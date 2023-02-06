@@ -30,8 +30,8 @@ const Profile = ({ data }) => {
              <div className="card shadow-sm p-3 mb-5 bg-white rounded" style={{width:"20rem"}}>
                 <Image
                 
-                  width={286}
-                  height={180}
+                  width={225}
+                  height={225}
                   src={
                   
                     profile.attributes.Profile[0].image.data[0].attributes.url
