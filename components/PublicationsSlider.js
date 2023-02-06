@@ -6,7 +6,7 @@ import Image from 'next/image'
 import Link from "next/link";
 
 const PublicationsSlider = ({ Publications }) => {
-  console.log("Publications in slider",Publications)
+ // console.log("Publications in slider",Publications)
  // const [modalShow, setmodalShow] = useState(false);
   const [showPublication, setshowPublication] = useState({});
   return (
@@ -26,7 +26,7 @@ const PublicationsSlider = ({ Publications }) => {
         >
           {Publications &&
             Publications.data.map((publication) => {
-              console.log("My publication",publication);
+             //console.log("My publication",publication);
               return (
                 <>
                 <article
@@ -36,12 +36,11 @@ const PublicationsSlider = ({ Publications }) => {
                   <div className="col-12 mb-4">
                     <div className="card card-full hover-a">
                       <div className="ratio_327-278 image-wrapper">
-                        <Link    href={publication.attributes.File.data.attributes.url
-              }  >
+                        <Link href={publication.attributes.File.data.attributes.url }  >
                           <Image
                           width = {400}
                           height={340}
-                            src={  publication.attributes.cover.data.attributes.url }
+                            src={ publication.attributes.cover.data.attributes.url }
                             data-src="../../assets/img/400x340/img1.jpg"
                             alt="Image description"
                           />
@@ -56,11 +55,8 @@ const PublicationsSlider = ({ Publications }) => {
                 
                  </>
               );
-            })}
-
-        
+            })}    
         </div>
-
         <p
           style={{
             textAlign: "right",

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { API_URL } from "@/config/index";
 import TeamModel from "../../components/TeamModal";
-
+import Image from 'next/image'
 const Profile = ({ data }) => {
   const [showProfile, setshowProfile] = useState({});
   console.log(showProfile);
@@ -27,19 +27,23 @@ const Profile = ({ data }) => {
                 setmodalShow(true);
               }}
              key ={profile.attributes.id}>
-              <div class="w-sm-65 text-center mx-auto ">
-                <img
-                  class="img-fluid rounded-3 mb-4"
+             <div class="card" style={{width: "20rem;"}}>
+                <Image
+                  class="card-img-top"
+                  width={300}
+                  height={200}
                   src={
-                    API_URL +
+                  
                     profile.attributes.Profile[0].image.data[0].attributes.url
                   }
                   alt="Image Description"
                 />
+                 <div class="card-body">
                 <h5 class="mb-1">{profile.attributes.name}</h5>
                 <span class="d-block">
                   {profile.attributes.Profile[0].title}
                 </span>
+              </div>
               </div>
             </div>
           );
