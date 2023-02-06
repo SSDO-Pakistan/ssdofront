@@ -10,3 +10,12 @@
     margin-top: 0.1rem !important;
     margin-bottom: 0.1rem !important;
 }
+.main-logo img {
+  margin-bottom: 0.1rem !important
+;
+
+}
+
+.main-logo img, .sub-card {
+  margin-top: 0.1rem !important
+}
