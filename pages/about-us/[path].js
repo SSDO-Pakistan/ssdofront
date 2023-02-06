@@ -30,8 +30,8 @@ const Profile = ({ data }) => {
              <div class="card" style={{width: "20rem;"}}>
                 <Image
                   class="card-img-top"
-                  width={300}
-                  height={200}
+                  width={286}
+                  height={180}
                   src={
                   
                     profile.attributes.Profile[0].image.data[0].attributes.url
