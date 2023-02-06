@@ -27,7 +27,7 @@ const Profile = ({ data }) => {
                 setmodalShow(true);
               }}
              key ={profile.attributes.id}>
-             <div className="card shadow-sm p-3 mb-5 bg-white rounded" style={{width:"20rem"}}>
+             <div className="card shadow-sm p-3 mb-5 bg-white rounded" style={{width:"16rem"}}>
                 <Image
                 
                   width={225}
