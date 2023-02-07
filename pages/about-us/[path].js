@@ -39,8 +39,8 @@ const Profile = ({ data }) => {
                   alt="Image Description"
                 />
                  <div className="card-body">
-                <h5 className="mb-1 text-center">{profile.attributes.name}</h5>
-                <span className="d-block text-center">
+                <h5 className="mb-1 text-center fw-bolder">{profile.attributes.name}</h5>
+                <span className="d-block text-center" style={{color:"grey"}}>
                   {profile.attributes.Profile[0].title}
                 </span>
               </div>
