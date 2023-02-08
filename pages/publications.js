@@ -63,7 +63,7 @@ const Publications = () => {
                  key ={publication.attributes.id}>
                   <article className="card shadow-sm" style={{width: "25rem"}}>     
                       <Image className="card-img-top"
-                        width={450}
+                        width={300}
                         height={350}
                         src={   
                           publication.attributes.cover.data.attributes.url
