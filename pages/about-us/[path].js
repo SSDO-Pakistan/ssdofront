@@ -4,6 +4,7 @@ import TeamModel from "../../components/TeamModal";
 import Image from 'next/image'
 import {useRouter} from 'next/router';
 
+
 const Profile = ({ data }) => {
   const router = useRouter()
  if (router.query.path == 'team')
@@ -12,6 +13,9 @@ const Profile = ({ data }) => {
  }
  else if(router.query.path=='directors'){
    var heading = 'Board of Directors'
+ }
+ else{
+  var heading = 'Advisory Board'
  }
   const [showProfile, setshowProfile] = useState({});
   console.log(showProfile);
@@ -24,7 +28,7 @@ const Profile = ({ data }) => {
     >
        <div className="block-title-6 text-center ">
        <h4 className="h5 border-primary">
-          <span className="bg-primary text-white fw-bolder ">{heading}</span>
+          <span className="bg-primary text-white fw-bolder">{heading}</span>
         </h4>
         </div>
       <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3">

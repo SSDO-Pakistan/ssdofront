@@ -4,7 +4,7 @@ import ModalBody from "react-bootstrap/ModalBody";
 import ModalHeader from "react-bootstrap/ModalHeader";
 import Carousel from "react-multi-carousel";
 import { API_URL } from "@/config/index";
-
+import ReactMarkdown from "react-markdown";
 const TeamModal = (props) => {
   console.log(props);
   const responsive = {
@@ -40,7 +40,7 @@ const TeamModal = (props) => {
         <h4 className="text-primary">
           {props?.data?.attributes?.Profile[0].title}
         </h4>
-        <p>{props?.data?.attributes?.Profile[0].description}</p>
+        <p><ReactMarkdown>{props?.data?.attributes?.Profile[0].description}</ReactMarkdown></p>
       </Modal.Body>
     </Modal>
   );
