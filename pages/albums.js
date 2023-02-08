@@ -50,24 +50,24 @@ const Albums = ({ data }) => {
   };
   return (
     <div className="row mt-3 p-3 ">
-      <div className="col-md-8">
-        <div className="block-title-6">
+      <div className="col-md-9">
+        <div className="block-title-6  text-center">
           <h4 className="h5 border-primary">
-            <span className="bg-primary text-white">Albums</span>
+            <span className="bg-primary text-white fw-bolder ">Albums</span>
           </h4>
         </div>
-        <div className="d-flex flex-row flex-wrap gap-2 h-auto">
+        <div className="d-flex flex-row flex-wrap gap-5 h-auto">
           {items &&
             items.data?.map((gallery) => {
               return (
-                <article className="card card-full hover-a mb-4"
+                <div className="card  shadow-sm hover-a mb-4"
                 
                   onClick={() => {
                     setshowGallery(gallery);
                     setmodalShow(true);
                   }}
                   key={gallery.attributes.id}>
-                  <div className="mb-2">
+                  <div className="card-body">
                   <Image
                      width={380}
                      height={210}
@@ -76,22 +76,19 @@ const Albums = ({ data }) => {
                       }
                       alt=""
                     /> 
-                  </div>
-                  <div>
-                    <h6 >
+                    <h6 className=" mt-1">
                       {gallery.attributes.title}
                     </h6>
-                    <p class="card-text">{gallery.attributes.description}</p>
                     <p><small>Images : {gallery.attributes.images.data.length}</small></p>
                    
                   </div>
-                </article>
+                </div>
               );
             })}
         </div>
       </div>
-      <div className="col-md-4   ">
-        <div className="block-title-6">
+      <div className="col-md-3   ">
+        <div className="block-title-6 ">
           <h4 className="h5 border-primary">
             <span className="bg-primary text-white">Thematic Areas</span>
           </h4>

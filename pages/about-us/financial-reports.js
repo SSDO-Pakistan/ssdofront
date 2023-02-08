@@ -6,9 +6,9 @@ const FinancialReports = ({ data }) => {
   return (
     <main className="d-flex flex-row mt-3 p-3  mb-3">
       <div className="col-md-12 h-auto ">
-        <div className="block-title-6">
+        <div className="block-title-6 text-center">
           <h4 className="h5 border-primary">
-            <span className="bg-primary text-white">Financial Reports</span>
+            <span className="bg-primary text-white ">Financial Reports</span>
           </h4>
         </div>
         <div className="d-flex justify-space-between flex-row flex-wrap gap-8 h-auto mt-5 mb-3">
@@ -71,7 +71,7 @@ const FinancialReports = ({ data }) => {
   );
 };
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   //fetching Financial Reports
   const publicationsres = await fetch(
     `${API_URL}/api/publications?filters[type][$eq]=Financial Reports&populate=*&sort=createdAt:desc`
@@ -83,6 +83,7 @@ export async function getServerSideProps() {
       data: {
         Publications,
       },
+      revalidate: 10, // In seconds
     },
   };
 }
