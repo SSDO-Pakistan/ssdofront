@@ -11,57 +11,37 @@ const FinancialReports = ({ data }) => {
             <span className="bg-primary text-white ">Financial Reports</span>
           </h4>
         </div>
-        <div className="d-flex justify-space-between flex-row flex-wrap gap-8 h-auto mt-5 mb-3">
+        <div className="d-flex justify-space-between flex-row flex-wrap gap-3 h-auto mt-5 mb-3">
           {data &&
             data.Publications?.data.map((publication) => {
               return (
                 <Link
-                  href={`${
-                     publication.attributes.File?.data?.attributes.url
-                  } `}
+                  href={`${publication.attributes.File?.data?.attributes.url
+                    } `}
                   target="_blank"
                   key={publication.attributes.id} >
-                  <article
-                    style={{
-                      width: "430px",
-                      height: "auto",
-                      cursor: "pointer",
-                    }}
-                  >
-                    <div className="mb-2">
+                  <div className="card">
+                    <div className="card-body">
                       <Image
-                        width={500}
+                        width={300}
                         height={350}
                         src={
-                        
+
                           publication.attributes.cover.data.attributes.url
                         }
-                        alt=""
+                        alt="Report"
                       />
                     </div>
-                    <div
-                      style={{ display: "flex", flexDirection: "column" }}
-                      class=" p-4 rounded border-bottom shadow-lrb-lg"
-                    >
-                      <h4 class="card-title h3 h2-md display-6-lg mb-1">
+                    <div>
+                      <h4 class="card-title text-center ">
                         {publication.attributes.title}
                       </h4>
                       <p class="card-text">
                         {publication.attributes.description}
                       </p>
-                      <div className="small text-white ">
-                        <p
-                          className="mb-0 text-white p-2 rounded"
-                          style={{ background: "rgb(133 7 53)" }}
-                        >
-                          {publication.attributes.type}
-                        </p>
-                      </div>
-                      {/* <div className="mt-1 small">
-              <p>Pictures : {gallery.attributes.images.data.length}</p>
-            </div> */}
+                 
                     </div>
-                  </article>
+                  </div>
                 </Link>
               );
             })}
