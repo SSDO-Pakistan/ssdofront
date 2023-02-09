@@ -167,7 +167,7 @@ export async function getServerSideProps() {
 
   //fetching sliderimgs
   const sliderhighlightsres = await fetch(
-    `${API_URL}/api/posts?filters[type][$eq]=Highlights&filters[slider][$eq]=true&sort=createdAt:desc&pagination[limit]=3&populate=*`
+    `${API_URL}/api/posts?filters[type][$eq]=Highlights&filters[slider][$eq]=true&sort=createdAt:desc&pagination[limit]=9&populate=*`
   );
   const SliderHighlights = await sliderhighlightsres.json();
 

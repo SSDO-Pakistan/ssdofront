@@ -44,7 +44,7 @@ const Registration = ({ data }) => {
                   <Link
                     className="btn btn-white text-white"
                     // href="mailto:support@site.com"
-                    href={API_URL + reg.attributes.file?.data[0].attributes.url}
+                    href={reg.attributes.file?.data[0].attributes.url}
                     style={{ textDecoration: "underline", cursor: "pointer" }}
                     target="_blank"
                   >
