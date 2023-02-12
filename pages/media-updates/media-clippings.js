@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { API_URL } from "@/config/index";
 import Link from "next/link";
+import Image from 'next/image'
 import ReactPaginate from "react-paginate";
 
 const MediaClippings = () => {
   const [items, setItems] = useState([]);
   const [pageCount, setpageCount] = useState(0);
-  let limit = 10;
+  let limit = 30;
   useEffect(() => {
     const getPublications = async () => {
       const res = await fetch(
@@ -55,8 +56,7 @@ const MediaClippings = () => {
             return (
               <Link
                 href={
-                  
-                  clip.attributes.image.data.attributes.formats?.thumbnail.url
+                  clip.attributes.image.data.attributes.url
                 }
                 target="_blank"
                key={clip.attributes.id}>
@@ -67,7 +67,9 @@ const MediaClippings = () => {
                     display: "inline-block",
                   }}
                 >
-                  <img
+                  <Image
+                  width={155}
+                  height={156}
                     src={ clip.attributes.image.data.attributes.url}
                     alt=""
                   />
