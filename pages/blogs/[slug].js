@@ -1,7 +1,7 @@
 import { API_URL } from "@/config/index";
 import ReactMarkdown from "react-markdown";
 const Blog = ({ data }) => {
- console.log(data)
+// console.log(data)
   return (
     <div className="d-flex flex-row mt-3 p-3  mb-3">
       <div className=" h-auto col-md-12">
