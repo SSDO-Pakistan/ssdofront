@@ -1,5 +1,6 @@
 import { API_URL } from "@/config/index";
-const Post = ({ data }) => {
+import ReactMarkdown from "react-markdown";
+const Blog = ({ data }) => {
  console.log(data)
   return (
     <div className="d-flex flex-row mt-3 p-3  mb-3">
@@ -14,7 +15,7 @@ const Post = ({ data }) => {
           <div className="card border-0  p-3">
               <h3  className="card-title">{data[0].attributes.title}</h3>
               <div className='card-body'>
-              <p>{data[0].attributes.description}</p>
+              <p><ReactMarkdown>{data[0].attributes.description}</ReactMarkdown></p>
               </div>
             </div>
           </div>
@@ -23,7 +24,7 @@ const Post = ({ data }) => {
     
   )
 }
-export default Post
+export default Blog
 export async function getStaticProps(context) {
   const { params } = context;
   const res = await fetch(`${API_URL}/api/posts?filters[type][$eq]=Blog&filters[slider][$eq]=false&filters[slug][$eq]=${params.slug}`)

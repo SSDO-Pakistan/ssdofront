@@ -1,7 +1,7 @@
 import React from "react";
 import moment from "moment";
 import Link from "next/link"
-
+import ReactMarkdown from "react-markdown";
 const Blog = ({ Blogs }) => {
   return (
     <div className="col-md-8">
@@ -36,7 +36,7 @@ const Blog = ({ Blogs }) => {
                           )}
                         </time>
                       </div>
-                      <p className="card-text">{blog.attributes.description}</p>
+                      <p className="card-text"><ReactMarkdown>{blog.attributes.description.substring(0, 300).concat("...")}</ReactMarkdown></p>
                     </div>
                   </div>
                 </div>
@@ -146,7 +146,7 @@ const Blog = ({ Blogs }) => {
             </div>
           </article> */}
         </div>
-        <Link href="/more/blogs">
+        <Link href="/posts">
           <p
             style={{
               textAlign: "right",
