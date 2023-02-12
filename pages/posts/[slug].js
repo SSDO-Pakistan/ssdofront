@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router'
 import { API_URL } from "@/config/index";
 const Post = ({ data }) => {
  console.log(data)
@@ -13,7 +12,7 @@ const Post = ({ data }) => {
 
           <div className="">
           <div className="card border-0  p-3">
-              <h3  >{data[0].attributes.title}</h3>
+              <h3  className="card-title">{data[0].attributes.title}</h3>
               <div className='card-body'>
               <p>{data[0].attributes.description}</p>
               </div>

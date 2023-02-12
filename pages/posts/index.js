@@ -4,7 +4,6 @@ import Link from "next/link";
 function Posts({ data }) {
   console.log("posts data", data)
   // return false;
-
   return (
     <div className="d-flex flex-row mt-3 p-3  mb-3">
       <div className=" h-auto col-md-12">
@@ -15,9 +14,9 @@ function Posts({ data }) {
         </div>
         <div className="">
           {data.map((post) => (
-            <div className="card border-0 border-bottom p-2">
+            <div className="card border-0 border-bottom p-2"  key={post.id}>
               <div className="card-body">
-                <Link key={post.id} href={`posts/${post.attributes.slug}`}>
+                <Link href={`posts/${post.attributes.slug}`}>
                   <h4 className="card-title" key={post.id}>{post.attributes.title}</h4>
                   <p> <small>By: admin</small></p>
 
