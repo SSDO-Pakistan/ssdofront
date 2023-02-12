@@ -7,7 +7,7 @@ import ReactPaginate from "react-paginate";
 const MediaClippings = () => {
   const [items, setItems] = useState([]);
   const [pageCount, setpageCount] = useState(0);
-  let limit = 30;
+  let limit = 35;
   useEffect(() => {
     const getPublications = async () => {
       const res = await fetch(
@@ -15,7 +15,9 @@ const MediaClippings = () => {
         // `https://jsonplaceholder.typicode.com/comments?_page=1&_limit=${limit}`
       );
       const data = await res.json();
-      // console.log("pub", data);
+    
+       console.log("pub", data);
+     
       const total = data.meta.pagination.total;
       setpageCount(Math.ceil(total / limit));
       // console.log(Math.ceil(total/12));
@@ -25,6 +27,7 @@ const MediaClippings = () => {
     getPublications();
   }, [limit]);
   console.log("items", items);
+
   const fetchPublications = async (currentPage) => {
     const res = await fetch(
       `${API_URL}/api/media-clipings?populate=*&sort=createdAt:desc&pagination[page]=${currentPage}&pagination[pageSize]=${limit}`
@@ -44,7 +47,7 @@ const MediaClippings = () => {
   };
   return (
     <div class="container p-4 mt-20">
-      <div className="block-title-6">
+      <div className="block-title-6 text-center">
         <h4 className="h5 border-primary">
           <span className="bg-primary text-white">Media Clippings</span>
         </h4>
@@ -68,10 +71,10 @@ const MediaClippings = () => {
                   }}
                 >
                   <Image
-                  width={155}
+                  width={188}
                   height={156}
-                    src={ clip.attributes.image.data.attributes.url}
-                    alt=""
+                    src={clip.attributes.image.data.attributes.formats?.thumbnail.url}
+                    alt="Thumbnail"
                   />
                 </div>
               </Link>
