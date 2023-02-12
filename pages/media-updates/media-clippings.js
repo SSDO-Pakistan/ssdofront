@@ -5,9 +5,7 @@ import ReactPaginate from "react-paginate";
 
 const MediaClippings = () => {
   const [items, setItems] = useState([]);
-
   const [pageCount, setpageCount] = useState(0);
-
   let limit = 10;
   useEffect(() => {
     const getPublications = async () => {
@@ -57,7 +55,7 @@ const MediaClippings = () => {
             return (
               <Link
                 href={
-                  API_URL +
+                  
                   clip.attributes.image.data.attributes.formats?.thumbnail.url
                 }
                 target="_blank"
@@ -70,7 +68,7 @@ const MediaClippings = () => {
                   }}
                 >
                   <img
-                    src={API_URL + clip.attributes.image.data.attributes.url}
+                    src={ clip.attributes.image.data.attributes.url}
                     alt=""
                   />
                 </div>

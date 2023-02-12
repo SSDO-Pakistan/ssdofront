@@ -3,7 +3,7 @@ import moment from "moment";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 function Blogs({ data }) {
-  console.log("posts data", data)
+//  console.log("posts data", data)
   // return false;
   return (
     <div className="d-flex flex-row mt-3 p-3  mb-3">
