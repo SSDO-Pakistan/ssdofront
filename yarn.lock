@@ -34,7 +34,7 @@
 
 "@etchteam/next-pagination@^3.5.4":
   version "3.5.4"
-  resolved "https://registry.npmjs.org/@etchteam/next-pagination/-/next-pagination-3.5.4.tgz"
+  resolved "https://registry.yarnpkg.com/@etchteam/next-pagination/-/next-pagination-3.5.4.tgz#54e4c8773701ab1431e89f6cf35d58f5248ef36e"
   integrity sha512-/mE6FO2Y5ANdOny4/Z+3ZPx3FWtvxwLYORo6UZKqlwJWTmdWTGu7+wKx8+oGmOEaD+NToqiw9663X4a3PLx/1A==
   dependencies:
     classnames "^2.3.1"

@@ -8,9 +8,7 @@ import moment from "moment";
 const Albums = ({ data }) => {
   const [modalShow, setmodalShow] = useState(false);
   const [showGallery, setshowGallery] = useState({});
-
   const [items, setItems] = useState([]);
-
   const [pageCount, setpageCount] = useState(0);
 
   let limit = 10;
@@ -49,18 +47,19 @@ const Albums = ({ data }) => {
     setItems(publicationFromServer);
   };
   return (
+    <>
     <div className="row mt-3 p-3 ">
-      <div className="col-md-9">
+      <div className="col-md-12">
         <div className="block-title-6  text-center">
-          <h4 className="h5 border-primary">
+          <h4 className="h5 border-primary  mb-5">
             <span className="bg-primary text-white fw-bolder ">Albums</span>
           </h4>
         </div>
-        <div className="d-flex flex-row flex-wrap gap-5 h-auto">
+        <div className="d-flex flex-row flex-wrap gap-3 h-auto">
           {items &&
             items.data?.map((gallery) => {
               return (
-                <div className="card  shadow-sm hover-a mb-4"
+                <div className="card shadow-sm hover-a mb-5 " style={{width: "15rem"}}
                 
                   onClick={() => {
                     setshowGallery(gallery);
@@ -69,12 +68,13 @@ const Albums = ({ data }) => {
                   key={gallery.attributes.id}>
                   <div className="card-body">
                   <Image
-                     width={380}
-                     height={210}
+                     width={208}   
+                     height={155}
                       src={  
                         gallery.attributes.images.data[0].attributes.formats.thumbnail.url
                       }
                       alt=""
+                   
                     /> 
                     <h6 className=" mt-1">
                       {gallery.attributes.title}
@@ -87,29 +87,7 @@ const Albums = ({ data }) => {
             })}
         </div>
       </div>
-      <div className="col-md-3   ">
-        <div className="block-title-6 ">
-          <h4 className="h5 border-primary">
-            <span className="bg-primary text-white">Thematic Areas</span>
-          </h4>
-        </div>
-        <div className="d-flex flex-column gap-3  " style={{ height: "100vh" }}>
-          {data.Categories.data.map((category) => {
-            return (
-              <Link href={`/thematicarea/` + category.attributes.slug} key={category.attributes.id}>
-                <div
-                  className=" d-flex justify-content-left "
-                
-                >
-                  <h6 className="align-self-center text-dark">
-                    {category.attributes.title}
-                  </h6>
-                </div>
-              </Link>
-            );
-          })}
-        </div>
-      </div>
+
       <ReactPaginate
           previousLabel={"previous"}
           nextLabel={"next"}
@@ -129,12 +107,14 @@ const Albums = ({ data }) => {
           breakLinkClassName={"page-link"}
           activeClassName={"active"}
         />
-      <AlbumModal
-        show={modalShow}
-        onHide={() => setmodalShow(false)}
-        data={showGallery}
-      />
+     
     </div>
+     <AlbumModal
+     show={modalShow}
+     onHide={() => setmodalShow(false)}
+     data={showGallery}
+   />
+   </>
   );
 };
 

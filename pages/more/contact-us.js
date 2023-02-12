@@ -2,9 +2,11 @@ import React from "react";
 
 const ContactUs = () => {
   return (
-    <div class="container content-space-t-1 p-4 mt-20">
-      <div class="text-center mb-7 ">
-        <h1 className="display-2 fw-bold ">Get in Touch</h1>
+    <div class="container content-space-t-1 p-4 mt-20 ">
+      <div className="block-title-6 text-center">
+        <h4 className="h5 border-primary mb-5">
+          <span className="bg-primary text-white">Get in Touch</span>
+        </h4>
       </div>
 
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 d-flex justify-content-center">

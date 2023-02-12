@@ -59,16 +59,14 @@ const HighLights = () => {
                 <article className="card card-full hover-a py-4" key={highlight.attributes.id}>
                   <div className="row">
                     <div className="col-sm-4">
-                      <div className="ratio_360-202 ">
+                      <div >
                         <Image
-                          className="img-fluid"
-                          src={
-                          
+                          width={ highlight.attributes.image.data.attributes.formats.thumbnail.width}
+                          height={ highlight.attributes.image.data.attributes.formats.thumbnail.height}
+                          src={  
                             highlight.attributes.image.data.attributes.url
-                          }
-                        
+                          }  
                           alt="Image description"
-                          style={{ height: "270px" }}
                         />
                       </div>
                     </div>

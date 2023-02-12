@@ -47,7 +47,7 @@ const Publications = () => {
   return (
     <div className="d-flex flex-row mt-3 p-3  mb-3">
       <div className=" h-auto col-md-12">
-        <div className="block-title-6">
+        <div className="block-title-6 text-center">
           <h4 className="h5 border-primary">
             <span className="bg-primary text-white">Publications</span>
           </h4>

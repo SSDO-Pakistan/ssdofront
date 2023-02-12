@@ -31,8 +31,8 @@ const AlbumModal = (props) => {
   return (
     <Modal
       {...props}
-      style={{ height: "500px", borderRadius: "0px 10px 0px 0px" }}
-     className=  "modal"
+       style={{ position: "absolute", borderRadius: "0px 10px 0px 0px" }}
+     className=  "modal-lg "
     >
       <Modal.Header closeButton>
         {props && props.data && props.data.attributes && (
@@ -52,8 +52,7 @@ const AlbumModal = (props) => {
           transitionDuration={500}
           containerClass="carousel-container"
           dotListClass="custom-dot-list-style"
-          itemClass="carousel-item-padding-40-px"
-          
+          itemClass="carousel-item-padding-40-px"      
         >
           {props.data.attributes &&
             props.data.attributes.images.data.map((image) => {
@@ -61,18 +60,16 @@ const AlbumModal = (props) => {
                 <Link href={ image.attributes.url} key={image.attributes.id}>
                
                 <Image
-                   src={image.attributes.url}  
-                   width={500}  
-                   height={400}
+                   src={image.attributes.url} 
+                   width={750} 
+                   height={550} 
                     alt="Image" 
-                    style={{
-                      height: "100%",
-                      width: "100%",
+                    style={{     
                       objectFit: "cover",
-                    }}
-                   
-                />
-                
+                    
+                    
+                    }}    
+                />        
                 </Link>
               );
             })}
