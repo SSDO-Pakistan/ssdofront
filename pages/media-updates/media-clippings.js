@@ -1,107 +1,61 @@
-import React, { useState, useEffect } from "react";
-import { API_URL } from "@/config/index";
-import Link from "next/link";
-import Image from 'next/image'
-import ReactPaginate from "react-paginate";
 
-const MediaClippings = () => {
-  const [items, setItems] = useState([]);
-  const [pageCount, setpageCount] = useState(0);
-  let limit = 35;
-  useEffect(() => {
-    const getPublications = async () => {
-      const res = await fetch(
-        `${API_URL}/api/media-clipings?populate=*&sort=createdAt:desc&pagination[page]=1&pagination[pageSize]=${limit}`
-        // `https://jsonplaceholder.typicode.com/comments?_page=1&_limit=${limit}`
-      );
-      const data = await res.json();
-    
-       console.log("pub", data);
-     
-      const total = data.meta.pagination.total;
-      setpageCount(Math.ceil(total / limit));
-      // console.log(Math.ceil(total/12));
-      setItems(data);
+import Gallery from "react-photo-gallery";
+import React, { useState, useCallback } from "react";
+import Carousel, { Modal, ModalGateway } from "react-images";
+function Photos(props) {
+
+    const [currentImage, setCurrentImage] = useState(0);
+    const [viewerIsOpen, setViewerIsOpen] = useState(false);
+  
+    const openLightbox = useCallback((event, { photo, index }) => {
+      setCurrentImage(index);
+      setViewerIsOpen(true);
+    }, []);
+  
+    const closeLightbox = () => {
+      setCurrentImage(0);
+      setViewerIsOpen(false);
     };
-
-    getPublications();
-  }, [limit]);
-  console.log("items", items);
-
-  const fetchPublications = async (currentPage) => {
-    const res = await fetch(
-      `${API_URL}/api/media-clipings?populate=*&sort=createdAt:desc&pagination[page]=${currentPage}&pagination[pageSize]=${limit}`
-      // `https://jsonplaceholder.typicode.com/comments?_page=${currentPage}&_limit=${limit}`
-    );
-    const data = await res.json();
-    return data;
-  };
-  const handlePageClick = async (data) => {
-    console.log(data.selected);
-
-    let currentPage = data.selected + 1;
-
-    const publicationFromServer = await fetchPublications(currentPage);
-
-    setItems(publicationFromServer);
-  };
-  return (
-    <div class="container p-4 mt-20">
-      <div className="block-title-6 text-center">
-        <h4 className="h5 border-primary">
-          <span className="bg-primary text-white">Media Clippings</span>
-        </h4>
-      </div>
-
-      <div className="d-flex flex-wrap">
-        {items &&
-          items.data?.map((clip) => {
-            return (
-              <Link
-                href={
-                  clip.attributes.image.data.attributes.url
-                }
-                target="_blank"
-               key={clip.attributes.id}>
-                <div
-                  style={{
-                    margin: "5px",
-                    width: "auto",
-                    display: "inline-block",
-                  }}
-                >
-                  <Image
-                  width={188}
-                  height={156}
-                    src={clip.attributes.image.data.attributes.formats?.thumbnail.url}
-                    alt="Thumbnail"
-                  />
-                </div>
-              </Link>
-            );
-          })}
-      </div>
-      <ReactPaginate
-        previousLabel={"previous"}
-        nextLabel={"next"}
-        breakLabel={"..."}
-        pageCount={pageCount}
-        marginPagesDisplayed={2}
-        pageRangeDisplayed={3}
-        onPageChange={handlePageClick}
-        containerClassName={"pagination justify-content-center"}
-        pageClassName={"page-item"}
-        pageLinkClassName={"page-link"}
-        previousClassName={"page-item"}
-        previousLinkClassName={"page-link"}
-        nextClassName={"page-item"}
-        nextLinkClassName={"page-link"}
-        breakClassName={"page-item"}
-        breakLinkClassName={"page-link"}
-        activeClassName={"active"}
-      />
+return (
+    <div>
+     <div>
+      <Gallery photos={props.mydata} onClick={openLightbox} />
+      <ModalGateway>
+        {viewerIsOpen ? (
+          <Modal onClose={closeLightbox}>
+            <Carousel
+              currentIndex={currentImage}
+              views={props.mydata.map(x => ({
+                ...x,
+                srcset: x.srcSet,
+                caption: x.title
+              }))}
+            />
+          </Modal>
+        ) : null}
+      </ModalGateway>
+    </div> 
     </div>
   );
-};
-
-export default MediaClippings;
+}
+export default Photos
+export async function getStaticProps() {
+    const res = await fetch('https://strapi-production-9f68.up.railway.app/api/media-clipings?populate=*&sort=createdAt:desc')
+    const photos = await res.json()
+    let mydata = new Array;
+    photos.data?.map((clip,index) => {      
+                mydata.push( {"src": clip.attributes.image.data.attributes.url,
+                "width":clip.attributes.image.data.attributes.formats?.thumbnail.width,
+                "height":clip.attributes.image.data.attributes.formats?.thumbnail.height});
+               
+            });      
+    return {
+      props: {
+      mydata
+      },
+      // Next.js will attempt to re-generate the page:
+      // - When a request comes in
+      // - At most once every 10 seconds
+      revalidate: 10, // In seconds
+    }
+  }
