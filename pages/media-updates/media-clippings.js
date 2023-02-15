@@ -2,7 +2,7 @@ import React, { useState, useCallback } from "react";
 import ReactPaginate from "react-paginate";
 import Gallery from "react-photo-gallery";
 import Carousel, { Modal, ModalGateway } from "react-images";
-function photos(props) {
+function Photos(props) {
   let limit = 30
   const [items, setItems] = useState(props.mydata);
   let pageCount=Math.ceil(props.total/limit)
@@ -93,7 +93,7 @@ function photos(props) {
 
   );
 }
-export default photos
+export default Photos
 export async function getStaticProps() {
     const res = await
 fetch('https://strapi-production-9f68.up.railway.app/api/media-clipings?populate=*&sort=createdAt:desc&pagination[page]=1&pagination[pageSize]=10')
