@@ -16,16 +16,20 @@ function Photos() {
         // `https://jsonplaceholder.typicode.com/comments?_page=1&_limit=${limit}`
       );
       const data = await res.json();
+      console.log(data)
       const total = data.meta.pagination.total;
       let mydata = new Array;
       data.data?.map((clip) => {
                   mydata.push( {"src":clip.attributes.image.data.attributes.url,
+                 "srcSet": [clip.attributes.image.data.attributes.formats.small.url,
+                    clip.attributes.image.data.attributes.formats.thumbnail.url],
+                    "sizes": ["(min-width: 480px) 50vw,(min-width: 1024px) 33.3vw,100vw"],
                   "width":clip.attributes.image.data.attributes.width,
                   "height":clip.attributes.image.data.attributes.height});
               });
    
       setpageCount(Math.ceil(total / limit));
-      // console.log(Math.ceil(total/12));
+   
       setItems(mydata);
     };
 
@@ -43,6 +47,9 @@ function Photos() {
     let mydata = new Array;
     data.data?.map((clip) => {
                 mydata.push( {"src":clip.attributes.image.data.attributes.url,
+                "srcSet": [clip.attributes.image.data.attributes.formats.small.url,
+                  clip.attributes.image.data.attributes.formats.thumbnail.url],
+                  "sizes": ["(min-width: 480px) 50vw,(min-width: 1024px) 33.3vw,100vw"],
                 "width":clip.attributes.image.data.attributes.width,
                 "height":clip.attributes.image.data.attributes.height});
             });
