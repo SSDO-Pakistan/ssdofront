@@ -21,9 +21,9 @@ function Photos() {
       let mydata = new Array;
       data.data?.map((clip) => {
                   mydata.push( {"src":clip.attributes.image.data.attributes.url,
-                 "srcSet": [clip.attributes.image.data.attributes.formats.small.url,
-                    clip.attributes.image.data.attributes.formats.thumbnail.url],
-                    "sizes": ["(min-width: 480px) 50vw,(min-width: 1024px) 33.3vw,100vw"],
+                 "srcSet": clip.attributes.image.data.attributes.formats.small.url
+                   ,
+                  "sizes": ["(min-width: 480px) 50vw,(min-width: 1024px) 33.3vw,100vw"],
                   "width":clip.attributes.image.data.attributes.width,
                   "height":clip.attributes.image.data.attributes.height});
               });
@@ -47,9 +47,8 @@ function Photos() {
     let mydata = new Array;
     data.data?.map((clip) => {
                 mydata.push( {"src":clip.attributes.image.data.attributes.url,
-                "srcSet": [clip.attributes.image.data.attributes.formats.small.url,
-                  clip.attributes.image.data.attributes.formats.thumbnail.url],
-                  "sizes": ["(min-width: 480px) 50vw,(min-width: 1024px) 33.3vw,100vw"],
+                 "srcSet": clip.attributes.image.data.attributes.formats.small.url,        
+                 "sizes": ["(min-width: 480px) 50vw,(min-width: 1024px) 33.3vw,100vw"],
                 "width":clip.attributes.image.data.attributes.width,
                 "height":clip.attributes.image.data.attributes.height});
             });
