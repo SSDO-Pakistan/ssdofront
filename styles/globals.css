@@ -19,3 +19,7 @@
 .main-logo img, .sub-card {
   margin-top: 0.3rem !important
 }
+.react-photo-gallery--gallery{
+   margin-top: 10px !important;
+  
+}
