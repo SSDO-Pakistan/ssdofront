@@ -26,6 +26,9 @@ function Reports() {
    {
     reportName="Progress Reports"
    }
+   else {
+    reportName="Violence reports against women and children"
+   }
   //console.log("reports", reports);
   let limit = 10
   const [items, setItems] = useState([]);
@@ -69,7 +72,17 @@ function Reports() {
   const renderPhoto = ({ layout, layoutOptions, imageProps: { alt,
     style, ...restImageProps },
     photo: { file, tags } }) => (
-    <div className="card shadow-sm" >
+
+    <div className="card shadow-sm"  style={{
+      border: "2px solid #eee",
+      borderRadius: "4px",
+      boxSizing: "content-box",
+      alignItems: "center",
+      width: style?.width,
+      padding: `${layoutOptions.padding - 2}px`,
+      paddingBottom: 0,
+  }} >
+      
       <div class="card-body">
         <img alt={alt} style={{ ...style, width: "100%", padding: 0 }}
           {...restImageProps} />
@@ -121,8 +134,10 @@ function Reports() {
           <span className="bg-primary text-white">{reportName}</span>
         </h4>
       </div>
+      <div sx={{ width: `90%`, mx: "auto" }}>
       <PhotoAlbum
         layout="rows"
+        containerWidth={850}
         photos={items}
         spacing={20}
         padding={20}
@@ -130,6 +145,7 @@ function Reports() {
         renderPhoto={renderPhoto}
         onClick={({ photo: { File }, index }) => setIndex(index)}
       />
+      </div>
       <Lightbox
         slides={items}
         open={index >= 0}

@@ -129,6 +129,7 @@ function Publications() {
       <PhotoAlbum
         layout="rows"
         photos={items}
+        containerWidth={900}
         spacing={20}
         padding={20}
         targetRowHeight={200}
