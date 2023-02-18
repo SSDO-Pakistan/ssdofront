@@ -14,6 +14,18 @@ import Link from "next/link";
 function Reports() {
   const router = useRouter();
   const {reports}=router.query;
+  let reportName=""
+  if(reports=="research-reports")
+   {
+      reportName="Research Reports"
+   }
+   else if(reports=="event-reports"){
+    reportName="Event Reports"
+   }
+   else if(reports=="progress-reports")
+   {
+    reportName="Progress Reports"
+   }
   //console.log("reports", reports);
   let limit = 10
   const [items, setItems] = useState([]);
@@ -106,7 +118,7 @@ function Reports() {
     <div className="col-sm-12">
       <div className="block-title-6 text-center">
         <h4 className="h5 border-primary">
-          <span className="bg-primary text-white">Media Clippings</span>
+          <span className="bg-primary text-white">{reportName}</span>
         </h4>
       </div>
       <PhotoAlbum
