@@ -26,8 +26,11 @@ function Reports() {
    {
     reportName="Progress Reports"
    }
-   else {
+   else if(reports=="monthly-vawc-report") {
     reportName="Violence reports against women and children"
+   }
+   else{
+    reportName="Newsletters"
    }
   //console.log("reports", reports);
   let limit = 10
@@ -137,7 +140,7 @@ function Reports() {
       <div sx={{ width: `90%`, mx: "auto" }}>
       <PhotoAlbum
         layout="rows"
-        containerWidth={850}
+        containerWidth={865}
         photos={items}
         spacing={20}
         padding={20}

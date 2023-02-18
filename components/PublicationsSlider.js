@@ -36,10 +36,10 @@ const PublicationsSlider = ({ Publications }) => {
                   <div className="col-12 mb-4">
                     <div className="card card-full hover-a">
                       <div className="ratio_327-278 image-wrapper">
-                        <Link href={publication.attributes.File.data.attributes.url }  >
+                        <Link href={publication.attributes.File.data.attributes.url }  target="_blank" >
                           <Image
-                          width = {400}
-                          height={340}
+                          width = {327}
+                          height={278}
                             src={ publication.attributes.cover.data.attributes.url }
                             data-src="../../assets/img/400x340/img1.jpg"
                             alt="Image description"
