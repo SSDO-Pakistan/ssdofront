@@ -16,7 +16,7 @@ function HighlightsSlider({ PressReleases, SliderHighlights }) {
                 <Image
                 width={750}
                   src={
-                    sliderhighlight.attributes.image.data.attributes.url
+                    sliderhighlight.attributes.image.data[0].attributes.url
                   }
                   alt="First slide"
                   height= {350}
