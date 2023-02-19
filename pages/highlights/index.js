@@ -4,6 +4,7 @@ import Link from "next/link";
 import ReactPaginate from "react-paginate";
 import moment from "moment";
 import Image from 'next/image'
+
 const HighLights = () => {
   const [items, setItems] = useState([]);
 
@@ -72,9 +73,11 @@ const HighLights = () => {
                     </div>
                     <div className="col-sm-9 mt-3">
                       <div className="card-body pt-3 pt-sm-0 pt-md-3 pt-lg-0">
+                        <Link href={`highlights/${highlight.attributes.slug}`}>
                         <h3 className="card-title h2 h3-sm h2-md">
                           {highlight.attributes.title}
                         </h3>
+                        </Link>
                         <div className="card-text mb-2 text-muted small">
                           {/* <span className="d-none d-sm-inline me-1">
                               <a className="fw-bold" href="#">
