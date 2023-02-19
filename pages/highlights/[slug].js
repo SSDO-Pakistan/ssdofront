@@ -1,5 +1,6 @@
 import { API_URL } from "@/config/index";
 import ReactMarkdown from "react-markdown";
+import Link from "next/link";
 //-----------liberaris for the lightbox-----------
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
