@@ -1,6 +1,6 @@
 import React from 'react'
 
-function MyMedia() {
+function index() {
   return (
     <div className='container'>
     <div class="card" style="width: 18rem;">
@@ -17,6 +17,6 @@ function MyMedia() {
   )
 }
 
-export default MyMedia
+export default index
 
 
