@@ -135,17 +135,7 @@ const SocialNetworksSidebar = () => {
           id="bootnews_custompost-10"
           className="widget widget_categories widget_categories_custom"
         >
-          <a
-            className="twitter-timeline"
-            href="https://twitter.com/komaildev?ref_src=twsrc%5Etfw"
-          >
-            Tweets by komaildev
-          </a>{" "}
-          <script
-            async
-            src="https://platform.twitter.com/widgets.js"
-            charSet="utf-8"
-          ></script>
+        <a class="twitter-timeline" data-width="400" data-height="800" href="https://twitter.com/SSDOPakistan?ref_src=twsrc%5Etfw">Tweets by SSDOPakistan</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </aside>
         {/* <aside className="widget">
           <div className="hover-a text-center">
