@@ -4,8 +4,8 @@ import Link from "next/link";
 function Media() {
     return (
         <div className='container'>
-        <div class="row mt-5 mb-5">
-            <div class="col-sm-6 mb-3 mb-sm-0 ">
+        <div class="row mt-5 mb-5" style={{justifyContent:"center"}}>
+            <div class="col-sm-3 mb-3 mb-sm-0 ">
                 <div className="card" style={{ width: "18rem", height: "18rem", backgroundColor: "#C84869",justifyContent:"center" }}>
                     <div className="card-body">
                         <Link href={`media/media-clippings`}>
