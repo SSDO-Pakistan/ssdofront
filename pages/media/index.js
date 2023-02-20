@@ -9,7 +9,7 @@ function Media() {
                 <div className="card" style={{ width: "18rem", height: "18rem", backgroundColor: "#C84869",justifyContent:"center" }}>
                     <div className="card-body">
                         <Link href={`media/media-clippings`}>
-                            <h5 className="card-title text-center" style={{ color: "white", fontWeight: "bolder" }}>Videos</h5>
+                            <h5 className="card-title text-center" style={{ color: "white", fontWeight: "bolder" }}>Videos <span>&#8594;</span></h5>
                         </Link>
                     </div>
                 </div>
@@ -17,9 +17,8 @@ function Media() {
             <div class="col-sm-6">
                 <div className="card" style={{ width: "18rem", height: "18rem", backgroundColor: "#C84869" , justifyContent:"center"}}>
                     <div className="card-body">
-
                         <Link href={`media/media-clippinigs`}>
-                            <h5 className="card-title text-center" style={{ color: "white", fontWeight: "bolder" }}>Media Clippings</h5>
+                            <h5 className="card-title text-center" style={{ color: "white", fontWeight: "bolder" }}>Media Clippings <span>&#8594;</span></h5>
                         </Link>
                     </div>
                 </div>
