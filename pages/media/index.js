@@ -17,21 +17,3 @@ function Media(data) {
     )
 }
 export default Media
-export async function getStaticProps() {
-    const res = await
-        fetch('https://strapi-production-9f68.up.railway.app/api/media')
-
-    const data = await res.json()
-
-
-    return {
-        props: {
-            data,
-
-        },
-        // Next.js will attempt to re-generate the page:
-        // - When a request comes in
-        // - At most once every 10 seconds
-        revalidate: 10, // In seconds
-    }
-}
