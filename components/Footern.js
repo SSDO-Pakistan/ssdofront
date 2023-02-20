@@ -56,7 +56,7 @@ const Footern = () => {
 
           <ul class="list-unstyled d-flex justify-content-around flex-column">
             <li>
-              <Link href="/more/contact-us" class="text-dark ">
+              <Link href="/contact-us" class="text-dark ">
                 Contact Us
               </Link>
             </li>
@@ -66,7 +66,7 @@ const Footern = () => {
               </Link>
             </li>
             <li>
-              <Link href="/" class="text-dark">
+              <Link href="/about-us/what-we-do" class="text-dark">
                 What we Do
               </Link>
             </li>
@@ -100,12 +100,12 @@ const Footern = () => {
 
           <ul class="list-unstyled d-flex justify-content-around flex-column">
             <li>
-              <Link href="/join-us/jobs" class="text-dark">
+              <Link href="/join-us" class="text-dark">
                 Jobs
               </Link>
             </li>
             <li>
-              <Link href="/more/blogs" class="text-dark">
+              <Link href="/blogs" class="text-dark">
                 Blog
               </Link>
             </li>{" "}
