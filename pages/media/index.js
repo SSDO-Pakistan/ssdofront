@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Media(data) {
+function Media() {
     return (
         <div className='container'>
             <div class="card" style="width: 18rem;">
