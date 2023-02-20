@@ -50,7 +50,7 @@ const Highlights = ({ Highlights }) => {
                           )}
                         </time>
                       </div>
-                      <p className="card-text">
+                      <p className="card-text" style={{textAlign:"justify"}}>
                         {highlight.attributes.description.substring(0, 300).concat("...")}
                       </p>
                     </div>
