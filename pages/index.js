@@ -22,7 +22,7 @@ export default function Home({ data }) {
 
   return (
     <Layout>
-   
+
       <div className="wrapper ">
         {/* main content */}
         <main id="content">
@@ -76,65 +76,86 @@ export default function Home({ data }) {
                     <div className="small-post">
                       <div className="">
                         <a href="#">
-                          <img
-                            className="img-fluid mb-4"
-                            src="https://www.unodc.org/images/frontpage/banners/WWD20.jpg"
-                            data-src="../../assets/img/110x77/img1.jpg"
-                            alt="Image description"
-                            width= {350}
-                            height={150}
-                            style={{
-                           
-                           
-                              objectFit: "cover",
-                            }}
-                          />
+                          <div className="card d-flex align-items-center rgba-black-strong py-5 px-4 mb-2" style={{ width: "22rem", height: "10rem", backgroundColor: "#213E8C", justifyContent: "center" }}>
+                            <div className="card-body">
+                              <div style={{ marginBottom: "20px", paddingTop: "20px", paddingLeft: "100px" }}>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="white" class="bi bi-peace" viewBox="0 0 16 16">
+                                  <path d="M7.5 1.018a7 7 0 0 0-4.79 11.566L7.5 7.793V1.018zm1 0v6.775l4.79 4.79A7 7 0 0 0 8.5 1.018zm4.084 12.273L8.5 9.207v5.775a6.97 6.97 0 0 0 4.084-1.691zM7.5 14.982V9.207l-4.084 4.084A6.97 6.97 0 0 0 7.5 14.982zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z" />
+                                </svg>
+                              </div>
+                              <Link href={`javascript:;`}>
+                                <h5 className="card-title text-center" style={{ color: "white", fontWeight: "bolder" }}>Countering Extremism & Promoting Peace</h5>
+                              </Link>
+                            </div>
+                          </div>
                         </a>
                       </div>
 
                       <div className="">
                         <a href="#">
-                          <img
-                            className="img-fluid mb-4"
-                            src="https://www.unodc.org/images/frontpage/banners/SDG_banner_210x100px.jpg"
-                            data-src="../../assets/img/110x77/img1.jpg"
-                            alt="Image description"
-                            style={{
-                              width: "100%",
-                              height: "150px",
-                              objectFit: "cover",
-                            }}
-                          />
+                          <div className="card d-flex align-items-center rgba-black-strong py-5 px-4  mb-2" style={{ width: "22rem", height: "10rem", backgroundColor: "#F2BF5E", justifyContent: "center" }}>
+                            <div className="card-body">
+                              <div style={{ marginBottom: "20px", paddingTop: "15px", paddingLeft: "80px" }}>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="white" class="bi bi-check-circle" viewBox="0 0 16 16">
+                                  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                  <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z" />
+                                </svg>
+                              </div>
+                              <Link href={`javascript:;`}>
+                                <h5 className="card-title text-center" style={{ color: "white", fontWeight: "bolder" }}>Equitable Health & Education</h5>
+                              </Link>
+                            </div>
+                          </div>
                         </a>
                       </div>
                       <div className="">
                         <a href="#">
-                          <img
-                            className="img-fluid mb-4"
-                            src="https://www.unodc.org/images/frontpage/banners/OpioidStrategy_210x100px.jpg"
-                            data-src="../../assets/img/110x77/img1.jpg"
-                            alt="Image description"
-                            style={{
-                              width: "100%",
-                              height: "150px",
-                              objectFit: "cover",
-                            }}
-                          />
+                          <div className="card d-flex align-items-center rgba-black-strong py-5 px-4  mb-2" style={{ width: "22rem", height: "10rem", backgroundColor: "#FF6161", justifyContent: "center" }}>
+                            <div className="card-body">
+                              <div style={{ marginBottom: "20px", paddingTop: "20px", paddingLeft: "100px" }}>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="white" class="bi bi-hammer" viewBox="0 0 16 16">
+                                  <path d="M9.972 2.508a.5.5 0 0 0-.16-.556l-.178-.129a5.009 5.009 0 0 0-2.076-.783C6.215.862 4.504 1.229 2.84 3.133H1.786a.5.5 0 0 0-.354.147L.146 4.567a.5.5 0 0 0 0 .706l2.571 2.579a.5.5 0 0 0 .708 0l1.286-1.29a.5.5 0 0 0 .146-.353V5.57l8.387 8.873A.5.5 0 0 0 14 14.5l1.5-1.5a.5.5 0 0 0 .017-.689l-9.129-8.63c.747-.456 1.772-.839 3.112-.839a.5.5 0 0 0 .472-.334z" />
+                                </svg>
+                              </div>
+                              <Link href={`javascript:;`}>
+                                <h5 className="card-title text-center" style={{ color: "white", fontWeight: "bolder" }}>Democratic & Just Governance</h5>
+                              </Link>
+                            </div>
+                          </div>
                         </a>
                       </div>
                       <div className="">
                         <a href="#">
-                          <img
-                            className="img-fluid mb-4"
-                            src="https://www.unodc.org/images/frontpage/banners/FasstrackingUNCAC-banner-210x100px.jpg"
-                            data-src="../../assets/img/110x77/img1.jpg"
-                            alt="Image description"
-                            style={{
-                              width: "100%",
-                              height: "150px",
-                              objectFit: "cover",
-                            }}
-                          />
+                          <div className="card d-flex align-items-center rgba-black-strong py-5 px-4 mb-2" style={{ width: "22rem", height: "10rem", backgroundColor: "#35C68B", justifyContent: "center" }}>
+                            <div className="card-body">
+                              <div style={{ marginBottom: "20px", paddingTop: "20px", paddingLeft: "100px" }}>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="white" class="bi bi-gender-female" viewBox="0 0 16 16">
+                                  <path fill-rule="evenodd" d="M8 1a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM3 5a5 5 0 1 1 5.5 4.975V12h2a.5.5 0 0 1 0 1h-2v2.5a.5.5 0 0 1-1 0V13h-2a.5.5 0 0 1 0-1h2V9.975A5 5 0 0 1 3 5z" />
+                                </svg>
+                              </div>
+                              <Link href={`javascript:;`}>
+                                <h5 className="card-title text-center" style={{ color: "white", fontWeight: "bolder" }}>Gender Equality & Women Empowerment</h5>
+                              </Link>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <div className="">
+                        <a href="#">
+                          <div className="card d-flex align-items-center rgba-black-strong py-5 px-4" style={{ width: "22rem", height: "10rem", backgroundColor: "#C84869", justifyContent: "center" }}>
+                            <div className="card-body">
+                              <div style={{ marginBottom: "20px", paddingTop: "20px", paddingLeft: "100px" }}>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="white" class="bi bi-zoom-in" viewBox="0 0 16 16">
+                                  <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+                                  <path d="M10.344 11.742c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1 6.538 6.538 0 0 1-1.398 1.4z" />
+                                  <path fill-rule="evenodd" d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5z" />
+                                </svg>
+                              </div>
+                              <Link href={`javascript:;`}>
+                                <h5 className="card-title text-center" style={{ color: "white", fontWeight: "bolder" }}>Accountability & Transparency</h5>
+                              </Link>
+                            </div>
+                          </div>
                         </a>
                       </div>
                     </div>
@@ -147,7 +168,7 @@ export default function Home({ data }) {
         </main>
         {/* <Footer /> */}
       </div>
-    
+
     </Layout>
   );
 }

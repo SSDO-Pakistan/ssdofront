@@ -1,5 +1,5 @@
 import React from "react";
-
+import Link from "next/link";
 const SocialNetworksSidebar = () => {
   return (
     <aside className="col-md-4 end-sidebar-lg">
@@ -12,93 +12,61 @@ const SocialNetworksSidebar = () => {
           </div>
           <ul className="list-unstyled social-two">
             <li className="facebook">
-              <a
+              <Link
                 className="bg-facebook text-white"
-                href="#"
+                href="https://www.facebook.com/SSDOPakistan/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="facebook"
               >
                 Facebook
-              </a>
+              </Link>
             </li>
             <li className="twitter">
-              <a
+              <Link
                 className="bg-twitter text-white"
-                href="#"
+                href="https://twitter.com/SSDOPakistan"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="twitter"
               >
                 Twitter
-              </a>
+              </Link>
             </li>
             <li className="instagram">
-              <a
+              <Link
                 className="bg-instagram text-white"
-                href="#"
+                href="https://www.instagram.com/ssdo_pakistan/?hl=en"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="instagram"
               >
                 Instagram
-              </a>
+              </Link>
             </li>
             <li className="youtube">
-              <a
+              <Link
                 className="bg-youtube text-white"
-                href="#"
+                href="https://www.youtube.com/@ssdopakistan7196/videos"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="youtube"
               >
                 Youtube
-              </a>
+              </Link>
             </li>
             <li className="linkedin">
-              <a
+              <Link
                 className="bg-linkedin text-white"
-                href="#"
+                href="https://www.linkedin.com/company/ssdopakistan/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="linkedin"
               >
                 Linkedin
-              </a>
+              </Link>
             </li>
-            <li className="vimeo">
-              <a
-                className="bg-vimeo text-white"
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Vimeo"
-              >
-                Vimeo
-              </a>
-            </li>
-            <li className="pinterest">
-              <a
-                className="bg-pinterest text-white"
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Pinterest"
-              >
-                Pinterest
-              </a>
-            </li>
-            <li className="telegram">
-              <a
-                className="bg-telegram text-white"
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Telegram"
-              >
-                Telegram
-              </a>
-            </li>
+
           </ul>
           <div className="gap-15"></div>
         </aside>
