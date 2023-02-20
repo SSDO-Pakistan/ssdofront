@@ -5,9 +5,9 @@ const Job = ({ data }) => {
   console.log("job", data);
   return (
     <div className="container p-4 mt-20">
-      <div className="block-title-6">
+      <div className="block-title-6 text-center">
         <h4 className="h5 border-primary">
-          <span className="bg-primary text-white">Job</span>
+          <span className="bg-primary text-white">Vacancy</span>
         </h4>
       </div>
       <div>
@@ -26,9 +26,8 @@ const Job = ({ data }) => {
     </div>
   );
 };
-export async function getServerSideProps({ params }) {
-  const { slug } = params;
-  console.log("param", slug);
+export async function getServerSideProps({ query: { slug } }) {
+
 
   const jobres = await fetch(`${API_URL}/api/jobs?filters[slug][$eq]=${slug}`);
   const Job = await jobres.json();

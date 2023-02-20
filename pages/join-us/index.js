@@ -45,9 +45,9 @@ const Jobs = () => {
   };
   return (
     <div class="container p-4 mt-20">
-      <div className="block-title-6">
+      <div className="block-title-6 text-center">
         <h4 className="h5 border-primary">
-          <span className="bg-primary text-white">JOBS</span>
+          <span className="bg-primary text-white">SSDO Jobs</span>
         </h4>
       </div>
       <div className="d-flex flex-wrap">
@@ -61,7 +61,7 @@ const Jobs = () => {
                     Job Status : {job.attributes.status}
                   </Card.Subtitle>
 
-                  <Card.Link href={`/jobs/${job.attributes.slug}`}>
+                  <Card.Link href={`/join-us/${job.attributes.slug}`}>
                     View Job
                   </Card.Link>
                 </Card.Body>
