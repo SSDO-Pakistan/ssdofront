@@ -20,7 +20,7 @@ const TheamticArea = ({ data }) => {
               <p className="text-white p-1 ">
                 <Link
                   className="text-white"
-                  href={`/thematicarea/${cat.attributes.slug}`}
+                  href={`javascript:;`}
                 >
                   {cat.attributes.title}{" "}
                 </Link>
