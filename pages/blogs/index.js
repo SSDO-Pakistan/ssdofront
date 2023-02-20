@@ -26,7 +26,7 @@ function Blogs({ data }) {
                             "Do MMMM YYYY"
                           )}
                         </time></small></p>
-                  <p className="card-text mt-3"><ReactMarkdown>{post.attributes.description.substring(0, 300).concat("...")}</ReactMarkdown></p>
+                  <p className="card-text mt-3" style={{textAlign:"justify"}}><ReactMarkdown>{post.attributes.description.substring(0, 300).concat("...")}</ReactMarkdown></p>
                 </Link>
               </div>
             </div>
