@@ -38,7 +38,7 @@ const Blog = ({ Blogs }) => {
                           )}
                         </time>
                       </div>
-                      <p className="card-text"><ReactMarkdown>{blog.attributes.description.substring(0, 300).concat("...")}</ReactMarkdown></p>
+                      <p className="card-text" style={{textAlign:"justify"}}><ReactMarkdown>{blog.attributes.description.substring(0, 300).concat("...")}</ReactMarkdown></p>
                     </div>
                   </div>
                 </div>
