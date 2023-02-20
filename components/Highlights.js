@@ -51,7 +51,7 @@ const Highlights = ({ Highlights }) => {
                         </time>
                       </div>
                       <p className="card-text">
-                        {highlight.attributes.description}
+                        {highlight.attributes.description.substring(0, 300).concat("...")}
                       </p>
                     </div>
                   </div>
