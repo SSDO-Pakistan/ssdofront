@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Media() {
+function MyMedia() {
   return (
     <div className='container'>
     <div class="card" style="width: 18rem;">
@@ -17,6 +17,6 @@ function Media() {
   )
 }
 
-export default Media
+export default MyMedia
 
 
