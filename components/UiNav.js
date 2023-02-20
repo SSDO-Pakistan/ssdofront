@@ -9,7 +9,9 @@ const UiNav = () => {
 
   const getNav = async () => {
     const navres = await fetch(`${API_URL}/api/navigation/render/1?type=TREE`);
+   
     const Navigation = await navres.json();
+   
     setNav(Navigation);
   };
 
