@@ -17,7 +17,7 @@ function Media() {
             <div class="col-sm-6">
                 <div className="card" style={{ width: "18rem", height: "18rem", backgroundColor: "#C84869" , justifyContent:"center"}}>
                     <div className="card-body">
-                        <Link href={`media/media-clippinigs`}>
+                        <Link href={`media/media-clippings`}>
                             <h5 className="card-title text-center" style={{ color: "white", fontWeight: "bolder" }}>Media Clippings <span>&#8594;</span></h5>
                         </Link>
                     </div>
