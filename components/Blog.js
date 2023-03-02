@@ -46,7 +46,7 @@ const Blog = ({ Blogs }) => {
             );
           })}
         </div>
-        <Link href="/posts">
+        <Link href="/blogs">
           <p
             style={{
               textAlign: "right",
