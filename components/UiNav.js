@@ -47,12 +47,12 @@ const UiNav = () => {
                   <>
                     {nav.items.length === 0 ? (
                       <li key={nav.id}>
-                        <a
+                        <Link
                           className="nav-link active text-dark"
                           href={nav.path}
                         >
                           {nav.title}
-                        </a>
+                        </Link>
                       </li>
                     ) : (
                       <li className="nav-item dropdown" key={nav.id}>
@@ -88,38 +88,7 @@ const UiNav = () => {
                         )}
                       </li>
                     )}
-                    {/* <li className="nav-item dropdown">
-                      <Link
-                        className="nav-link active dropdown-toggle text-dark"
-                        href={path}
-                      >
-                        {title}
-                      </Link>
-
-                      {items !== null ? (
-                        <ul
-                          className="dropdown-menu"
-                          aria-labelledby="navbarhome"
-                        >
-                          {items.map((item) => {
-                            return (
-                              <>
-                                <li>
-                                  <Link
-                                    className="dropdown-item"
-                                    href={item.path}
-                                  >
-                                    {item.title}
-                                  </Link>
-                                </li>
-                              </>
-                            );
-                          })}
-                        </ul>
-                      ) : (
-                        ""
-                      )}
-                    </li> */}
+                   
                   </>
                 );
               })}

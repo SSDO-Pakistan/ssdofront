@@ -1,5 +1,5 @@
 import React from "react";
-
+import Marquee from "react-fast-marquee";
 const Upcomings = ({ Upcomings }) => {
   console.log(Upcomings);
   return (
@@ -22,46 +22,18 @@ const Upcomings = ({ Upcomings }) => {
 
       <div className="col-10 col-sm-11 col-md-9 col-lg-10 ps-1 ps-md-2">
         <div className="breaking-box position-relative py-2">
-          <div
-            className="box-carousel"
-            data-flickity='{ "cellAlign": "left", "wrapAround": true, "adaptiveHeight": true, "prevNextButtons": true , "autoPlay": 5000, "pageDots": false, "imagesLoaded": true }'
-          >
+        <Marquee className="" speed={50} loop={5} gradient={false}  pauseOnHover={true}>
             {Upcomings.data.map((upc) => {
               return (
-                <div className="col-12 aribudin" key={upc.id}>
+                <div className="col-8 " key={upc.id}>
                 <a className="h6 fw-normal" href="#">
-                  {upc.attributes.title}
+                &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;
+                {upc.attributes.title}
                 </a>
               </div>
               )
-            })}
-         
-
-            {/* <div className="col-12 aribudin">
-              <a className="h6 fw-normal" href="#">
-                Investors Betting Against Tesla Made $1 Billion on Friday
-              </a>
-            </div>
-
-            <div className="col-12 aribudin">
-              <a className="h6 fw-normal" href="#">
-                Carmelo Anthony Officially Signs with the Houston Rockets
-              </a>
-            </div>
-
-            <div className="col-12 aribudin">
-              <a className="h6 fw-normal" href="#">
-                Lemon make your skin fresh and glowing
-              </a>
-            </div>
-
-            <div className="col-12 aribudin">
-              <a className="h6 fw-normal" href="#">
-                5 Takeaways From Elon Musk’s Interview With The Times About
-                Tesla
-              </a>
-            </div> */}
-          </div>
+            })}  
+            </Marquee>
         </div>
       </div>
     </div>

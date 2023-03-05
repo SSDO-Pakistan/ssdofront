@@ -182,7 +182,7 @@ export async function getServerSideProps() {
 
   //fetching Press Releases
   const pressreleaseres = await fetch(
-    `${API_URL}/api/posts?filters[type][$eq]=Press Release&sort=createdAt:desc&pagination[limit]=3`
+    `${API_URL}/api/posts?filters[type][$eq]=Press Release&sort=createdAt:desc&pagination[limit]=4`
   );
   const PressReleases = await pressreleaseres.json();
 

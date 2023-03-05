@@ -11,6 +11,7 @@
   "dependencies": {
     "@etchteam/next-pagination": "^3.5.4",
     "@popperjs/core": "^2.11.6",
+    "@splidejs/react-splide": "^0.7.12",
     "axios": "^1.2.0",
     "bootstrap": "^5.2.2",
     "bootstrap-icons": "^1.10.3",
@@ -19,12 +20,14 @@
     "react": "^18.2.0",
     "react-bootstrap": "^2.6.0",
     "react-dom": "^18.2.0",
+    "react-fast-marquee": "^1.3.5",
     "react-images": "^1.2.0-beta.7",
     "react-markdown": "^8.0.5",
     "react-multi-carousel": "^2.8.2",
     "react-paginate": "^8.1.4",
     "react-photo-album": "^2.0.2",
     "react-photo-gallery": "^8.0.0",
+    "react-slideshow-image": "^4.2.1",
     "yet-another-react-lightbox": "^2.4.2"
   },
   "devDependencies": {

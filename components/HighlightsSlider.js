@@ -7,14 +7,14 @@ import { API_URL } from "@/config/index";
 function HighlightsSlider({ PressReleases, SliderHighlights }) {
   return (
     <div className="row">
-      <div className="col-md-8 p-2">
-        <Carousel style={{ height: "350px" }}>
+      <div className="col-md-7 p-2">
+        <Carousel >
           {SliderHighlights.data.map((sliderhighlight) => {
             console.log(sliderhighlight);
             return (
               <Carousel.Item key={sliderhighlight.id}>
                 <Image
-                width={750}
+                width={655}
                   src={
                     sliderhighlight.attributes.image.data[0].attributes.url
                   }
@@ -27,7 +27,7 @@ function HighlightsSlider({ PressReleases, SliderHighlights }) {
         </Carousel>
         {/* </div> */}
       </div>
-      <div className="col-md-4 pt-05 ps-md-05" style={{ marginTop: "4px" }}>
+      <div className="col-md-5 pt-05 ps-md-05" style={{ marginTop: "4px" }}>
         <div className="block-title-6">
           <h5 className="h5-border-primary">
             <span className="bg-primary text-white">Press Releases</span>
@@ -49,14 +49,7 @@ function HighlightsSlider({ PressReleases, SliderHighlights }) {
                 );
               })}
 
-              {/* <p style={{ paddingLeft: "10px" }}>
-                1 November 2022 — Afghanistan opium cultivation in 2022 up by 32
-                per cent: UNODC survey
-              </p>
-              <p style={{ paddingLeft: "10px" }}>
-                28 October 2022 — Call by UNESCO, UNODC and partners to fight
-                against illicit trafficking of Afghan cultural property
-              </p> */}
+          
             </div>
           </div>
         </div>

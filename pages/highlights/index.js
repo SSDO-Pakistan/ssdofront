@@ -7,9 +7,7 @@ import Image from 'next/image'
 
 const HighLights = () => {
   const [items, setItems] = useState([]);
-
   const [pageCount, setpageCount] = useState(0);
-
   let limit = 10;
   useEffect(() => {
     const getHighlights = async () => {
@@ -27,7 +25,7 @@ const HighLights = () => {
 
     getHighlights();
   }, [limit]);
-  console.log("items", items);
+ // console.log("items", items);
   const fetchPublications = async (currentPage) => {
     const res = await fetch(
       `${API_URL}/api/posts?filters[type][$eq]=Highlights&filters[slider][$eq]=false&populate=*&sort=createdAt:desc&pagination[page]=${currentPage}&pagination[pageSize]=${limit}`
