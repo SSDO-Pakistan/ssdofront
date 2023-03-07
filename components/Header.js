@@ -9,9 +9,9 @@ const Header = () => {
   return (
     <>
       <header className="header">
-        <div className="mobile-sticky fs-6 bg-black">
+        <div className="mobile-sticky fs-6 ">
           <div className="container">
-            <nav className="navbar navbar-expand-lg navbar-dark px-0 py-0">
+            <nav className="navbar navbar-expand-lg navbar-light px-0 py-0">
               <Link
                 id="showStartPush"
                 aria-label="sidebar menu"
