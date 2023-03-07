@@ -1,6 +1,8 @@
 import React from "react";
 import Link from "next/link";
-const SocialNetworksSidebar = () => {
+import { TwitterTimelineEmbed } from 'react-twitter-embed';
+const SocialNetworksSidebar = (props) => {
+
   return (
     <aside className="col-md-4 end-sidebar-lg">
       <div className="sticky">
@@ -103,7 +105,13 @@ const SocialNetworksSidebar = () => {
           id="bootnews_custompost-10"
           className="widget widget_categories widget_categories_custom"
         >
-        <a class="twitter-timeline" data-width="400" data-height="800" href="https://twitter.com/SSDOPakistan?ref_src=twsrc%5Etfw">Tweets by SSDOPakistan</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          <TwitterTimelineEmbed
+            sourceType="profile"
+            screenName="SSDOPakistan"
+            options={{ height: 800 }}
+          />
+
+
         </aside>
         {/* <aside className="widget">
           <div className="hover-a text-center">

@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Link from "next/link";
 
 const Highlights = ({ Highlights }) => {
-  console.log("Highlights", Highlights);
+ // console.log("Highlights", Highlights);
   return (
     <div className="col-md-8">
       <div className="block-area">

@@ -1,6 +1,4 @@
 import Head from "next/head";
-import { useState } from "react";
-
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import Layout from "./../components/Layout";
@@ -18,7 +16,6 @@ import AlbumsSlider from "./../components/AlbumsSlider";
 import MobileSidebar from "./../components/MobileSidebar";
 
 export default function Home({ data }) {
-  const [news, setnews] = useState(undefined);
 
   return (
     <Layout>
@@ -54,8 +51,9 @@ export default function Home({ data }) {
               )}
 
               {/* right column */}
+           
               <SocialNetworksSidebar />
-
+              
               {/* album slider */}
 
               {data && data.Galleries && (
