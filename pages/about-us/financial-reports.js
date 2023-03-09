@@ -2,8 +2,10 @@ import React from "react";
 import Link from "next/link";
 import Image from 'next/image';
 import { API_URL } from "@/config/index";
+import Layout from "@/components/Layout";
 const FinancialReports = ({ data }) => {
   return (
+    <Layout title="Financial Reports">
     <main className="d-flex flex-row mt-3 p-3  mb-3">
       <div className="col-md-12 h-auto ">
         <div className="block-title-6 text-center">
@@ -48,6 +50,7 @@ const FinancialReports = ({ data }) => {
         </div>
       </div>
     </main>
+    </Layout>
   );
 };
 

@@ -1,11 +1,12 @@
 import React from "react";
 import { API_URL } from "@/config/index";
 import Link from "next/link";
-
+import Layout from "@/components/Layout";
 const Registration = ({ data }) => {
   console.log("Registration data",data)
  // return false;
   return (
+    <Layout title="Registration details">
     <div class="container content-space-1 vh-100 p-4 mt-20">
       <div className="block-title-6 text-center">
         <h4 className="h5 border-primary">
@@ -61,6 +62,7 @@ const Registration = ({ data }) => {
         })}
       </div>
     </div>
+    </Layout>
   );
 };
 

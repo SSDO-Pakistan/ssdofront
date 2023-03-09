@@ -1,9 +1,11 @@
 import React from "react";
 import { API_URL } from "@/config/index";
 import Link from "next/link";
+import Layout from "@/components/Layout";
 const TheamticArea = ({ data }) => {
-  console.log("data", data.ThematicAreas);
+ // console.log("data", data.ThematicAreas);
   return (
+<Layout title="Thematic Areas">
     <div class="container content-space-1 p-4 mt-20">
       <div className="block-title-6">
         <h4 className="h5 border-primary">
@@ -30,6 +32,7 @@ const TheamticArea = ({ data }) => {
         })}
       </div>
     </div>
+    </Layout>
   );
 };
 

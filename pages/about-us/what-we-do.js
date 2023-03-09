@@ -1,7 +1,9 @@
 import React from 'react'
 import Link from "next/link";
+import Layout from "@/components/Layout";
 function Whatwedo() {
     return (
+        <Layout  title= "What we do" >
         <div className='container'>
             <div className="block-title-6 mt-5 text-center">
                 <h4 className="h5 border-primary">
@@ -139,6 +141,7 @@ function Whatwedo() {
                 </div>
             </div>
         </div>
+        </Layout>
     )
 }
 

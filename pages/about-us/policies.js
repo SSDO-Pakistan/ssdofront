@@ -1,9 +1,11 @@
 import React from "react";
 import { API_URL } from "@/config/index";
 import Card from "react-bootstrap/Card";
+import Layout from "@/components/Layout";
 const Policies = ({ data }) => {
  // console.log("policy", data);
   return (
+    <Layout title="SSDO Policies">
     <div className="container p-4 mt-20">
       <div className="block-title-6 text-center">
         <h4 className="h5 border-primary">
@@ -34,6 +36,7 @@ const Policies = ({ data }) => {
         </section>
       </div>
     </div>
+    </Layout>
   );
 };
 

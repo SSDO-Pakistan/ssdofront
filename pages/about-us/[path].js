@@ -3,7 +3,7 @@ import { API_URL } from "@/config/index";
 import TeamModel from "../../components/TeamModal";
 import Image from 'next/image'
 import {useRouter} from 'next/router';
-
+import Layout from "@/components/Layout";
 
 const Profile = ({ data }) => {
   const router = useRouter()
@@ -22,6 +22,7 @@ const Profile = ({ data }) => {
   const [modalShow, setmodalShow] = useState(false);
 
   return (
+    <Layout  title= {heading} >
     <div
       className="container content-space-1 p-4 mt-20"
       style={{ overflowX: "hidden" }}
@@ -68,6 +69,7 @@ const Profile = ({ data }) => {
         data={showProfile}
       />
     </div>
+    </Layout>
   );
 };
 
