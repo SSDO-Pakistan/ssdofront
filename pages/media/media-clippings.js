@@ -8,7 +8,7 @@ import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 import ReactPaginate from "react-paginate";
-
+import Layout from "@/components/Layout";
 function Photosalbum(props) {
   let limit = 20
   const [items, setItems] = useState(props.mydata);
@@ -69,6 +69,7 @@ function Photosalbum(props) {
 
 
   return (
+    <Layout title="Media Clippings">
     <div className="row p-4 mt-20">
     <div className="col-sm-12">
       <div className="block-title-6 text-center">
@@ -115,6 +116,7 @@ function Photosalbum(props) {
       />
     </div>
 </div>
+</Layout>
   );
 }
 export default Photosalbum

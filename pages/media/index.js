@@ -1,8 +1,10 @@
 import React from 'react'
 import Link from "next/link";
-
+import Layout from "@/components/Layout";
 function Media() {
+  
     return (
+        <Layout title="Media">
         <div className='container'>
         <div class="row mt-5 mb-5" style={{justifyContent:"center"}}>
             <div class="col-sm-3 mb-3 mb-sm-0 ">
@@ -25,6 +27,7 @@ function Media() {
             </div>
         </div>
         </div>
+        </Layout>
     )
 }
 

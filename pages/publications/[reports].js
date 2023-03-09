@@ -11,6 +11,7 @@ import ReactPaginate from "react-paginate";
 import { API_URL } from "@/config/index";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import Layout from "@/components/Layout";
 function Reports() {
   const router = useRouter();
   const {reports}=router.query;
@@ -130,6 +131,7 @@ function Reports() {
 
 
   return (
+    <Layout title={reportName}>
     <div className="row p-4 mt-20">
     <div className="col-sm-12">
       <div className="block-title-6 text-center">
@@ -178,6 +180,7 @@ function Reports() {
       />
     </div>
 </div>
+</Layout>
   );
 }
 export default Reports

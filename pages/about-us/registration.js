@@ -3,7 +3,7 @@ import { API_URL } from "@/config/index";
 import Link from "next/link";
 import Layout from "@/components/Layout";
 const Registration = ({ data }) => {
-  console.log("Registration data",data)
+ // console.log("Registration data",data)
  // return false;
   return (
     <Layout title="Registration details">

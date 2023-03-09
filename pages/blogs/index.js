@@ -2,10 +2,12 @@ import { API_URL } from "@/config/index";
 import moment from "moment";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
+import Layout from "@/components/Layout";
 function Blogs({ data }) {
 //  console.log("posts data", data)
   // return false;
   return (
+    <Layout title="Blogs">
     <div className="d-flex flex-row mt-3 p-3  mb-3">
       <div className=" h-auto col-md-12">
         <div className="block-title-6 text-center">
@@ -34,6 +36,7 @@ function Blogs({ data }) {
         </div>
       </div>
     </div>
+    </Layout>
 
   )
 }

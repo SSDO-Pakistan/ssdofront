@@ -4,7 +4,7 @@ import Link from "next/link";
 import ReactPaginate from "react-paginate";
 import moment from "moment";
 import Image from 'next/image'
-
+import Layout from "@/components/Layout";
 const HighLights = () => {
   const [items, setItems] = useState([]);
   const [pageCount, setpageCount] = useState(0);
@@ -44,6 +44,7 @@ const HighLights = () => {
     setItems(publicationFromServer);
   };
   return (
+    <Layout title="Highlights">
     <div className="row p-4 mt-20">
       <div className="col-sm-12">
         <div className="block-title-6 text-center">
@@ -98,6 +99,7 @@ const HighLights = () => {
               );
             })}
         </div>
+      
         <ReactPaginate
           previousLabel={"previous"}
           nextLabel={"next"}
@@ -119,6 +121,7 @@ const HighLights = () => {
         />
       </div>
     </div>
+    </Layout>
   );
 };
 
