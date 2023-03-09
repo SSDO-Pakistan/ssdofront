@@ -108,7 +108,7 @@ const SocialNetworksSidebar = (props) => {
           <TwitterTimelineEmbed
             sourceType="profile"
             screenName="SSDOPakistan"
-            options={{ height: 800 }}
+            options={{ height: 830 }}
           />
 
 

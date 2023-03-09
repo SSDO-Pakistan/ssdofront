@@ -2,7 +2,7 @@ import React from "react";
 import { API_URL } from "@/config/index";
 import Card from "react-bootstrap/Card";
 const Policies = ({ data }) => {
-  console.log("policy", data);
+ // console.log("policy", data);
   return (
     <div className="container p-4 mt-20">
       <div className="block-title-6 text-center">

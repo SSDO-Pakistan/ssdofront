@@ -18,7 +18,7 @@ import MobileSidebar from "./../components/MobileSidebar";
 export default function Home({ data }) {
 
   return (
-    <Layout>
+    <Layout title="SSDO Pakistan">
 
       <div className="wrapper ">
         {/* main content */}

@@ -3,8 +3,9 @@ import Head from "next/head";
 
 
 const Layout = ({ children, title, description, keywords }) => {
+ 
   return (
-    <div >
+    <div>
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />

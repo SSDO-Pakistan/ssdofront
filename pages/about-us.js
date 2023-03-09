@@ -1,9 +1,12 @@
 import React from "react";
 import { API_URL } from "@/config/index";
 import Image from 'next/image'
+import Layout from "@/components/Layout";
 const AboutUs = ({ data }) => {
-  console.log("about", data);
+ // console.log("about", data);
+ 
   return (
+    <Layout title="About Us">
     <div class="container p-4 mt-20">
       <div className="block-title-6">
         <h4 className="h5 border-primary">
@@ -51,6 +54,7 @@ const AboutUs = ({ data }) => {
         <p>{data.About.data.attributes.vision}</p>
       </div>
     </div>
+    </Layout>
   );
 };
 export async function getServerSideProps({ params }) {
@@ -68,19 +72,3 @@ export async function getServerSideProps({ params }) {
   };
 }
 export default AboutUs;
-
-{
-  /* <div class="col-lg-6 mb-4">
-                  <div class="card card-shadow h-100">
-                    <div class="card-body">
-                      <div class="mb-3">
-                        <i class="bi-droplet fs-2 text-dark"></i>
-                      </div>
-                      <h4>Built with creativity</h4>
-                      <p class="mb-0">
-                        We strive to embrace and drive change in our industry.
-                      </p>
-                    </div>
-                  </div>
-                </div> */
-}
