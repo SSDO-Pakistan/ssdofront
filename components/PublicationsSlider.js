@@ -39,10 +39,11 @@ const PublicationsSlider = ({ Publications }) => {
                 <SplideSlide key={index}>
                  
                   <Link href={publication.attributes.File.data.attributes.url} target="_blank" >
+
                     <Image
-                    width={300}
-                    height={350}
-                      src={publication.attributes.cover.data.attributes.formats.small.url}
+                      width={300}
+                      height={350}
+                      src={publication && publication.attributes.cover.data.attributes.formats.small?.url}
                       data-src="../../assets/img/400x340/img1.jpg"
                       alt="Image description"
                     />

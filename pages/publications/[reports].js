@@ -92,7 +92,8 @@ function Reports() {
           {...restImageProps} />
         <h5 className="card-title text-center mt-2">
           {file && (   
-           <Link href={file}><span className="badge  bg-danger text-light">Download</span></Link>
+           <Link href={file} target="_blank">
+            <span className="badge  bg-danger text-light">Download</span></Link>
           )}
         </h5>
       </div>
