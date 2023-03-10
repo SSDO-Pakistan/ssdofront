@@ -11,7 +11,7 @@ import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 
 //=================
-import { PhotoAlbum, RenderPhoto } from "react-photo-album";
+import { PhotoAlbum,renderContainer, RenderPhoto } from "react-photo-album";
 import React, { useState, useEffect } from "react";
 const Highlightsdetails = ({ data }) => {
     // console.log(data)
@@ -32,11 +32,25 @@ const Highlightsdetails = ({ data }) => {
             ]
         });
     });
-
+    const renderContainer = ({ containerProps, children, containerRef }) => (
+        <div className="shadow-sm"
+            style={{
+                border: "2px solid #eee",
+                borderRadius: "10px",
+                padding: "20px",
+                background:"beige"
+                
+            }}
+        >
+            <div ref={containerRef} {...containerProps}>
+                {children}
+            </div>
+        </div>
+    );
     const renderPhoto = ({ layout, layoutOptions, imageProps: { alt,
         style, ...restImageProps },
         photo: { file, tags } }) => (
-        <div className="card shadow-sm" >
+        <div className="card shadow-sm"  style={{margin:"10px"}}>
             <div class="card-body">
                 <img alt={alt} style={{ ...style, width: "100%", padding: 0 }}
                     {...restImageProps} />
@@ -50,7 +64,7 @@ const Highlightsdetails = ({ data }) => {
     );
     //=======================
     return (
-        <div className="d-flex flex-row mt-3 p-3  mb-3">
+        <div className="d-flex flex-row mt-3 p-3  mb-3" >
             <div className=" h-auto col-md-12">
                 <div className="block-title-6 text-center">
                     <h4 className="h5 border-primary ">
@@ -59,7 +73,7 @@ const Highlightsdetails = ({ data }) => {
                 </div>
                 <div className="">
                     {data && (
-                        <div className="card border-1  p-3">
+                        <div className="card border-1  p-3 mb-3 shadow-sm">
                             <h3 className="card-title">{data.data[0].attributes.title}</h3>
                             <div className='card-body'>
                                 <p><ReactMarkdown>{data.data[0].attributes.description}</ReactMarkdown></p>
@@ -67,13 +81,15 @@ const Highlightsdetails = ({ data }) => {
                         </div>
                     )}
                 </div>
+              
                 <PhotoAlbum
                     layout="rows"
                     photos={gallerydata}
                     containerWidth={900}
                     spacing={20}
                     padding={20}
-                    targetRowHeight={200}
+                    targetRowHeight={170}
+                    renderContainer={renderContainer}
                     renderPhoto={renderPhoto}
                     onClick={({ photo: { File }, index }) => setIndex(index)}
                 />
@@ -87,8 +103,9 @@ const Highlightsdetails = ({ data }) => {
                     plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
                 />
             </div>
+            </div>
 
-        </div>
+       
 
 
     )

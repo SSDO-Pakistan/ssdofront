@@ -52,7 +52,14 @@ const PublicationsSlider = ({ Publications }) => {
               );
             })}
         </Splide>
-        <p>
+        <p
+        style={{
+          textAlign: "right",
+          color: "blue",
+          cursor: "pointer",
+          marginTop:"10px"
+        }}
+      >
           <Link href="/publications">view more</Link>
         </p>
       </div>
