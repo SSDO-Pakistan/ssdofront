@@ -32,7 +32,7 @@ const Profile = ({ data }) => {
           <span className="bg-primary text-white fw-bolder">{heading}</span>
         </h4>
         </div>
-      <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3">
+      <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 myteam">
         {data.Profiles.data.map((profile) => {
           return (
             <div
