@@ -60,7 +60,7 @@ export async function getStaticProps() {
     `${API_URL}/api/publications?filters[type][$eq]=Financial Reports&populate=*&sort=createdAt:desc`
   );
   const Publications = await publicationsres.json();
-  console.log(Publications);
+ // console.log(Publications);
   return {
     props: {
       data: {

@@ -43,7 +43,7 @@ const PublicationsSlider = ({ Publications }) => {
                     <Image
                       width={300}
                       height={350}
-                      src={publication && publication.attributes.cover.data.attributes.formats.small?.url}
+                      src={publication && publication.attributes.cover.data.attributes.url}
                       data-src="../../assets/img/400x340/img1.jpg"
                       alt="Image description"
                     />

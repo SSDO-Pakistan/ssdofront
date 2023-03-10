@@ -192,7 +192,7 @@ export async function getServerSideProps() {
 
   //fetching publications
   const publicationsres = await fetch(
-    `${API_URL}/api/publications?pagination[limit]=4&populate=*&sort=createdAt:desc`
+    `${API_URL}/api/publications?pagination[limit]=4&filters[PublicationSlider][$eq]=true&populate=*&sort=createdAt:desc`
   );
   const Publications = await publicationsres.json();
 
