@@ -54,20 +54,24 @@ const FinancialReports = ({ data }) => {
   );
 };
 
-export async function getStaticProps() {
-  //fetching Financial Reports
+
+export async function getServerSideProps() {
+ 
+
+  //fetching pubilcations
   const publicationsres = await fetch(
     `${API_URL}/api/publications?filters[type][$eq]=Financial Reports&populate=*&sort=createdAt:desc`
-  );
-  const Publications = await publicationsres.json();
- // console.log(Publications);
+    );
+    const Publications = await publicationsres.json();
+  //fetching Publications
+  //console.log("Profiles", Profiles);
   return {
     props: {
       data: {
         Publications,
       },
-      revalidate: 10, // In seconds
     },
   };
 }
 export default FinancialReports;
+

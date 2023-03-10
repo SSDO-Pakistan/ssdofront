@@ -43,7 +43,7 @@ const Profile = ({ data }) => {
                 setmodalShow(true);
               }}
              key ={profile.attributes.id}>
-             <div className="card  p-3  box-shadow mb-5 bg-white rounded" style={{width:"16rem"}}>
+             <div className="card p-3  box-shadow mb-5 bg-white rounded" style={{width:"16rem"}}>
                 <Image     
                   width={225}
                   height={225}
@@ -81,8 +81,8 @@ export async function getServerSideProps({ params }) {
     `${API_URL}/api/profiles?filters[navType][$eq]=${path}&populate[Profile][populate]=image&sort=createdAt:asc`
   );
   const Profiles = await profileres.json();
-  //fetching Publications
-  console.log("Profiles", Profiles);
+  //fetching profiles
+  //console.log("Profiles", Profiles);
   return {
     props: {
       data: {
