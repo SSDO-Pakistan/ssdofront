@@ -14,11 +14,27 @@ function Photosalbum(props) {
   const [items, setItems] = useState(props.mydata);
   let pageCount = Math.ceil(props.total / limit)
   const [index, setIndex] = useState(-1);
-
+//rendering the container
+const renderContainer = ({ containerProps, children, containerRef }) => (
+  <div className="shadow-sm"
+      style={{
+          border: "2px solid #eee",
+          borderRadius: "10px",
+          padding: "20px",
+          background:"beige"
+          
+      }}
+  >
+      <div ref={containerRef} {...containerProps}>
+          {children}
+      </div>
+  </div>
+);
+//rendering the photo
   const renderPhoto = ({ layout, layoutOptions, imageProps: { alt,
     style, ...restImageProps },
     photo: { src, tags } }) => (
-    <div className="card shadow-sm" >
+    <div className="card shadow" >
       <div class="card-body">
         <img alt={alt} style={{ ...style, width: "100%", padding: 0 }}
           {...restImageProps} />
@@ -84,6 +100,7 @@ function Photosalbum(props) {
         spacing={20}
         padding={20}
         targetRowHeight={200}
+        renderContainer={renderContainer}
         renderPhoto={renderPhoto}
         onClick={({ photo: { src }, index }) => setIndex(index)}
       />
