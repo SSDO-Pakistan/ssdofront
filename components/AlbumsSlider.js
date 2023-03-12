@@ -106,7 +106,7 @@ const AlbumsSlider = ({ Galleries }) => {
           cursor: "pointer",
         }}
       >
-        <Link href="/gallery">view more</Link>
+        <Link href="/albums">view more</Link>
       </p>
     </div>
 
