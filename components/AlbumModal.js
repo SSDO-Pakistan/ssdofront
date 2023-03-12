@@ -55,7 +55,7 @@ const AlbumModal = (props) => {
           itemClass="carousel-item-padding-40-px"      
         >
           {props.data.attributes &&
-            props.data.attributes.images.data.map((image) => {
+            props.data.attributes.image.data.map((image) => {
               return (
                 <Link href={ image.attributes.url} key={image.attributes.id}>
                

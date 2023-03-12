@@ -210,7 +210,7 @@ export async function getServerSideProps() {
 
   //fetching Gallery
   const galleriesres = await fetch(
-    `${API_URL}/api/galleries?pagination[limit]=4&populate=*&sort=createdAt:desc`
+    `${API_URL}/api/posts?filters[type][$eq]=Highlights&filters[slider][$eq]=false&populate=*&sort=createdAt:desc&pagination[page]=1&pagination[pageSize]=5`
   );
   const Galleries = await galleriesres.json();
 

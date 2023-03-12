@@ -84,7 +84,7 @@ const AlbumsSlider = ({ Galleries }) => {
                   width={400}
                   height={300} 
                   src={
-                    gallery.attributes.images.data[0].attributes.url
+                    gallery.attributes.image.data[0].attributes.url
                   }
                   data-src="../../assets/img/400x340/img1.jpg"
                   alt="Image description"
