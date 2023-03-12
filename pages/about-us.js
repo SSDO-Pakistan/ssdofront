@@ -57,7 +57,7 @@ const AboutUs = ({ data }) => {
     </Layout>
   );
 };
-export async function getServerSideProps({ params }) {
+export async function getStaticProps({ params }) {
   //fetching about us page
   const aboutusres = await fetch(`${API_URL}/api/about-us?populate=*`);
   const About = await aboutusres.json();
@@ -68,6 +68,7 @@ export async function getServerSideProps({ params }) {
       data: {
         About,
       },
+      revalidate: 10, // In secondss
     },
   };
 }
