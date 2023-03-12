@@ -38,7 +38,7 @@ function Photosalbum(props) {
     style, ...restImageProps },
     photo: { src, tags,title } }) => (
    
-      <div
+      <div className="shadow-sm"
       style={{
           border: "2px solid #eee",
           borderRadius: "4px",
