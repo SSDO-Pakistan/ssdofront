@@ -11,6 +11,7 @@ import ReactPaginate from "react-paginate";
 import Layout from "@/components/Layout";
 import { API_URL } from "@/config/index";
 function Photosalbum(props) {
+  //console.log("new album data",props.mydata)
   let limit = 10
   const [items, setItems] = useState(props.mydata);
   let pageCount = Math.ceil(props.total / limit)
@@ -35,22 +36,38 @@ function Photosalbum(props) {
   //rendering the photo
   const renderPhoto = ({ layout, layoutOptions, imageProps: { alt,
     style, ...restImageProps },
-    photo: { src, tags } }) => (
-    <div className="card shadow m-1" >
-      <div class="card-body">
+    photo: { src, tags,title } }) => (
+   
+      <div
+      style={{
+          border: "2px solid #eee",
+          borderRadius: "4px",
+          boxSizing: "content-box",
+          alignItems: "center",
+          width: style?.width,
+          padding: `${layoutOptions.padding - 2}px`,
+          paddingBottom: 0,
+          backgroundColor:"white"
+      }}
+  >
         <img alt={alt} style={{ ...style, width: "100%", padding: 0 }}
           {...restImageProps} />
-        <div>
-          {tags && (
-            <ul className="photo-tags">
-              {tags.map((tag) => (
-                <li key={tag}>{tag}</li>
-              ))}
-            </ul>
-          )}
+      <div style={{
+                paddingTop: "8px",
+                paddingBottom: "8px",
+                overflow: "visible",   
+                textAlign: "left",
+                fontSize:"13px",
+                overflowWrap: "break-word",
+                fontWeight:"bolder",
+                color: "#545E63"
+                // inlineSize: "350px"
+            }}
+        >
+            {title}
         </div>
-      </div>
-    </div>
+        </div>
+   
   );
   //===================
   const fetchSlidesForLightBox = async (id) => {
@@ -58,7 +75,6 @@ function Photosalbum(props) {
       `${API_URL}/api/posts?filters[type][$eq]=Highlights&filters[slider][$eq]=false&filters[id][$eq]=${id}&populate=*&sort=createdAt:desc`
     );
     const data = await res.json();
-    console.log(data)
     //return false;
     let slidesData = new Array;
     data.data?.map((clip) => {
@@ -91,6 +107,7 @@ function Photosalbum(props) {
     let mydata = new Array;
     data.data?.map((clip) => {
       mydata.push({
+        "title":clip.attributes.title,
         "id": clip.id,
         "src": clip.attributes.image.data[0].attributes.url,
         "width": clip.attributes.image.data[0].attributes.width,
@@ -133,7 +150,7 @@ function Photosalbum(props) {
             targetRowHeight={200}
             renderContainer={renderContainer}
             renderPhoto={renderPhoto}
-            onClick={({ photo: { src, id }, index }) => {
+            onClick={({ photo: { src, id,title }, index }) => {
               setOpen(true)
               fetchSlidesForLightBox(id);
 
@@ -181,7 +198,8 @@ export async function getStaticProps() {
   const total = photos.meta.pagination.total;
   let mydata = new Array;
   photos.data?.map((clip) => {
-    mydata.push({
+    mydata.push({   
+      "title":clip.attributes.title,
       "id": clip.id,
       "src": clip.attributes.image.data[0].attributes.url,
       "width": clip.attributes.image.data[0].attributes.width,
