@@ -12,20 +12,20 @@ import Layout from "@/components/Layout";
 import { API_URL } from "@/config/index";
 function Photosalbum(props) {
   //console.log("new album data",props.mydata)
-  let limit = 10
+  let limit = 10;
   const [items, setItems] = useState(props.mydata);
-  let pageCount = Math.ceil(props.total / limit)
+  let pageCount = Math.ceil(props.total / limit);
   const [open, setOpen] = useState(false);
   const [slidesData, setSlidesData] = useState("");
   //console.log("total data",props.mydata)
   const renderContainer = ({ containerProps, children, containerRef }) => (
-    <div className="shadow-sm"
+    <div
+      className="shadow-sm"
       style={{
         border: "2px solid #eee",
         borderRadius: "10px",
         padding: "20px",
-        background: "beige"
-
+        background: "beige",
       }}
     >
       <div ref={containerRef} {...containerProps}>
@@ -34,40 +34,46 @@ function Photosalbum(props) {
     </div>
   );
   //rendering the photo
-  const renderPhoto = ({ layout, layoutOptions, imageProps: { alt,
-    style, ...restImageProps },
-    photo: { src, tags,title } }) => (
-   
-      <div className="shadow-sm"
+  const renderPhoto = ({
+    layout,
+    layoutOptions,
+    imageProps: { alt, style, ...restImageProps },
+    photo: { src, tags, title },
+  }) => (
+    <div
+      className="shadow-sm"
       style={{
-          border: "2px solid #eee",
-          borderRadius: "4px",
-          boxSizing: "content-box",
-          alignItems: "center",
-          width: style?.width,
-          padding: `${layoutOptions.padding - 2}px`,
-          paddingBottom: 0,
-          backgroundColor:"white"
+        border: "2px solid #eee",
+        borderRadius: "4px",
+        boxSizing: "content-box",
+        alignItems: "center",
+        width: style?.width,
+        padding: `${layoutOptions.padding - 2}px`,
+        paddingBottom: 0,
+        backgroundColor: "white",
       }}
-  >
-        <img alt={alt} style={{ ...style, width: "100%", padding: 0 }}
-          {...restImageProps} />
-      <div style={{
-                paddingTop: "8px",
-                paddingBottom: "8px",
-                overflow: "visible",   
-                textAlign: "left",
-                fontSize:"13px",
-                overflowWrap: "break-word",
-                fontWeight:"bolder",
-                color: "#545E63"
-                // inlineSize: "350px"
-            }}
-        >
-            {title}
-        </div>
-        </div>
-   
+    >
+      <img
+        alt={alt}
+        style={{ ...style, width: "100%", padding: 0 }}
+        {...restImageProps}
+      />
+      <div
+        style={{
+          paddingTop: "8px",
+          paddingBottom: "8px",
+          overflow: "visible",
+          textAlign: "left",
+          fontSize: "13px",
+          overflowWrap: "break-word",
+          fontWeight: "bolder",
+          color: "#545E63",
+          // inlineSize: "350px"
+        }}
+      >
+        {title}
+      </div>
+    </div>
   );
   //===================
   const fetchSlidesForLightBox = async (id) => {
@@ -76,23 +82,21 @@ function Photosalbum(props) {
     );
     const data = await res.json();
     //return false;
-    let slidesData = new Array;
+    let slidesData = new Array();
     data.data?.map((clip) => {
       clip.attributes.image.data?.map((newClip) => {
         slidesData.push({
-          "src": newClip.attributes.url,
-          "width": newClip.attributes.width,
-          "height": newClip.attributes.height,
-          "images": [
+          src: newClip.attributes.url,
+          width: newClip.attributes.width,
+          height: newClip.attributes.height,
+          images: [
             {
-              "src":
-                newClip.attributes.formats.small.url
+              src: newClip.attributes.formats.small.url,
             },
             {
-              "src":
-                newClip.attributes.formats.thumbnail.url
-            }
-          ]
+              src: newClip.attributes.formats.thumbnail.url,
+            },
+          ],
         });
       });
     });
@@ -104,24 +108,22 @@ function Photosalbum(props) {
       `${API_URL}/api/posts?filters[type][$eq]=Highlights&filters[slider][$eq]=false&populate=*&sort=createdAt:desc&pagination[page]=${currentPage}&pagination[pageSize]=${limit}`
     );
     const data = await res.json();
-    let mydata = new Array;
+    let mydata = new Array();
     data.data?.map((clip) => {
       mydata.push({
-        "title":clip.attributes.title,
-        "id": clip.id,
-        "src": clip.attributes.image.data[0].attributes.url,
-        "width": clip.attributes.image.data[0].attributes.width,
-        "height": clip.attributes.image.data[0].attributes.height,
-        "images": [
+        title: clip.attributes.title,
+        id: clip.id,
+        src: clip.attributes.image.data[0].attributes.url,
+        width: clip.attributes.image.data[0].attributes.width,
+        height: clip.attributes.image.data[0].attributes.height,
+        images: [
           {
-            "src":
-              clip.attributes.image.data[0].attributes.formats.small.url
+            src: clip.attributes.image.data[0].attributes.formats.small.url,
           },
           {
-            "src":
-              clip.attributes.image.data[0].attributes.formats.thumbnail.url
-          }
-        ]
+            src: clip.attributes.image.data[0].attributes.formats.thumbnail.url,
+          },
+        ],
       });
     });
     return mydata;
@@ -134,90 +136,95 @@ function Photosalbum(props) {
   };
   return (
     <Layout title="Media Clippings">
-      <div className="row p-4 mt-20">
-        <div className="col-sm-12">
-          <div className="block-title-6 text-center">
-            <h4 className="h5 border-primary">
-              <span className="bg-primary text-white">Albums</span>
-            </h4>
+      <div className="wrapper ">
+        {/* main content */}
+        <main id="content">
+          <div className="container">
+            <div className="row p-4 mt-20">
+              <div className="col-sm-12">
+                <div className="block-title-6 text-center">
+                  <h4 className="h5 border-primary">
+                    <span className="bg-primary text-white">Albums</span>
+                  </h4>
+                </div>
+                <PhotoAlbum
+                  layout="rows"
+                  photos={items}
+                  containerWidth={900}
+                  spacing={20}
+                  padding={20}
+                  targetRowHeight={200}
+                  renderContainer={renderContainer}
+                  renderPhoto={renderPhoto}
+                  onClick={({ photo: { src, id, title }, index }) => {
+                    setOpen(true);
+                    fetchSlidesForLightBox(id);
+                  }}
+                />
+                <Lightbox
+                  slides={slidesData}
+                  close={() => setOpen(false)}
+                  open={open}
+                  // enable optional lightbox plugins
+                  plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
+                />
+                <ReactPaginate
+                  previousLabel={"previous"}
+                  nextLabel={"next"}
+                  breakLabel={"..."}
+                  pageCount={pageCount}
+                  marginPagesDisplayed={2}
+                  pageRangeDisplayed={3}
+                  onPageChange={handlePageClick}
+                  containerClassName={"pagination justify-content-center mt-2"}
+                  pageClassName={"page-item"}
+                  pageLinkClassName={"page-link"}
+                  previousClassName={"page-item"}
+                  previousLinkClassName={"page-link"}
+                  nextClassName={"page-item"}
+                  nextLinkClassName={"page-link"}
+                  breakClassName={"page-item"}
+                  breakLinkClassName={"page-link"}
+                  activeClassName={"active"}
+                />
+              </div>
+            </div>
           </div>
-          <PhotoAlbum
-            layout="rows"
-            photos={items}
-            containerWidth={900}
-            spacing={20}
-            padding={20}
-            targetRowHeight={200}
-            renderContainer={renderContainer}
-            renderPhoto={renderPhoto}
-            onClick={({ photo: { src, id,title }, index }) => {
-              setOpen(true)
-              fetchSlidesForLightBox(id);
-
-            }}
-          />
-          <Lightbox
-            slides={slidesData}
-            close={() => setOpen(false)}
-            open={open}
-            // enable optional lightbox plugins
-            plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
-          />
-          <ReactPaginate
-            previousLabel={"previous"}
-            nextLabel={"next"}
-            breakLabel={"..."}
-            pageCount={pageCount}
-            marginPagesDisplayed={2}
-            pageRangeDisplayed={3}
-            onPageChange={handlePageClick}
-            containerClassName={"pagination justify-content-center mt-2"}
-            pageClassName={"page-item"}
-            pageLinkClassName={"page-link"}
-            previousClassName={"page-item"}
-            previousLinkClassName={"page-link"}
-            nextClassName={"page-item"}
-            nextLinkClassName={"page-link"}
-            breakClassName={"page-item"}
-            breakLinkClassName={"page-link"}
-            activeClassName={"active"}
-          />
-        </div>
+        </main>
       </div>
     </Layout>
   );
 }
-export default Photosalbum
+export default Photosalbum;
 export async function getStaticProps() {
-  const res = await
-    fetch(
-      `${API_URL}/api/posts?filters[type][$eq]=Highlights&filters[slider][$eq]=false&populate=*&sort=createdAt:desc&pagination[page]=1&pagination[pageSize]=10`
-    )
+  const res = await fetch(
+    `${API_URL}/api/posts?filters[type][$eq]=Highlights&filters[slider][$eq]=false&populate=*&sort=createdAt:desc&pagination[page]=1&pagination[pageSize]=10`
+  );
 
-  const photos = await res.json()
+  const photos = await res.json();
   const total = photos.meta.pagination.total;
-  let mydata = new Array;
+  let mydata = new Array();
   photos.data?.map((clip) => {
-    mydata.push({   
-      "title":clip.attributes.title,
-      "id": clip.id,
-      "src": clip.attributes.image.data[0].attributes.url,
-      "width": clip.attributes.image.data[0].attributes.width,
-      "height": clip.attributes.image.data[0].attributes.height,
-      "images": [
-        { "src": clip.attributes.image.data[0].attributes.formats.small.url },
-        { "src": clip.attributes.image.data[0].attributes.formats.thumbnail.url }
-      ]
+    mydata.push({
+      title: clip.attributes.title,
+      id: clip.id,
+      src: clip.attributes.image.data[0].attributes.url,
+      width: clip.attributes.image.data[0].attributes.width,
+      height: clip.attributes.image.data[0].attributes.height,
+      images: [
+        { src: clip.attributes.image.data[0].attributes.formats.small.url },
+        { src: clip.attributes.image.data[0].attributes.formats.thumbnail.url },
+      ],
     });
   });
   return {
     props: {
       mydata,
-      total
+      total,
     },
     // Next.js will attempt to re-generate the page:
     // - When a request comes in
     // - At most once every 10 seconds
     revalidate: 10, // In seconds
-  }
+  };
 }

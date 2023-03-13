@@ -128,52 +128,59 @@ function Publications(props) {
   };
   return (
     <Layout title="Media Clippings">
-      <div className="row p-4 mt-20">
-        <div className="col-sm-12">
-          <div className="block-title-6 text-center">
-            <h4 className="h5 border-primary">
-              <span className="bg-primary text-white">Publications</span>
-            </h4>
+      <div className="wrapper ">
+        {/* main content */}
+        <main id="content">
+          <div className="container">
+            <div className="row p-4 mt-20">
+              <div className="col-sm-12">
+                <div className="block-title-6 text-center">
+                  <h4 className="h5 border-primary">
+                    <span className="bg-primary text-white">Publications</span>
+                  </h4>
+                </div>
+                <PhotoAlbum
+                  layout="rows"
+                  photos={items}
+                  containerWidth={900}
+                  spacing={20}
+                  padding={20}
+                  targetRowHeight={200}
+                  renderContainer={renderContainer}
+                  renderPhoto={renderPhoto}
+                  onClick={({ photo: { File }, index }) => setIndex(index)}
+                />
+                <Lightbox
+                  slides={items}
+                  open={index >= 0}
+                  index={index}
+                  close={() => setIndex(-1)}
+                  // enable optional lightbox plugins
+                  plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
+                />
+                <ReactPaginate
+                  previousLabel={"previous"}
+                  nextLabel={"next"}
+                  breakLabel={"..."}
+                  pageCount={pageCount}
+                  marginPagesDisplayed={2}
+                  pageRangeDisplayed={3}
+                  onPageChange={handlePageClick}
+                  containerClassName={"pagination justify-content-center mt-2"}
+                  pageClassName={"page-item"}
+                  pageLinkClassName={"page-link"}
+                  previousClassName={"page-item"}
+                  previousLinkClassName={"page-link"}
+                  nextClassName={"page-item"}
+                  nextLinkClassName={"page-link"}
+                  breakClassName={"page-item"}
+                  breakLinkClassName={"page-link"}
+                  activeClassName={"active"}
+                />
+              </div>
+            </div>
           </div>
-          <PhotoAlbum
-            layout="rows"
-            photos={items}
-            containerWidth={900}
-            spacing={20}
-            padding={20}
-            targetRowHeight={200}
-            renderContainer={renderContainer}
-            renderPhoto={renderPhoto}
-            onClick={({ photo: { File }, index }) => setIndex(index)}
-          />
-          <Lightbox
-            slides={items}
-            open={index >= 0}
-            index={index}
-            close={() => setIndex(-1)}
-            // enable optional lightbox plugins
-            plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
-          />
-          <ReactPaginate
-            previousLabel={"previous"}
-            nextLabel={"next"}
-            breakLabel={"..."}
-            pageCount={pageCount}
-            marginPagesDisplayed={2}
-            pageRangeDisplayed={3}
-            onPageChange={handlePageClick}
-            containerClassName={"pagination justify-content-center mt-2"}
-            pageClassName={"page-item"}
-            pageLinkClassName={"page-link"}
-            previousClassName={"page-item"}
-            previousLinkClassName={"page-link"}
-            nextClassName={"page-item"}
-            nextLinkClassName={"page-link"}
-            breakClassName={"page-item"}
-            breakLinkClassName={"page-link"}
-            activeClassName={"active"}
-          />
-        </div>
+        </main>
       </div>
     </Layout>
   );
