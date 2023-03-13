@@ -71,7 +71,7 @@ function Photosalbum(props) {
           // inlineSize: "350px"
         }}
       >
-        {title}
+        {title.length > 50 ? title.slice(0, 50) + "..." : title}
       </div>
     </div>
   );
