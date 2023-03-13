@@ -78,7 +78,7 @@ function Publications(props) {
           // inlineSize: "350px"
         }}
       >
-        {title.length > 50 ? title.slice(0, 50) + "..." : title}
+        {title.length > 15 ? title.slice(0, 15) + "..." : title}
       </div>
       <h5 className="text-center mt-2">
         {file && (
