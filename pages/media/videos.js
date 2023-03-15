@@ -20,6 +20,7 @@ const Videos = ({ data }) => {
               data.Videos?.data.map((video) => {
                 return (
                   <div
+                    key={video.id}
                     className="player-wrapper card  mb-10 mt-10  bg-white shadow-sm  "
                     style={{
                       marginTop: "50px",
@@ -48,7 +49,6 @@ const Videos = ({ data }) => {
                           paddingTop: "20px",
                           height: "20px",
                         }}
-                        key={video.id}
                         className="react-player"
                         width="95%"
                         height="40%"
