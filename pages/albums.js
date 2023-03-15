@@ -25,7 +25,7 @@ function Photosalbum(props) {
         border: "2px solid #eee",
         borderRadius: "10px",
         padding: "20px",
-        background: "beige",
+        background: "#E5E5CC",
       }}
     >
       <div ref={containerRef} {...containerProps}>
