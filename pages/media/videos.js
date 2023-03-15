@@ -33,17 +33,6 @@ const Videos = ({ data }) => {
                   >
                     <div className="card-body">
                       <ReactPlayer
-                        light={
-                          <img
-                            style={{
-                              position: "relative",
-                              width: "100%",
-                              height: "100%",
-                            }}
-                            src={video.attributes.url}
-                            alt="sun"
-                          />
-                        }
                         style={{
                           paddingLeft: "25px",
                           paddingTop: "20px",
