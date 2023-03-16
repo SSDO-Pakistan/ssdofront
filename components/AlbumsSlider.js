@@ -71,7 +71,11 @@ const AlbumsSlider = ({ Galleries }) => {
         >
           {Galleries.data.map((gallery) => {
             return (
-              <div className="card" style={{ height: "18rem" }}>
+              <div
+                key={gallery.id}
+                className="card"
+                style={{ height: "18rem" }}
+              >
                 <ReactPlayer
                   className="react-player"
                   width="100%"
