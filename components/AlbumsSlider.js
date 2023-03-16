@@ -1,44 +1,43 @@
 import React, { useState } from "react";
-import { API_URL } from "@/config/index";
-import AlbumModal from "./AlbumModal";
+
 import Link from "next/link";
-import Image from "next/image";
+import ReactPlayer from "react-player";
 import Carousel from "react-multi-carousel";
 const AlbumsSlider = ({ Galleries }) => {
-  const responsive={
+  const responsive = {
     desktop: {
       breakpoint: {
         max: 3000,
-        min: 1024
+        min: 1024,
       },
       items: 3,
-      partialVisibilityGutter: 40
+      partialVisibilityGutter: 40,
     },
     mobile: {
       breakpoint: {
         max: 464,
-        min: 0
+        min: 0,
       },
       items: 1,
-      partialVisibilityGutter: 30
+      partialVisibilityGutter: 30,
     },
     tablet: {
       breakpoint: {
         max: 1024,
-        min: 464
+        min: 464,
       },
       items: 2,
-      partialVisibilityGutter: 30
-    }
-  }
+      partialVisibilityGutter: 30,
+    },
+  };
   const [showGallery, setshowGallery] = useState({});
-  const [modalShow, setmodalShow] = useState(false);
+
   return (
     <div className="col-12 mb-4 ">
       <div className="block-area p-4 border bg-light-black">
         <div className="block-title-6">
           <h4 className="h5 border-primary">
-            <span className="bg-primary text-white">Albums</span>
+            <span className="bg-primary text-white">Videos</span>
           </h4>
         </div>
         <Carousel
@@ -54,7 +53,6 @@ const AlbumsSlider = ({ Galleries }) => {
           dotListClass=""
           draggable
           focusOnSelect={false}
-         
           itemClass=""
           keyBoardControl
           minimumTouchDrag={80}
@@ -73,31 +71,18 @@ const AlbumsSlider = ({ Galleries }) => {
         >
           {Galleries.data.map((gallery) => {
             return (
-              <div className="card" 
-                onClick={() => {
-                  setshowGallery(gallery);
-                  setmodalShow(true);
-                }}
-                key={gallery.id}
-              >
-                <Image
-                  width={400}
-                  height={300} 
-                  src={
-                    gallery.attributes.image.data[0].attributes.url
-                  }
-                  data-src="../../assets/img/400x340/img1.jpg"
-                  alt="Image description"
+              <div className="card" style={{ height: "18rem" }}>
+                <ReactPlayer
+                  className="react-player"
+                  width="100%"
+                  height="100%"
+                  controls={true}
+                  url={gallery.attributes.url}
                 />
               </div>
             );
           })}
         </Carousel>
-        <AlbumModal
-          show={modalShow}
-          onHide={() => setmodalShow(false)}
-          data={showGallery}
-        />
       </div>
       <p
         style={{
@@ -109,7 +94,6 @@ const AlbumsSlider = ({ Galleries }) => {
         <Link href="/albums">view more</Link>
       </p>
     </div>
-
   );
 };
 

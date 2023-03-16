@@ -22,8 +22,8 @@ function Reports() {
     reportName = "Event Reports";
   } else if (reports == "progress-reports") {
     reportName = "Progress Reports";
-  } else if (reports == "monthly-vawc-report") {
-    reportName = "Violence reports against women and children";
+  } else if (reports == "monthly-vawc-reports") {
+    reportName = "Violence Reports against Women and Children";
   } else {
     reportName = "Newsletters";
   }
