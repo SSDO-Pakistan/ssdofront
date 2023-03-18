@@ -1,11 +1,46 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ReactPlayer from "react-player";
 import { API_URL } from "@/config/index";
 import Layout from "@/components/Layout";
+import ReactPaginate from "react-paginate";
+const Videos = () => {
+  const [items, setItems] = useState([]);
+  const [pageCount, setpageCount] = useState(0);
+  let limit = 10;
+  useEffect(() => {
+    const getVideos = async () => {
+      const res = await fetch(
+        `${API_URL}/api/videos?&sort=createdAt:asc&pagination[page]=1&pagination[pageSize]=${limit}`
+        // `https://jsonplaceholder.typicode.com/comments?_page=1&_limit=${limit}`
+      );
+      const data = await res.json();
+      console.log("videos", data);
+      const total = data.meta.pagination.total;
+      setpageCount(Math.ceil(total / limit));
+      // console.log(Math.ceil(total/12));
+      setItems(data);
+    };
 
-const Videos = ({ data }) => {
-  //console.log("videos", data);
-  // return false;
+    getVideos();
+  }, [limit]);
+  // console.log("items", items);
+  const fetchVideos = async (currentPage) => {
+    const res = await fetch(
+      `${API_URL}/api/videos?&sort=createdAt:asc&pagination[page]=${currentPage}&pagination[pageSize]=${limit}`
+      // `https://jsonplaceholder.typicode.com/comments?_page=${currentPage}&_limit=${limit}`
+    );
+    const data = await res.json();
+    return data;
+  };
+  const handlePageClick = async (data) => {
+    console.log(data.selected);
+
+    let currentPage = data.selected + 1;
+
+    const publicationFromServer = await fetchVideos(currentPage);
+
+    setItems(publicationFromServer);
+  };
   return (
     <Layout title="Videos">
       <div className="wrapper ">
@@ -20,8 +55,8 @@ const Videos = ({ data }) => {
                   </h4>
                 </div>
                 <div className="row " style={{ background: "#E5E5CC" }}>
-                  {data &&
-                    data.Videos?.data.map((video) => {
+                  {items &&
+                    items.data.map((video) => {
                       return (
                         <div
                           style={{ height: "18rem" }}
@@ -39,6 +74,25 @@ const Videos = ({ data }) => {
                       );
                     })}
                 </div>
+                <ReactPaginate
+                  previousLabel={"previous"}
+                  nextLabel={"next"}
+                  breakLabel={"..."}
+                  pageCount={pageCount}
+                  marginPagesDisplayed={2}
+                  pageRangeDisplayed={3}
+                  onPageChange={handlePageClick}
+                  containerClassName={"pagination justify-content-center mt-2"}
+                  pageClassName={"page-item"}
+                  pageLinkClassName={"page-link"}
+                  previousClassName={"page-item"}
+                  previousLinkClassName={"page-link"}
+                  nextClassName={"page-item"}
+                  nextLinkClassName={"page-link"}
+                  breakClassName={"page-item"}
+                  breakLinkClassName={"page-link"}
+                  activeClassName={"active"}
+                />
               </div>
             </div>
           </div>
@@ -48,18 +102,4 @@ const Videos = ({ data }) => {
   );
 };
 
-export async function getServerSideProps() {
-  //fetching pubilcations
-  const videos_res = await fetch(`${API_URL}/api/videos?sort=createdAt:asc`);
-  const Videos = await videos_res.json();
-  //fetching Publications
-  //console.log("Profiles", Profiles);
-  return {
-    props: {
-      data: {
-        Videos,
-      },
-    },
-  };
-}
 export default Videos;
