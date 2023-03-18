@@ -38,9 +38,13 @@ const TeamModal = (props) => {
       </Modal.Header>
       <Modal.Body>
         <h4 className="text-primary">
-          {props?.data?.attributes?.Profile[0].title}
+          {props?.data?.attributes?.Profile.title}
         </h4>
-        <p><ReactMarkdown>{props?.data?.attributes?.Profile[0].description}</ReactMarkdown></p>
+        <p>
+          <ReactMarkdown>
+            {props?.data?.attributes?.Profile.description}
+          </ReactMarkdown>
+        </p>
       </Modal.Body>
     </Modal>
   );

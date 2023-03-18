@@ -4,7 +4,7 @@ import { API_URL } from "@/config/index";
 import Layout from "@/components/Layout";
 
 const Videos = ({ data }) => {
-  console.log("videos", data);
+  //console.log("videos", data);
   // return false;
   return (
     <Layout title="Videos">

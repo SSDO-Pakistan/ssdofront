@@ -6,46 +6,55 @@ import Layout from "@/components/Layout";
 const FinancialReports = ({ data }) => {
   return (
     <Layout title="Financial Reports">
-      <main className="d-flex flex-row mt-3 p-3  mb-3">
-        <div className="col-md-12 h-auto ">
-          <div className="block-title-6 text-center">
-            <h4 className="h5 border-primary">
-              <span className="bg-primary text-white ">Financial Reports</span>
-            </h4>
+      <div className="wrapper ">
+        {/* main content */}
+        <main id="content">
+          <div className="container">
+            <div className="col-md-12 h-auto ">
+              <div className="block-title-6 text-center">
+                <h4 className="h5 border-primary">
+                  <span className="bg-primary text-white ">
+                    Financial Reports
+                  </span>
+                </h4>
+              </div>
+              <div className="d-flex justify-space-between flex-row flex-wrap gap-3 h-auto mt-5 mb-3">
+                {data &&
+                  data.Publications?.data.map((publication) => {
+                    return (
+                      <Link
+                        href={`${publication.attributes.File?.data?.attributes.url} `}
+                        target="_blank"
+                        key={publication.attributes.id}
+                      >
+                        <div className="card">
+                          <div className="card-body">
+                            <Image
+                              width={300}
+                              height={350}
+                              src={
+                                publication.attributes.cover.data.attributes.url
+                              }
+                              alt="Report"
+                            />
+                          </div>
+                          <div>
+                            <h4 class="card-title text-center ">
+                              {publication.attributes.title}
+                            </h4>
+                            <p class="card-text">
+                              {publication.attributes.description}
+                            </p>
+                          </div>
+                        </div>
+                      </Link>
+                    );
+                  })}
+              </div>
+            </div>
           </div>
-          <div className="d-flex justify-space-between flex-row flex-wrap gap-3 h-auto mt-5 mb-3">
-            {data &&
-              data.Publications?.data.map((publication) => {
-                return (
-                  <Link
-                    href={`${publication.attributes.File?.data?.attributes.url} `}
-                    target="_blank"
-                    key={publication.attributes.id}
-                  >
-                    <div className="card">
-                      <div className="card-body">
-                        <Image
-                          width={300}
-                          height={350}
-                          src={publication.attributes.cover.data.attributes.url}
-                          alt="Report"
-                        />
-                      </div>
-                      <div>
-                        <h4 class="card-title text-center ">
-                          {publication.attributes.title}
-                        </h4>
-                        <p class="card-text">
-                          {publication.attributes.description}
-                        </p>
-                      </div>
-                    </div>
-                  </Link>
-                );
-              })}
-          </div>
-        </div>
-      </main>
+        </main>
+      </div>
     </Layout>
   );
 };

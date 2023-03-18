@@ -92,7 +92,7 @@ function Publications(props) {
 
   const fetchPhotos = async (currentPage) => {
     const res = await fetch(
-      `${API_URL}/api/publications?populate=*&filters[type][$ne]=Financial Reports&sort=createdAt:desc&pagination[page]=${currentPage}&pagination[pageSize]=${limit}`
+      `${API_URL}/api/publications?populate=*&filters[type][$ne]=Financial Reports&sort=rank&pagination[page]=${currentPage}&pagination[pageSize]=${limit}`
     );
     const data = await res.json();
     let mydata = new Array();
@@ -188,7 +188,7 @@ function Publications(props) {
 export default Publications;
 export async function getStaticProps() {
   const res = await fetch(
-    `${API_URL}/api/publications?populate=*&filters[type][$ne]=Financial Reports&sort=createdAt:asc&pagination[page]=1&pagination[pageSize]=10`
+    `${API_URL}/api/publications?populate=*&filters[type][$ne]=Financial Reports&sort=rank&pagination[page]=1&pagination[pageSize]=10`
   );
 
   const photos = await res.json();
