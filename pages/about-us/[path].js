@@ -55,7 +55,7 @@ const Profile = ({ data }) => {
                   />
                   <div className="card-body">
                     <h5 className="mb-1 text-center fw-bold">
-                      {profile.attributes.name}
+                      {profile.attributes.title}
                     </h5>
                     <span
                       className="d-block text-center"
