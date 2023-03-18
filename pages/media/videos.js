@@ -6,7 +6,7 @@ import ReactPaginate from "react-paginate";
 const Videos = () => {
   const [items, setItems] = useState([]);
   const [pageCount, setpageCount] = useState(0);
-  let limit = 10;
+  let limit = 12;
   useEffect(() => {
     const getVideos = async () => {
       const res = await fetch(
