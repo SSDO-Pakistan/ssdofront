@@ -33,7 +33,7 @@ const Videos = () => {
     return data;
   };
   const handlePageClick = async (data) => {
-    console.log(data.selected);
+    //console.log(data.selected);
 
     let currentPage = data.selected + 1;
 
@@ -56,7 +56,7 @@ const Videos = () => {
                 </div>
                 <div className="row " style={{ background: "#E5E5CC" }}>
                   {items &&
-                    items.data.map((video) => {
+                    items.data?.map((video) => {
                       return (
                         <div
                           style={{ height: "18rem" }}
