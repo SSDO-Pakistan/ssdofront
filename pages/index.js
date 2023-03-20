@@ -358,7 +358,7 @@ export async function getServerSideProps() {
   const Blogs = await blogsres.json();
 
   //fetching Gallery
-  const videos_res = await fetch(`${API_URL}/api/videos?sort=createdAt:asc`);
+  const videos_res = await fetch(`${API_URL}/api/videos?sort=rank`);
   const Videos = await videos_res.json();
 
   // console.log("Galleries", Galleries);
