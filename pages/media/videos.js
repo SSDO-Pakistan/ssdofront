@@ -10,7 +10,7 @@ const Videos = () => {
   useEffect(() => {
     const getVideos = async () => {
       const res = await fetch(
-        `${API_URL}/api/videos?&sort=createdAt:asc&pagination[page]=1&pagination[pageSize]=${limit}`
+        `${API_URL}/api/videos?&sort=rank&pagination[page]=1&pagination[pageSize]=${limit}`
         // `https://jsonplaceholder.typicode.com/comments?_page=1&_limit=${limit}`
       );
       const data = await res.json();
@@ -26,7 +26,7 @@ const Videos = () => {
   // console.log("items", items);
   const fetchVideos = async (currentPage) => {
     const res = await fetch(
-      `${API_URL}/api/videos?&sort=createdAt:asc&pagination[page]=${currentPage}&pagination[pageSize]=${limit}`
+      `${API_URL}/api/videos?&sort=rank&pagination[page]=${currentPage}&pagination[pageSize]=${limit}`
       // `https://jsonplaceholder.typicode.com/comments?_page=${currentPage}&_limit=${limit}`
     );
     const data = await res.json();
