@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import Carousel from "react-bootstrap/Carousel";
 import moment from "moment";
 import Image from "next/image";
+
+import Link from "next/link";
 import { API_URL } from "@/config/index";
 function HighlightsSlider({ PressReleases, SliderHighlights }) {
   return (
@@ -40,12 +42,15 @@ function HighlightsSlider({ PressReleases, SliderHighlights }) {
             <div style={{ marginTop: "10px" }}>
               {PressReleases.data.map((pressrelease) => {
                 return (
+                  <Link href={`media/${pressrelease.attributes.slug}`}>
                   <p style={{ paddingLeft: "10px" }} key={pressrelease.id}><strong>
                     {moment(pressrelease.attributes.createdAt).format(
                       "Do MMMM YYYY"
                     )}{" "}</strong>
+
                     — {pressrelease.attributes.title}
                   </p>
+                  </Link>
                 );
               })}
 

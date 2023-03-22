@@ -1,7 +1,7 @@
 import { API_URL } from "@/config/index";
 import ReactMarkdown from "react-markdown";
 const PressReleases = ({ data }) => {
-   console.log(data.PressRelease.data[0].attributes.title)
+ //  console.log(data.PressRelease.data[0].attributes.title)
   //return false
   return (
     <div className="wrapper ">

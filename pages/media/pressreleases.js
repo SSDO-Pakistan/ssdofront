@@ -5,7 +5,7 @@ import { API_URL } from "@/config/index";
 import Layout from "@/components/Layout";
 import ReactPaginate from "react-paginate";
 import ReactMarkdown from "react-markdown";
-const Videos = () => {
+const PressReleases = () => {
   const [items, setItems] = useState([]);
   const [pageCount, setpageCount] = useState(0);
   let limit = 10;
@@ -123,4 +123,4 @@ const Videos = () => {
   );
 };
 
-export default Videos;
+export default PressReleases;
