@@ -44,7 +44,7 @@ const PressReleases = () => {
     setItems(publicationFromServer);
   };
   return (
-    <Layout title="Videos">
+    <Layout title="Press Releases">
       <div className="wrapper ">
         {/* main content */}
         <main id="content">
