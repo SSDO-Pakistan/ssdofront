@@ -135,7 +135,7 @@ function Photosalbum(props) {
     setItems(commentsFormServer);
   };
   return (
-    <Layout title="Media Clippings">
+    <Layout title="Albums">
       <div className="wrapper ">
         {/* main content */}
         <main id="content">

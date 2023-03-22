@@ -3,6 +3,7 @@ import { API_URL } from "@/config/index";
 import Link from "next/link";
 import ReactPaginate from "react-paginate";
 import Card from "react-bootstrap/Card";
+import Layout from "@/components/Layout";
 const Jobs = () => {
   const [items, setItems] = useState([]);
 
@@ -44,6 +45,7 @@ const Jobs = () => {
     setItems(publicationFromServer);
   };
   return (
+    <Layout title="Join Us">
     <div class="container p-4 mt-20">
       <div className="block-title-6 text-center">
         <h4 className="h5 border-primary">
@@ -61,9 +63,9 @@ const Jobs = () => {
                     Job Status : {job.attributes.status}
                   </Card.Subtitle>
 
-                  <Card.Link href={`/join-us/${job.attributes.slug}`}>
+                  <Link href={`/join-us/${job.attributes.slug}`}>
                     View Job
-                  </Card.Link>
+                  </Link>
                 </Card.Body>
               </Card>
             );
@@ -89,6 +91,7 @@ const Jobs = () => {
         activeClassName={"active"}
       />
     </div>
+    </Layout>
   );
 };
 
