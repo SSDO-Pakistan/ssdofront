@@ -42,8 +42,8 @@ function HighlightsSlider({ PressReleases, SliderHighlights }) {
             <div style={{ marginTop: "10px" }}>
               {PressReleases.data.map((pressrelease) => {
                 return (
-                  <Link href={`media/${pressrelease.attributes.slug}`}>
-                  <p style={{ paddingLeft: "10px" }} key={pressrelease.id}><strong>
+                  <Link href={`media/${pressrelease.attributes.slug}`} key={pressrelease.id}>
+                  <p style={{ paddingLeft: "10px" }} ><strong>
                     {moment(pressrelease.attributes.createdAt).format(
                       "Do MMMM YYYY"
                     )}{" "}</strong>
