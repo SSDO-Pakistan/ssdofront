@@ -92,7 +92,7 @@ function Publications(props) {
 
   const fetchPhotos = async (currentPage) => {
     const res = await fetch(
-      `${API_URL}/api/publications?populate=*&filters[$and][0][type][$ne]=AuditReports&filters[$and][1][type][$ne]=TaxReturns&sort=rank&pagination[page]=${currentPage}&pagination[pageSize]=${limit}`
+      `${API_URL}/api/publications?populate=*&filters[$and][0][type][$ne]=Audit Reports&filters[$and][1][type][$ne]=Tax Returns&sort=rank&pagination[page]=${currentPage}&pagination[pageSize]=${limit}`
     );
     const data = await res.json();
     let mydata = new Array();
