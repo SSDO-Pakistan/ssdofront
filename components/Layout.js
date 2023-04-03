@@ -13,8 +13,7 @@ const Layout = ({ children, title, description, keywords,SliderHighlights }) => 
         <meta property="og:title" content="SSDO Pakistan" />
         <meta property="og:description" content="Sustainable Social Development Organization (SSDO) is a non-governmental organization founded in 2015 and registered under Societies Registration Act 1860."/>
         <meta property="og:image" content={SliderHighlights && SliderHighlights.data[0].attributes.image.data[0].attributes.url}/>
-        <meta property="og:image:width" content="500" />
-         <meta property="og:image:height" content="500" />
+      
         <meta property="og:url" content="https://ssdo.org.pk/"/>
       </Head>
     
