@@ -12,7 +12,7 @@ function HighlightsSlider({ PressReleases, SliderHighlights }) {
       <div className="col-md-7 p-2">
         <Carousel >
           {SliderHighlights.data.map((sliderhighlight) => {
-            console.log(sliderhighlight);
+          //  console.log("Highlights slider",sliderhighlight);
             return (
               <Carousel.Item key={sliderhighlight.id}>
                 <Image

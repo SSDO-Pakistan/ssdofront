@@ -17,7 +17,7 @@ import MobileSidebar from "./../components/MobileSidebar";
 
 export default function Home({ data }) {
   return (
-    <Layout title="SSDO Pakistan">
+    <Layout title="SSDO Pakistan" SliderHighlights={data.SliderHighlights}>
       <div className="wrapper ">
         {/* main content */}
         <main id="content">
