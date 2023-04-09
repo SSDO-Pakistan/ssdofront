@@ -86,22 +86,25 @@ function Photosalbum(props) {
       `${API_URL}/api/progress-reports?populate[0]=Report&populate[1]=Report.cover&populate[2]=Report.file&sort=rank:asc&pagination[page]=${currentPage}&pagination[pageSize]=${limit}`
     );
     const data = await res.json();
+
     let mydata = new Array();
     data.data?.map((clip) => {
-      mydata.push({
-        file: clip.attributes.Report.file.data?.attributes.url,
-        src: clip.attributes.Report.cover.data?.attributes.url,
-        width: clip.attributes.Report.cover.data?.attributes.width,
-        height: clip.attributes.Report.cover.data?.attributes.height,
-        images: [
-          {
-            src: clip.attributes.Report.cover.data?.formats.small.url,
-          },
-          {
-            src: clip.attributes.Report.cover.data?.formats.thumbnail.url,
-          },
-        ],
-      });
+      if (clip.attributes.Report.file) {
+        mydata.push({
+          file: clip.attributes.Report.file.data?.attributes.url,
+          src: clip.attributes.Report.cover.data?.attributes.url,
+          width: clip.attributes.Report.cover.data?.attributes.width,
+          height: clip.attributes.Report.cover.data?.attributes.height,
+          images: [
+            {
+              src: clip.attributes.Report.cover.data?.formats.small.url,
+            },
+            {
+              src: clip.attributes.Report.cover.data?.formats.thumbnail.url,
+            },
+          ],
+        });
+      }
     });
     return mydata;
   };
@@ -189,10 +192,12 @@ export async function getStaticProps() {
       height: clip.attributes.Report.cover.data?.attributes.height,
       images: [
         {
-          src: clip.attributes.Report.cover.data?.formats.small.url,
+          src: clip.attributes.Report.cover.data?.attributes.formats.thumbnail
+            .url,
         },
         {
-          src: clip.attributes.Report.cover.data?.formats.thumbnail.url,
+          src: clip.attributes.Report.cover.data?.attributes.formats.thumbnail
+            .url,
         },
       ],
     });

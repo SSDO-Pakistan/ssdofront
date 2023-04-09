@@ -95,10 +95,12 @@ function Photosalbum(props) {
         height: clip.attributes.Report.cover.data?.attributes.height,
         images: [
           {
-            src: clip.attributes.image.data.attributes.formats.small.url,
+            src: clip.attributes.Report.cover.data?.attributes.formats.thumbnail
+              .url,
           },
           {
-            src: clip.attributes.image.data.attributes.formats.thumbnail.url,
+            src: clip.attributes.Report.cover.data?.attributes.formats.thumbnail
+              .url,
           },
         ],
       });
@@ -189,7 +191,8 @@ export async function getStaticProps() {
       height: clip.attributes.Report.cover.data?.attributes.height,
       images: [
         {
-          src: clip.attributes.Report.cover.data?.attributes.formats.small.url,
+          src: clip.attributes.Report.cover.data?.attributes.formats.thumbnail
+            .url,
         },
         {
           src: clip.attributes.Report.cover.data?.attributes.formats.thumbnail
