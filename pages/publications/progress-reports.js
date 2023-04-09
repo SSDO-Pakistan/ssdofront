@@ -125,7 +125,7 @@ function Photosalbum(props) {
                 <div className="block-title-6 text-center">
                   <h4 className="h5 border-primary">
                     <span className="bg-primary text-white">
-                      Research Reports
+                      Progress Reports
                     </span>
                   </h4>
                 </div>

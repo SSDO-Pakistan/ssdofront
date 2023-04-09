@@ -123,9 +123,7 @@ function Photosalbum(props) {
               <div className="col-sm-12">
                 <div className="block-title-6 text-center">
                   <h4 className="h5 border-primary">
-                    <span className="bg-primary text-white">
-                      Violence Reports against Women and Children
-                    </span>
+                    <span className="bg-primary text-white">Event Reports</span>
                   </h4>
                 </div>
                 <PhotoAlbum
