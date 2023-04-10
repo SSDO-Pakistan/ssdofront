@@ -21,7 +21,7 @@ const TheamticArea = ({ data }) => {
             return (
               <div class="col mb-3 " key={cat.attributes.id}>
                 <div
-                  className="card  d-flex  rgba-black-strong py-5 px-2"
+                  className="card  d-flex  rgba-black-strong py-5 px-2 shadow"
                   style={{
                     width: "22rem",
                     height: "18rem",
