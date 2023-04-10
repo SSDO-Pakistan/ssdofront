@@ -15,21 +15,41 @@ const TheamticArea = ({ data }) => {
         <div>
           <p>{data.ThematicAreas.data.attributes.description}</p>
         </div>
-        <div
-          className="d-flex flex-col flex-wrap"
-          style={{ marginTop: "45px" }}
-        >
-          {data.ThematicAreas.data.attributes.categories.data.map((cat) => {
+        <div class="row mt-5 mb-5 g-2" style={{ justifyContent: "left" }}>
+          {data.ThematicAreas.data.attributes.categories.data?.map((cat) => {
+            let bgColor = cat.attributes.BackgroundColor;
             return (
-              <div
-                className="bg-primary p-3 d-flex justify-content-center align-items-center ms-3 mb-3"
-                key={cat.attributes.id}
-              >
-                <p className="text-white p-1 ">
-                  <Link className="text-white" href={`javascript:;`}>
-                    {cat.attributes.title}{" "}
-                  </Link>
-                </p>
+              <div class="col mb-3 " key={cat.attributes.id}>
+                <div
+                  className="card  d-flex  rgba-black-strong py-5 px-2"
+                  style={{
+                    width: "22rem",
+                    height: "18rem",
+                    backgroundColor: `${bgColor}`,
+                    justifyContent: "center",
+                  }}
+                >
+                  <div className="card-body">
+                    <div style={{ marginBottom: "20px", paddingTop: "30px" }}>
+                      <i
+                        className={cat.attributes.icon}
+                        color="white"
+                        style={{
+                          color: "white",
+                          fontSize: "4rem",
+                          marginLeft: "7rem",
+                        }}
+                      />
+                    </div>
+                    <Link
+                      className="text-white"
+                      href={`javascript:;`}
+                      style={{ textAlign: "justify" }}
+                    >
+                      {cat.attributes.title}{" "}
+                    </Link>
+                  </div>
+                </div>
               </div>
             );
           })}

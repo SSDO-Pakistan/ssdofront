@@ -122,7 +122,7 @@ function Photosalbum(props) {
                 <div className="block-title-6 text-center">
                   <h4 className="h5 border-primary">
                     <span className="bg-primary text-white">
-                      Violence Reports against Women and Children
+                      Violence against Women and Children Reports
                     </span>
                   </h4>
                 </div>

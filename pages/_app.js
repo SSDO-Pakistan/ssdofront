@@ -4,8 +4,9 @@ import Head from "next/head";
 import Script from "next/script";
 import "@etchteam/next-pagination/dist/index.css";
 import "react-multi-carousel/lib/styles.css";
-import '@splidejs/splide/css';
+import "@splidejs/splide/css";
 
+import "bootstrap-icons/font/bootstrap-icons.css";
 import Header from "@/components/Header";
 import UiNav from "./../components/UiNav";
 import Footern from "./../components/Footern";
@@ -14,7 +15,7 @@ import MobileSidebar from "./../components/MobileSidebar";
 function MyApp({ Component, pageProps }) {
   return (
     <>
-       <Head>
+      <Head>
         <link rel="shortcut icon" href="/favicon.png" />
       </Head>
       <Script
@@ -41,13 +42,13 @@ function MyApp({ Component, pageProps }) {
       />
 
       <Script src="/js/theme.js" strategy="lazyOnload" type="text/javascript" />
-      <Header   suppressHydrationWarning/>
-      <MobileSidebar   suppressHydrationWarning/>
+      <Header suppressHydrationWarning />
+      <MobileSidebar suppressHydrationWarning />
       {/* <MainNav /> */}
       <UiNav />
-      <Component {...pageProps}   suppressHydrationWarning/>
+      <Component {...pageProps} suppressHydrationWarning />
       {/* <Footer /> */}
-      <Footern   suppressHydrationWarning/>
+      <Footern suppressHydrationWarning />
     </>
   );
 }
