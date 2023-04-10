@@ -3,7 +3,7 @@ import { API_URL } from "@/config/index";
 import Link from "next/link";
 import Layout from "@/components/Layout";
 const TheamticArea = ({ data }) => {
-  console.log("data", data.ThematicAreas);
+  // console.log("data", data.ThematicAreas);
   return (
     <Layout title="Thematic Areas">
       <div class="container content-space-1 p-4 mt-20">
@@ -30,22 +30,22 @@ const TheamticArea = ({ data }) => {
                   }}
                 >
                   <div className="card-body">
-                    <div style={{ marginBottom: "20px", paddingTop: "30px" }}>
-                      <i
-                        className={cat.attributes.icon}
-                        color="white"
-                        style={{
-                          color: "white",
-                          fontSize: "4rem",
-                          marginLeft: "7rem",
-                        }}
-                      />
-                    </div>
                     <Link
                       className="text-white"
-                      href={`javascript:;`}
+                      href={`thematic-areas/${cat.attributes.slug}`}
                       style={{ textAlign: "justify" }}
                     >
+                      <div style={{ marginBottom: "20px", paddingTop: "30px" }}>
+                        <i
+                          className={cat.attributes.icon}
+                          color="white"
+                          style={{
+                            color: "white",
+                            fontSize: "4rem",
+                            marginLeft: "7rem",
+                          }}
+                        />
+                      </div>
                       {cat.attributes.title}{" "}
                     </Link>
                   </div>
