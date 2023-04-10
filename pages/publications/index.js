@@ -12,7 +12,7 @@ import { API_URL } from "@/config/index";
 import Link from "next/link";
 import Layout from "@/components/Layout";
 function Photosalbum(props) {
-  let limit = 20;
+  let limit = 10;
   const [items, setItems] = useState(props.mydata);
   let pageCount = Math.ceil(props.total / limit);
   const [index, setIndex] = useState(-1);
@@ -83,7 +83,7 @@ function Photosalbum(props) {
 
   const fetchPhotos = async (currentPage) => {
     const res = await fetch(
-      `${API_URL}/api/research-reports?populate[0]=Report&populate[1]=Report.cover&populate[2]=Report.file&sort=rank:asc&pagination[page]=${currentPage}&pagination[pageSize]=${limit}`
+      `${API_URL}/api/research-reports?populate=*&populate[0]=Report&populate[1]=Report.cover&populate[2]=Report.file&sort=rank:asc&pagination[page]=${currentPage}&pagination[pageSize]=${limit}`
     );
     const data = await res.json();
     let mydata = new Array();
@@ -95,10 +95,12 @@ function Photosalbum(props) {
         height: clip.attributes.Report.cover.data?.attributes.height,
         images: [
           {
-            src: clip.attributes.Report.cover.data?.formats.small.url,
+            src: clip.attributes.Report.cover.data?.attributes.formats.small
+              .url,
           },
           {
-            src: clip.attributes.Report.cover.data?.formats.thumbnail.url,
+            src: clip.attributes.Report.cover.data?.attributes.formats.thumbnail
+              .url,
           },
         ],
       });
@@ -175,7 +177,7 @@ function Photosalbum(props) {
 export default Photosalbum;
 export async function getStaticProps() {
   const res = await fetch(
-    `${API_URL}/api/research-reports?populate[0]=Report&populate[1]=Report.cover&populate[2]=Report.file&sort=rank:asc&pagination[page]=1&pagination[pageSize]=10`
+    `${API_URL}/api/research-reports?populate=*&populate[0]=Report&populate[1]=Report.cover&populate[2]=Report.file&sort=rank:asc&pagination[page]=1&pagination[pageSize]=10`
   );
 
   const photos = await res.json();
