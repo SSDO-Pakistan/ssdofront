@@ -4,6 +4,8 @@ import Image from "next/image";
 import { API_URL } from "@/config/index";
 import Layout from "@/components/Layout";
 const FinancialReports = ({ data }) => {
+  console.log("tax returns",data)
+ // return false;
   return (
     <Layout title="Financial Reports">
       <div className="wrapper ">
@@ -19,10 +21,10 @@ const FinancialReports = ({ data }) => {
                 </div>
                 <div className="d-flex justify-space-between flex-row flex-wrap gap-3 h-auto mt-5 mb-3">
                   {data &&
-                    data.Publications?.data.map((publication) => {
+                    data.Publications.data?.map((publication) => {
                       return (
                         <Link
-                          href={`${publication.attributes.File?.data?.attributes.url} `}
+                          href={`${publication.attributes.Report.file?.data?.attributes.url} `}
                           target="_blank"
                           key={publication.attributes.id}
                         >
@@ -32,7 +34,7 @@ const FinancialReports = ({ data }) => {
                                 width={300}
                                 height={350}
                                 src={
-                                  publication.attributes.cover.data.attributes
+                                  publication.attributes.Report.cover.data.attributes
                                     .url
                                 }
                                 alt="Report"
@@ -63,7 +65,7 @@ const FinancialReports = ({ data }) => {
 export async function getServerSideProps() {
   //fetching pubilcations
   const publicationsres = await fetch(
-    `${API_URL}/api/publications?filters[type][$eq]=Tax Returns&populate=*&sort=createdAt:desc`
+    `${API_URL}/api/tax-returns?populate=*&populate[0]=Report&populate[1]=Report.cover&populate[2]=Report.file&sort=rank:asc`
   );
   const Publications = await publicationsres.json();
   //fetching Publications
