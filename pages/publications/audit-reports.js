@@ -132,7 +132,7 @@ function Photosalbum(props) {
                   containerWidth={900}
                   spacing={20}
                   padding={20}
-                  targetRowHeight={200}
+                  targetRowHeight={230}
                   renderContainer={renderContainer}
                   renderPhoto={renderPhoto}
                   onClick={({ photo: { File }, index }) => setIndex(index)}
