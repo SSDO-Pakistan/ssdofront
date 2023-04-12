@@ -140,7 +140,7 @@ function Photosalbum(props) {
                                     containerWidth={900}
                                     spacing={20}
                                     padding={20}
-                                    targetRowHeight={200}
+                                    targetRowHeight={280}
                                     renderContainer={renderContainer}
                                     renderPhoto={renderPhoto}
                                     onClick={({ photo: { url }, index }) => setIndex(index)}
@@ -190,7 +190,7 @@ export async function getStaticProps() {
             height: clip.attributes.image.data.attributes.height,
             images: [
                 {
-                    src: clip.attributes.image.data.attributes.formats.small
+                    src: clip.attributes.image.data.attributes.formats.thumbnail
                         .url,
                 },
                 {
