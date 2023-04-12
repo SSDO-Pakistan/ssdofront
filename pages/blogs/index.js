@@ -71,7 +71,7 @@ export default Blogs;
 // revalidation is enabled and a new request comes in
 export async function getStaticProps() {
   const res = await fetch(
-    `${API_URL}/api/posts?filters[type][$eq]=Blog&filters[slider][$eq]=false`
+    `${API_URL}/api/posts?filters[type][$eq]=Blog&filters[slider][$eq]=false&sort=createdAt:asc`
   );
   const posts = await res.json();
   const data = posts.data;
