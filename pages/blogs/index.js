@@ -6,14 +6,18 @@ import ReactMarkdown from "react-markdown";
 import moment from "moment";
 import Image from "next/image";
 import Layout from "@/components/Layout";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 const Blog = () => {
   const [items, setItems] = useState([]);
   const [pageCount, setpageCount] = useState(0);
+  const [loading, setLoading] = useState(false);
   let limit = 10;
   useEffect(() => {
+    setLoading(true);
     const getHighlights = async () => {
       const res = await fetch(
-        `${API_URL}/api/posts?filters[type][$eq]=Blog&filters[slider][$eq]=false&sort=createdAt:desc&pagination[page]=1&pagination[pageSize]=${limit}`
+        `${API_URL}/api/posts?filters[type][$eq]=Blog&filters[slider][$eq]=false&populate=*&sort=createdAt:desc&pagination[page]=1&pagination[pageSize]=${limit}`
         // `https://jsonplaceholder.typicode.com/comments?_page=1&_limit=${limit}`
       );
       const data = await res.json();
@@ -21,6 +25,7 @@ const Blog = () => {
       const total = data.meta.pagination.total;
       setpageCount(Math.ceil(total / limit));
       // console.log(Math.ceil(total/12));
+      setLoading(false);
       setItems(data);
     };
 
@@ -29,7 +34,7 @@ const Blog = () => {
   // console.log("items", items);
   const fetchPublications = async (currentPage) => {
     const res = await fetch(
-      `${API_URL}/api/posts?filters[type][$eq]=Blog&filters[slider][$eq]=false&sort=createdAt:desc&pagination[page]=${currentPage}&pagination[pageSize]=${limit}`
+      `${API_URL}/api/posts?filters[type][$eq]=Blog&filters[slider][$eq]=false&populate=*&sort=createdAt:desc&pagination[page]=${currentPage}&pagination[pageSize]=${limit}`
       // `https://jsonplaceholder.typicode.com/comments?_page=${currentPage}&_limit=${limit}`
     );
     const data = await res.json();
@@ -58,7 +63,14 @@ const Blog = () => {
                   </h4>
                 </div>
                 <div className="border-bottom-last-0 first-pt-0">
-                  {items &&
+                  {loading ? (
+                    <div className="loader-container">
+                      <div className="spinner">
+                        <Skeleton count={10} />
+                      </div>
+                    </div>
+                  ) : (
+                    items &&
                     items.data?.map((highlight) => {
                       return (
                         <article
@@ -68,28 +80,31 @@ const Blog = () => {
                           <div className="row">
                             <div className="col-sm-3">
                               <div>
-                              {highlight.attributes.image > 0 &&
-                                <Image
-                                  width={
-                                    highlight.attributes.image.data[0]
-                                      .attributes?.formats.thumbnail.width
-                                  }
-                                  height={
-                                    highlight.attributes.image.data[0]
-                                      .attributes?.formats.thumbnail.height
-                                  }
-                                  src={
-                                    highlight.attributes.image.data[0]
-                                      .attributes.url
-                                  }
-                                  alt="Image description"
-                                />
-                               }
+                                {highlight.attributes.image.data?.length >
+                                  0 && (
+                                  <Image
+                                    width={
+                                      highlight.attributes.image.data[0]
+                                        .attributes?.formats.thumbnail.width
+                                    }
+                                    height={
+                                      highlight.attributes.image.data[0]
+                                        .attributes?.formats.thumbnail.height
+                                    }
+                                    src={
+                                      highlight.attributes.image.data[0]
+                                        .attributes.url
+                                    }
+                                    alt="Image description"
+                                  />
+                                )}
                               </div>
                             </div>
                             <div className="col-sm-9 mt-3">
                               <div className="card-body pt-3 pt-sm-0 pt-md-3 pt-lg-0">
-                              <Link href={`blogs/${highlight.attributes.slug}`}>
+                                <Link
+                                  href={`blogs/${highlight.attributes.slug}`}
+                                >
                                   <h3 className="card-title h2 h3-sm h2-md">
                                     {highlight.attributes.title}
                                   </h3>
@@ -107,21 +122,22 @@ const Blog = () => {
                                   </time>
                                 </div>
                                 <p
-                            className="card-text mt-3"
-                            style={{ textAlign: "justify" }}
-                          >
-                            <ReactMarkdown>
-                              {highlight.attributes.description
-                                .substring(0, 300)
-                                .concat("...")}
-                            </ReactMarkdown>
-                          </p>
+                                  className="card-text mt-3"
+                                  style={{ textAlign: "justify" }}
+                                >
+                                  <ReactMarkdown>
+                                    {highlight.attributes.description
+                                      .substring(0, 300)
+                                      .concat("...")}
+                                  </ReactMarkdown>
+                                </p>
                               </div>
                             </div>
                           </div>
                         </article>
                       );
-                    })}
+                    })
+                  )}
                 </div>
 
                 <ReactPaginate
@@ -154,7 +170,6 @@ const Blog = () => {
 
 export default Blog;
 
-
 // This function gets called at build time on server-side.
 // It may be called again, on a serverless function, if
 // revalidation is enabled and a new request comes in
@@ -165,7 +180,7 @@ export default Blog;
 //     `${API_URL}/api/posts?filters[type][$eq]=Blog&filters[slider][$eq]=false&sort=createdAt:asc`
 //   );
 //   const posts = await thematicareares.json();
- 
+
 //   //fetching Publications
 //   //  console.log("ThematicAreas", ThematicAreas);
 //   return {
