@@ -33,7 +33,7 @@ const TeamModal = (props) => {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          {props?.data?.attributes?.name}
+          {props?.data?.attributes?.title}
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
