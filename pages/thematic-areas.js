@@ -13,8 +13,8 @@ const TheamticArea = ({ data }) => {
             <span className="bg-primary text-white">Thematic Areas</span>
           </h4>
         </div>
-        <div >
-          <p style={{textAlign:"justify"}}><ReactMarkdown>{data.ThematicAreas.data.attributes.description}</ReactMarkdown></p>
+        <div className="mt-2">
+          <p style={{textAlign:"justify",marginTop:"20px"}}><ReactMarkdown>{data.ThematicAreas.data.attributes.description}</ReactMarkdown></p>
         </div>
         <div class="row mt-5 mb-5 g-2" style={{ justifyContent: "left" }}>
           {data.ThematicAreas.data.attributes.categories.data?.map((cat) => {
