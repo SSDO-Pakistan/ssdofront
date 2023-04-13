@@ -64,10 +64,18 @@ const Blog = () => {
                 </div>
                 <div className="border-bottom-last-0 first-pt-0">
                   {loading ? (
-                    <div className="loader-container">
-                      <div className="spinner">
-                        <Skeleton count={10} />
-                      </div>
+                    <div className="loader-container border-bottom">
+                      <article className="card card-full hover-a py-5">
+                        <div className="row">
+                          <div className="col-sm-3">
+                            <Skeleton count={10} height={200} />
+                          </div>
+                          <div className="col-sm-9 ">
+                            <Skeleton count={10} height={200} />
+                          </div>
+                          <hr></hr>
+                        </div>
+                      </article>
                     </div>
                   ) : (
                     items &&
@@ -169,26 +177,3 @@ const Blog = () => {
 };
 
 export default Blog;
-
-// This function gets called at build time on server-side.
-// It may be called again, on a serverless function, if
-// revalidation is enabled and a new request comes in
-
-// export async function getServerSideProps() {
-//   //fetching thematic-area
-//   const thematicareares = await fetch(
-//     `${API_URL}/api/posts?filters[type][$eq]=Blog&filters[slider][$eq]=false&sort=createdAt:asc`
-//   );
-//   const posts = await thematicareares.json();
-
-//   //fetching Publications
-//   //  console.log("ThematicAreas", ThematicAreas);
-//   return {
-//     props: {
-//       data: {
-//         posts,
-//       },
-//     },
-//   };
-// }
-// export default Blogs;

@@ -5,11 +5,15 @@ import ReactPaginate from "react-paginate";
 import moment from "moment";
 import Image from "next/image";
 import Layout from "@/components/Layout";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 const HighLights = () => {
   const [items, setItems] = useState([]);
   const [pageCount, setpageCount] = useState(0);
+  const [loading, setLoading] = useState(false);
   let limit = 10;
   useEffect(() => {
+    setLoading(true);
     const getHighlights = async () => {
       const res = await fetch(
         `${API_URL}/api/posts?filters[type][$eq]=Highlights&filters[slider][$eq]=false&populate=*&sort=createdAt:desc&pagination[page]=1&pagination[pageSize]=${limit}`
@@ -20,6 +24,7 @@ const HighLights = () => {
       const total = data.meta.pagination.total;
       setpageCount(Math.ceil(total / limit));
       // console.log(Math.ceil(total/12));
+      setLoading(false);
       setItems(data);
     };
 
@@ -57,7 +62,22 @@ const HighLights = () => {
                   </h4>
                 </div>
                 <div className="border-bottom-last-0 first-pt-0">
-                  {items &&
+                  {loading ? (
+                    <div className="loader-container border-bottom">
+                      <article className="card card-full hover-a py-5">
+                        <div className="row">
+                          <div className="col-sm-3">
+                            <Skeleton count={10} height={200} />
+                          </div>
+                          <div className="col-sm-9 ">
+                            <Skeleton count={10} height={200} />
+                          </div>
+                          <hr></hr>
+                        </div>
+                      </article>
+                    </div>
+                  ) : (
+                    items &&
                     items.data?.map((highlight) => {
                       return (
                         <article
@@ -113,9 +133,9 @@ const HighLights = () => {
                           </div>
                         </article>
                       );
-                    })}
+                    })
+                  )}
                 </div>
-
                 <ReactPaginate
                   previousLabel={"previous"}
                   nextLabel={"next"}
