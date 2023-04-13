@@ -2,6 +2,7 @@ import React from "react";
 import { API_URL } from "@/config/index";
 import Link from "next/link";
 import Layout from "@/components/Layout";
+import ReactMarkdown from "react-markdown";
 const TheamticArea = ({ data }) => {
   // console.log("data", data.ThematicAreas);
   return (
@@ -12,8 +13,8 @@ const TheamticArea = ({ data }) => {
             <span className="bg-primary text-white">Thematic Areas</span>
           </h4>
         </div>
-        <div>
-          <p>{data.ThematicAreas.data.attributes.description}</p>
+        <div >
+          <p style={{textAlign:"justify"}}><ReactMarkdown>{data.ThematicAreas.data.attributes.description}</ReactMarkdown></p>
         </div>
         <div class="row mt-5 mb-5 g-2" style={{ justifyContent: "left" }}>
           {data.ThematicAreas.data.attributes.categories.data?.map((cat) => {
