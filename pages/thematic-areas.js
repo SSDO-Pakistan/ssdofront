@@ -45,8 +45,9 @@ const TheamticArea = ({ data }) => {
                             marginLeft: "7rem",
                           }}
                         />
+                           <p style={{textAlign:"center",color:"white"}}>{cat.attributes.title}{" "}</p>
                       </div>
-                      {cat.attributes.title}{" "}
+                   
                     </Link>
                   </div>
                 </div>
