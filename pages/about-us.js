@@ -2,6 +2,8 @@ import React from "react";
 import { API_URL } from "@/config/index";
 import Image from "next/image";
 import Layout from "@/components/Layout";
+
+import ReactMarkdown from "react-markdown";
 const AboutUs = ({ data }) => {
   // console.log("about", data);
 
@@ -13,11 +15,12 @@ const AboutUs = ({ data }) => {
             <span className="bg-primary text-white">About Us</span>
           </h4>
         </div>
-        <div className=" w-100 d-flex flex-column ">
-          <div className=" w-100">
-            <h5 className="text-start " style={{ textAlign: "justify" }}>
-              {data.About.data.attributes.description}
-            </h5>
+        <div className=" w-100 d-flex flex-column">
+          <div className=" w-100 mb-3">
+            <p  style={{ textAlign: "justify" ,marginTop:"20px"}}>
+
+              <ReactMarkdown>{data.About.data.attributes.description}</ReactMarkdown>
+            </p>
             {/* <img
             src="/uploads/plane.svg"
             style={{ width: "300px", height: "230px" }}
@@ -42,7 +45,7 @@ const AboutUs = ({ data }) => {
           </div>
         </div>
         <div
-          className="d-flex flex-column rounded shadow-lg"
+          className="d-flex flex-column rounded shadow"
           style={{ background: "#dfdef69c", padding: "15px" }}
         >
           <h1 className="bg-primary p-2 w-25 text-white rounded text-center">
