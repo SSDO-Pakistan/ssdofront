@@ -22,7 +22,7 @@ function Team({ data }) {
                   </h4>
                 </div>
                 <div
-                  className="row text-center mt-5 myteam"
+                  className="row text-center mt-3 myteam shadow-sm"
                   style={{ padding: "18px", borderRadius: "10px" }}
                 >
                   {data.Profiles.data.map((profile) => {
