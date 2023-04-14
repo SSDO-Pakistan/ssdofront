@@ -59,12 +59,10 @@ function Team({ data }) {
                             </ul>
                           </div>
                           <div className="team-content">
-                            <h3 className="title">
-                              {" "}
+                            <h3 className="title">   
                               {profile.attributes.title}
                             </h3>
-                            <span className="post small">
-                              {" "}
+                            <span className="small">
                               {profile.attributes.Profile.position}
                             </span>
                           </div>
@@ -90,7 +88,7 @@ export default Team;
 export async function getServerSideProps() {
   //fetching profiles
   const profileres = await fetch(
-    `${API_URL}/api/teams?populate=*&populate[0]=Profile&populate[1]=Profile.image&populate[2]=Profile.sociallinks.iconClass`
+    `${API_URL}/api/teams?populate=*&populate[0]=Profile&populate[1]=Profile.image&populate[2]=Profile.sociallinks.iconClass&sort=rank:asc`
   );
   const Profiles = await profileres.json();
   //fetching profiles
