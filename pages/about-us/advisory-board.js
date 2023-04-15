@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { API_URL } from "@/config/index";
 import TeamModel from "../../components/TeamModal";
 import Image from "next/image";
-function Team({ data }) {
+function AdvisoryBoard({ data }) {
   console.log(data);
   const [showProfile, setshowProfile] = useState({});
   console.log(showProfile);
@@ -93,11 +93,11 @@ function Team({ data }) {
     </Layout>
   );
 }
-export default Team;
+export default AdvisoryBoard;
 export async function getServerSideProps() {
   //fetching profiles
   const profileres = await fetch(
-    `${API_URL}/api/teams?populate=*&populate[0]=Profile&populate[1]=Profile.image&populate[2]=Profile.sociallinks.iconClass&sort=rank:asc`
+    `${API_URL}/api/advisory-boards?populate=*&populate[0]=Profile&populate[1]=Profile.image&populate[2]=Profile.sociallinks.iconClass&sort=rank:asc`
   );
   const Profiles = await profileres.json();
   //fetching profiles
