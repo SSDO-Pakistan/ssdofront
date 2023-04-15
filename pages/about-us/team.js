@@ -26,7 +26,7 @@ function Team({ data }) {
                   style={{ padding: "18px", borderRadius: "10px" }}
                 >
                   {data.Profiles.data.map((profile) => {
-                  //  console.log("Hello",profile.attributes.Profile.sociallinks[0]?.href)
+                    //  console.log("Hello",profile.attributes.Profile.sociallinks[0]?.href)
                     return (
                       <div
                         style={{ cursor: "pointer" }}
@@ -53,17 +53,25 @@ function Team({ data }) {
                             />
                             <ul className="social">
                               <li>
-                                <a href={ profile.attributes.Profile.sociallinks[0]?.href}>
+                                <a
+                                  href={
+                                    profile.attributes.Profile.sociallinks[0]
+                                      ?.href
+                                  }
+                                >
                                   <i className="bi bi-linkedin"></i>
                                 </a>
                               </li>
                             </ul>
                           </div>
                           <div className="team-content">
-                            <h3 className="title">   
+                            <h3 className="title">
                               {profile.attributes.title}
                             </h3>
-                            <span className="small">
+                            <span
+                              className="post"
+                              style={{ fontSize: "12px", color: "#626262" }}
+                            >
                               {profile.attributes.Profile.position}
                             </span>
                           </div>
