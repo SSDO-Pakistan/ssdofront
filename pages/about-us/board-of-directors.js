@@ -18,7 +18,9 @@ function Bod({ data }) {
               <div className="col-sm-12">
                 <div className="block-title-6 text-center">
                   <h4 className="h5 border-primary">
-                    <span className="bg-primary text-white">Meet Our Team</span>
+                    <span className="bg-primary text-white">
+                      Board of Directors
+                    </span>
                   </h4>
                 </div>
                 <div
