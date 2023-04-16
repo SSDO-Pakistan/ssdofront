@@ -1,8 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import { TwitterTimelineEmbed } from 'react-twitter-embed';
+import { TwitterTimelineEmbed } from "react-twitter-embed";
 const SocialNetworksSidebar = (props) => {
-
   return (
     <aside className="col-md-4 end-sidebar-lg">
       <div className="sticky">
@@ -68,7 +67,6 @@ const SocialNetworksSidebar = (props) => {
                 Linkedin
               </Link>
             </li>
-
           </ul>
           <div className="gap-15"></div>
         </aside>
@@ -79,25 +77,6 @@ const SocialNetworksSidebar = (props) => {
               <span>Media</span>
             </h4>
           </div>
-
-          {/* <iframe
-            width="355"
-            height="200"
-            src="https://www.youtube.com/embed/yT9dUBVkHeQ"
-          ></iframe>
-          <br />
-          <iframe
-            width="355"
-            height="200"
-            src="https://www.youtube.com/embed/GCuU6kadgaU"
-          ></iframe>
-          <br />
-          <iframe
-            width="355"
-            height="200"
-            src="https://www.youtube.com/embed/8zLeIltoVaA"
-          ></iframe> */}
-          {/* <div className="gap-0"></div> */}
         </aside>
 
         {/* timeline */}
@@ -110,8 +89,6 @@ const SocialNetworksSidebar = (props) => {
             screenName="SSDOPakistan"
             options={{ height: 830 }}
           />
-
-
         </aside>
         {/* <aside className="widget">
           <div className="hover-a text-center">

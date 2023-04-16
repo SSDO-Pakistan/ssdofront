@@ -9,12 +9,11 @@ import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
-
+import Layout from "@/components/Layout";
 //=================
 import { PhotoAlbum, renderContainer, RenderPhoto } from "react-photo-album";
 import React, { useState, useEffect } from "react";
 const Highlightsdetails = ({ data }) => {
-  // console.log(data)
   const [index, setIndex] = useState(-1);
   //====================================
   //getting array for the gallery
@@ -71,61 +70,66 @@ const Highlightsdetails = ({ data }) => {
   );
   //=======================
   return (
-    <div className="wrapper ">
-      {/* main content */}
-      <main id="content">
-        <div className="container">
-          <div className="d-flex flex-row mt-3 p-3  mb-3">
-            <div className=" h-auto col-md-12">
-              <div className="block-title-6 text-center">
-                <h4 className="h5 border-primary ">
-                  <span className="bg-primary text-white">
-                    HighLights details
-                  </span>
-                </h4>
-              </div>
-              <div className="">
-                {data && (
-                  <div className="card border-1  p-3 mb-3 shadow-sm">
-                    <h3 className="card-title">
-                      {data.data[0].attributes.title}
-                    </h3>
-                    <div className="card-body">
-                      <p>
-                        <ReactMarkdown>
-                          {data.data[0].attributes.description}
-                        </ReactMarkdown>
-                      </p>
+    <Layout
+      title="Highlights Details"
+      image={data.data[0].attributes.image.data[0]?.attributes.url}
+    >
+      <div className="wrapper ">
+        {/* main content */}
+        <main id="content">
+          <div className="container">
+            <div className="d-flex flex-row mt-3 p-3  mb-3">
+              <div className=" h-auto col-md-12">
+                <div className="block-title-6 text-center">
+                  <h4 className="h5 border-primary ">
+                    <span className="bg-primary text-white">
+                      HighLights details
+                    </span>
+                  </h4>
+                </div>
+                <div className="">
+                  {data && (
+                    <div className="card border-1  p-3 mb-3 shadow-sm">
+                      <h3 className="card-title">
+                        {data.data[0].attributes.title}
+                      </h3>
+                      <div className="card-body">
+                        <p>
+                          <ReactMarkdown>
+                            {data.data[0].attributes.description}
+                          </ReactMarkdown>
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                )}
+                  )}
+                </div>
+
+                <PhotoAlbum
+                  layout="rows"
+                  photos={gallerydata}
+                  containerWidth={900}
+                  spacing={20}
+                  padding={20}
+                  targetRowHeight={170}
+                  renderContainer={renderContainer}
+                  renderPhoto={renderPhoto}
+                  onClick={({ photo: { File }, index }) => setIndex(index)}
+                />
+
+                <Lightbox
+                  slides={gallerydata}
+                  open={index >= 0}
+                  index={index}
+                  close={() => setIndex(-1)}
+                  // enable optional lightbox plugins
+                  plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
+                />
               </div>
-
-              <PhotoAlbum
-                layout="rows"
-                photos={gallerydata}
-                containerWidth={900}
-                spacing={20}
-                padding={20}
-                targetRowHeight={170}
-                renderContainer={renderContainer}
-                renderPhoto={renderPhoto}
-                onClick={({ photo: { File }, index }) => setIndex(index)}
-              />
-
-              <Lightbox
-                slides={gallerydata}
-                open={index >= 0}
-                index={index}
-                close={() => setIndex(-1)}
-                // enable optional lightbox plugins
-                plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
-              />
             </div>
           </div>
-        </div>
-      </main>
-    </div>
+        </main>
+      </div>
+    </Layout>
   );
 };
 
