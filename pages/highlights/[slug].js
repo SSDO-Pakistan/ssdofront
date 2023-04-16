@@ -73,6 +73,7 @@ const Highlightsdetails = ({ data }) => {
     <Layout
       title="Highlights Details"
       image={data.data[0].attributes.image.data[0]?.attributes.url}
+      description={data.data[0].attributes.description}
     >
       <div className="wrapper ">
         {/* main content */}
