@@ -15,22 +15,22 @@ const Layout = ({ children, title, description, keywords, image }) => {
   const router = useRouter();
   const { asPath, pathname } = useRouter();
   //console.log(`https://ssdo.org.pk${asPath}`);
-  const meta = {
-    title: { title },
-    description: { description },
-    imageUrl: { image },
-    type: "website",
-  };
+  // const meta = {
+  //   title: { title },
+  //   description: { description },
+  //   imageUrl: { image },
+  //   type: "website",
+  // };
   return (
     <div>
       <Head>
-        <meta name="description" content={meta.description} />
+        <meta name="description" content={description} />
         <meta name="keywords" content={keywords} />
         <meta property="og:url" content={`https://ssdo.org.pk${asPath}`} />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="SSDO Pakistan" />
-        <meta property="og:description" content={meta.description} />
-        <meta property="og:image" content={meta.imageUrl} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={image} />
       </Head>
       <div class="sticky-container">
         <ul class="sticky">
