@@ -25,6 +25,9 @@ const Layout = ({ children, title, description, keywords, image }) => {
         <meta property="og:title" content="SSDO Pakistan" />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={image} />
+        <meta property="og:image:width" content="500" />
+
+        <meta property="og:image:height" content="168" />
       </Head>
       <div class="sticky-container">
         <ul class="sticky">
