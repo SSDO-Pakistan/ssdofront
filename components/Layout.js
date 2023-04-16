@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import createOpenGraphImage from "./OpenGraphImages";
+
 import {
   FacebookShareButton,
   FacebookIcon,
