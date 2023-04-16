@@ -2,13 +2,17 @@ import { API_URL } from "@/config/index";
 import ReactMarkdown from "react-markdown";
 import Layout from "@/components/Layout";
 const BlogDetails = ({ data }) => {
-  console.log(data);
-  return false;
+  //console.log(data);
+  //return false;
   //consl
   return (
     <Layout
       title="Highlights Details"
-      image={data.data[0].attributes.image.data[0]?.attributes.url}
+      image={
+        data.data[0].attributes.image.length > 0
+          ? data.data[0].attributes.image.data[0]?.attributes.url
+          : ""
+      }
       description={data.data[0].attributes.description}
     >
       <div className="wrapper ">
