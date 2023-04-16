@@ -2,8 +2,8 @@ import { API_URL } from "@/config/index";
 import ReactMarkdown from "react-markdown";
 import Layout from "@/components/Layout";
 const BlogDetails = ({ data }) => {
-  //console.log(data)
-  //return false;
+  console.log(data);
+  return false;
   //consl
   return (
     <Layout
@@ -51,7 +51,7 @@ export async function getServerSideProps({ params }) {
 
   //fetching profiles
   const res = await fetch(
-    `${API_URL}/api/posts?filters[type][$eq]=Blog&filters[slider][$eq]=false&filters[slug][$eq]=${slug}`
+    `${API_URL}/api/posts?populate=*&filters[type][$eq]=Blog&filters[slider][$eq]=false&filters[slug][$eq]=${slug}`
   );
   const posts = await res.json();
   const data = posts.data;
