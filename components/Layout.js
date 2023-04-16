@@ -29,8 +29,6 @@ const Layout = ({ children, title, description, keywords, image }) => {
         <meta property="og:image:width" content="500" />
         <meta property="og:image:height" content="168" />
 
-        {/* twitter */}
-
         <meta name="twitter:card" content={image} />
         <meta name="twitter:site" content="@ssdo" />
         <meta name="twitter:title" content={title} />
