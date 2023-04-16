@@ -1,5 +1,6 @@
 import { API_URL } from "@/config/index";
 import ReactMarkdown from "react-markdown";
+import Layout from "@/components/Layout";
 const BlogDetails = ({ data }) => {
   //console.log(data)
   //return false;
