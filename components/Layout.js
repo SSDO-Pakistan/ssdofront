@@ -31,7 +31,7 @@ const Layout = ({ children, title, description, keywords, image }) => {
 
         {/* twitter */}
 
-        <meta name="twitter:card" content={ImageOptimizerCache} />
+        <meta name="twitter:card" content={image} />
         <meta name="twitter:site" content="@ssdo" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
