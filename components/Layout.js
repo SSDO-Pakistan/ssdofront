@@ -11,16 +11,10 @@ import {
 } from "next-share";
 import { useRouter } from "next/router";
 const Layout = ({ children, title, description, keywords, image }) => {
-  //console.log(image);
+  console.log(description);
   const router = useRouter();
   const { asPath, pathname } = useRouter();
-  //console.log(`https://ssdo.org.pk${asPath}`);
-  // const meta = {
-  //   title: { title },
-  //   description: { description },
-  //   imageUrl: { image },
-  //   type: "website",
-  // };
+
   return (
     <div>
       <Head>
