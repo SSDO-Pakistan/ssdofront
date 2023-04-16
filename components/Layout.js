@@ -34,7 +34,7 @@ const Layout = ({ children, title, description, keywords, image }) => {
         <meta name="twitter:title" content={title} />
         <meta
           name="twitter:description"
-          content={description.substring(0, 100).concate("...")}
+          content={description.substring(0, 300).concat("...")}
         />
         <meta name="twitter:image" content={image} />
         <meta name="twitter:creator" content="@ssdo" />
