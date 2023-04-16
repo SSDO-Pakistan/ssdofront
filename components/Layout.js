@@ -10,6 +10,7 @@ import {
   LinkedinIcon,
 } from "next-share";
 import { useRouter } from "next/router";
+import { ImageOptimizerCache } from "next/dist/server/image-optimizer";
 const Layout = ({ children, title, description, keywords, image }) => {
   console.log(description);
   const router = useRouter();
@@ -26,8 +27,15 @@ const Layout = ({ children, title, description, keywords, image }) => {
         <meta property="og:description" content={description} />
         <meta property="og:image" content={image} />
         <meta property="og:image:width" content="500" />
-
         <meta property="og:image:height" content="168" />
+
+        {/* twitter */}
+
+        <meta name="twitter:card" content={ImageOptimizerCache} />
+        <meta name="twitter:site" content="@ssdo" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={image} />
       </Head>
       <div class="sticky-container">
         <ul class="sticky">
