@@ -29,14 +29,12 @@ const Layout = ({ children, title, description, keywords, image }) => {
         <meta property="og:image:width" content="500" />
         <meta property="og:image:height" content="168" />
 
-        <meta name="twitter:card" content={image} />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@ssdo" />
         <meta name="twitter:title" content={title} />
-        <meta
-          name="twitter:description"
-          content={description.substring(0, 200).concat("...")}
-        />
+        <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={image} />
+        <meta name="twitter:creator" content="@ssdo" />
       </Head>
       <div class="sticky-container">
         <ul class="sticky">
