@@ -32,7 +32,10 @@ const Layout = ({ children, title, description, keywords, image }) => {
         <meta name="twitter:card" content={image} />
         <meta name="twitter:site" content="@ssdo" />
         <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={description} />
+        <meta
+          name="twitter:description"
+          content={description.substring(0, 200).concat("...")}
+        />
         <meta name="twitter:image" content={image} />
       </Head>
       <div class="sticky-container">
