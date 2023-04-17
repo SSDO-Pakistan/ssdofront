@@ -19,6 +19,7 @@ const Layout = ({ children, title, description, keywords, image }) => {
   return (
     <div>
       <Head>
+        <title>{title}</title>
         <meta name="description" content={description} />
         <meta name="keywords" content={keywords} />
         <meta property="og:url" content={`https://ssdo.org.pk${asPath}`} />
