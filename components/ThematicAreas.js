@@ -28,6 +28,7 @@ const ThematicAreas = ({ ThematicAreas }) => {
                     <Link
                       className="text-white"
                       href={`thematic-areas/${cat.attributes.slug}`}
+                      target="_blank"
                       style={{ textAlign: "justify" }}
                     >
                       <div style={{ marginBottom: "20px", paddingTop: "30px" }}>
