@@ -16,7 +16,7 @@ const ThematicAreas = ({ ThematicAreas }) => {
             return (
               <div class="col mb-3 " key={cat.attributes.id}>
                 <div
-                  className="card  d-flex  rgba-black-strong py-5 px-2 shadow"
+                  className="card  d-flex  rgba-black-strong py-5 px-2 shadow-sm"
                   style={{
                     width: "22rem",
                     height: "12.3rem",
