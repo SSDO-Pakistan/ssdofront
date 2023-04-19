@@ -5,6 +5,12 @@ const ThematicAreas = ({ ThematicAreas }) => {
   //return false;
   return (
     <>
+    <div className="block-area border bg-light-black" style={{backgroundColor:"#f8f9fa",padding : "20px 10px 1px 20px"}}>
+        <div className="block-title-6">
+          <h4 className="h5 border-primary">
+            <span className="bg-primary text-white">Thematic Areas</span>
+          </h4>
+        </div>
       <div className="">
         {ThematicAreas.data.attributes.categories.data?.map(function (
           cat,
@@ -69,6 +75,7 @@ const ThematicAreas = ({ ThematicAreas }) => {
             view more
           </p>
         </Link>
+      </div>
       </div>
     </>
   );

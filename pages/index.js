@@ -66,10 +66,10 @@ export default function Home({ data }) {
               {/* start left column */}
 
               {/* start right column */}
-              <aside className="col-md-4 end-sidebar-lg mt-4">
+              <aside className="col-md-4 end-sidebar-lg">
                 <div className="sticky">
                   <aside className="widget">
-                    <div className="small-post" style={{backgroundColor:"rgb(240, 242, 245)",padding:"20px 20px 1px 21px",borderRadius:"10px"}}>
+                    <div className="small-post" >
                       {data && data.ThematicAreas && (
                         <ThematicAreas ThematicAreas={data.ThematicAreas} />
                       )}

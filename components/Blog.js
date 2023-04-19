@@ -5,13 +5,13 @@ import ReactMarkdown from "react-markdown";
 const Blog = ({ Blogs }) => {
   return (
     <div className="col-md-8">
-      <div className="block-area">
+      <div className="block-area border bg-light-black" style={{backgroundColor:"#f8f9fa",padding : "20px 20px 10px 20px"}}>
         <div className="block-title-6">
           <h4 className="h5 border-primary">
             <span className="bg-primary text-white">Blogs</span>
           </h4>
         </div>
-        <div className="border-bottom-last-0 first-pt-0">
+        <div className="border-bottom-last-0 first-pt-0 " >
           {Blogs.data.map((blog) => {
             return (
               <article
@@ -29,7 +29,7 @@ const Blog = ({ Blogs }) => {
                       <div className="card-text mb-2 text-muted small">
                         <span className="d-none d-sm-inline me-1">
                           <a className="fw-bold" href="#">
-                            admin
+                            Admin
                           </a>
                         </span>
                         <time dateTime="2019-10-21">
