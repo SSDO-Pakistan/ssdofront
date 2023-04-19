@@ -87,16 +87,18 @@ const AlbumsSlider = ({ Galleries }) => {
             );
           })}
         </Carousel>
-      </div>
-      <p
+        <p
         style={{
           textAlign: "right",
           color: "blue",
           cursor: "pointer",
+          paddingTop:"20px"
         }}
       >
         <Link href="/albums">view more</Link>
       </p>
+      </div>
+   
     </div>
   );
 };
