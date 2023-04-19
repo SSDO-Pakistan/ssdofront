@@ -9,7 +9,7 @@ import { API_URL } from "@/config/index";
 function HighlightsSlider({ PressReleases, SliderHighlights }) {
   return (
     <div className="row">
-      <div className="col-md-7 p-2">
+      <div className="col-md-7 " style={{paddingBottom:"5px"}}>
         <Carousel >
           {SliderHighlights.data.map((sliderhighlight) => {
           //  console.log("Highlights slider",sliderhighlight);
