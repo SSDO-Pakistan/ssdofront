@@ -69,7 +69,7 @@ export default function Home({ data }) {
               <aside className="col-md-4 end-sidebar-lg mt-4">
                 <div className="sticky">
                   <aside className="widget">
-                    <div className="small-post">
+                    <div className="small-post" style={{backgroundColor:"rgb(240, 242, 245)",padding:"20px 20px 1px 21px",borderRadius:"10px"}}>
                       {data && data.ThematicAreas && (
                         <ThematicAreas ThematicAreas={data.ThematicAreas} />
                       )}

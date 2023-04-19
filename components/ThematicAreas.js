@@ -18,7 +18,7 @@ const ThematicAreas = ({ ThematicAreas }) => {
                 <div
                   className="card  d-flex  rgba-black-strong py-5 px-2 shadow-sm"
                   style={{
-                    width: "22rem",
+                    width: "19rem",
                     height: "12.3rem",
                     backgroundColor: `${bgColor}`,
                     justifyContent: "center",
@@ -38,7 +38,7 @@ const ThematicAreas = ({ ThematicAreas }) => {
                           style={{
                             color: "white",
                             fontSize: "4rem",
-                            marginLeft: "7rem",
+                            marginLeft: "6rem",
                           }}
                         />
                         <p
