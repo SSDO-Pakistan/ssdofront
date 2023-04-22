@@ -6,7 +6,7 @@ import ReactMarkdown from "react-markdown";
 import Layout from "@/components/Layout";
 
 const ThematicArea = ({ data }) => {
-  console.log(data.thematicArea);
+  //console.log(data.thematicArea);
   //return false;
 
   return (
@@ -26,15 +26,14 @@ const ThematicArea = ({ data }) => {
                 </div>
 
                 <div className="card unset-img">
-                  {data.thematicArea.data[0]?.attributes.image?.data?.attributes
-                    ?.url ? (
+                  {data.thematicArea.data[0]?.attributes.image?.data?.length >
+                  0 ? (
                     <Image
                       fill={true}
                       src={
-                        data.thematicArea.data[0]?.attributes.image?.data
+                        data.thematicArea.data[0]?.attributes.image?.data[0]
                           .attributes?.url
                       }
-                      layout="fill"
                       className="custom-img"
                       alt="Image description"
                     />
