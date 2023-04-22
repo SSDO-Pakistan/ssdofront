@@ -26,16 +26,21 @@ const ThematicArea = ({ data }) => {
                 </div>
 
                 <div className="card unset-img">
-                  <Image
-                    fill={true}
-                    src={
-                      data.thematicArea.data[0]?.attributes.image?.data[0]
-                        .attributes?.url
-                    }
-                    layout="fill"
-                    className="custom-img"
-                    alt="Image description"
-                  />
+                  {data.thematicArea.data[0]?.attributes.image?.data?.attributes
+                    ?.url ? (
+                    <Image
+                      fill={true}
+                      src={
+                        data.thematicArea.data[0]?.attributes.image?.data
+                          .attributes?.url
+                      }
+                      layout="fill"
+                      className="custom-img"
+                      alt="Image description"
+                    />
+                  ) : (
+                    ""
+                  )}
                   <div className="card border-0  p-3">
                     <h3 className="card-title">
                       {data.thematicArea.data[0].attributes.title}
