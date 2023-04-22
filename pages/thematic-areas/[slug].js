@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { API_URL } from "@/config/index";
-
+import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 
 import Layout from "@/components/Layout";
@@ -25,7 +25,17 @@ const ThematicArea = ({ data }) => {
                   </h4>
                 </div>
 
-                <div className="">
+                <div className="card unset-img">
+                  <Image
+                    fill={true}
+                    src={
+                      data.thematicArea.data[0]?.attributes.image?.data[0]
+                        .attributes?.url
+                    }
+                    layout="fill"
+                    className="custom-img"
+                    alt="Image description"
+                  />
                   <div className="card border-0  p-3">
                     <h3 className="card-title">
                       {data.thematicArea.data[0].attributes.title}
@@ -53,7 +63,7 @@ export async function getServerSideProps({ params }) {
 
   //fetching profiles
   const res = await fetch(
-    `${API_URL}/api/categories?filters[slug][$eq]=${slug}`
+    `${API_URL}/api/categories?filters[slug][$eq]=${slug}&populate[image]=*`
   );
   const thematicArea = await res.json();
   //fetching profiles

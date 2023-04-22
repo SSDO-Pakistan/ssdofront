@@ -14,7 +14,11 @@ const TheamticArea = ({ data }) => {
           </h4>
         </div>
         <div className="mt-2">
-          <p style={{textAlign:"justify",marginTop:"20px"}}><ReactMarkdown>{data.ThematicAreas.data.attributes.description}</ReactMarkdown></p>
+          <p style={{ textAlign: "justify", marginTop: "20px" }}>
+            <ReactMarkdown>
+              {data.ThematicAreas.data.attributes.description}
+            </ReactMarkdown>
+          </p>
         </div>
         <div class="row mt-5 mb-5 g-2" style={{ justifyContent: "left" }}>
           {data.ThematicAreas.data.attributes.categories.data?.map((cat) => {
@@ -46,9 +50,16 @@ const TheamticArea = ({ data }) => {
                             marginLeft: "7rem",
                           }}
                         />
-                           <p style={{textAlign:"center",color:"white",marginTop:"20px"}}>{cat.attributes.title}{" "}</p>
+                        <p
+                          style={{
+                            textAlign: "center",
+                            color: "white",
+                            marginTop: "20px",
+                          }}
+                        >
+                          {cat.attributes.title}{" "}
+                        </p>
                       </div>
-                   
                     </Link>
                   </div>
                 </div>
