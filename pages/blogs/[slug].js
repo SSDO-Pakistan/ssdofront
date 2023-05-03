@@ -1,5 +1,7 @@
 import { API_URL } from "@/config/index";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+
 import Layout from "@/components/Layout";
 const BlogDetails = ({ data }) => {
   //console.log(data);
@@ -34,7 +36,7 @@ const BlogDetails = ({ data }) => {
                     </h3>
                     <div className="card-body">
                       <p>
-                        <ReactMarkdown>
+                        <ReactMarkdown remarkPlugins={[remarkGfm]}>
                           {data.data[0].attributes.description}
                         </ReactMarkdown>
                       </p>
