@@ -4,12 +4,12 @@ import remarkGfm from "remark-gfm";
 
 import Layout from "@/components/Layout";
 const BlogDetails = ({ data }) => {
-  //console.log(data);
+  console.log(data.data[0].attributes.image.data[0]?.attributes.url);
   //return false;
   //consl
   return (
     <Layout
-      title="Highlights Details"
+      title={data.data[0].attributes.title}
       image={
         data.data[0].attributes.image.length > 0
           ? data.data[0].attributes.image.data[0]?.attributes.url
