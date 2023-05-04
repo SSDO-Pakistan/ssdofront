@@ -11,7 +11,7 @@ import {
 } from "next-share";
 import { useRouter } from "next/router";
 
-const Layout = ({ children, title, image, description, keywords }) => {
+const Layout = ({ children, title, description, keywords, image }) => {
   console.log(description);
   const router = useRouter();
   const { asPath, pathname } = useRouter();
@@ -22,15 +22,16 @@ const Layout = ({ children, title, image, description, keywords }) => {
         <title>{title}</title>
         <meta name="description" content={description} />
         <meta name="keywords" content={keywords} />
-        <meta property="og:url" content={`https://ssdo.org.pk${asPath}`} />
+        <meta
+          property="og:secure_url"
+          content={`https://ssdo.org.pk${asPath}`}
+        />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content={title} />
-        <meta property="og:image" content={image} />
+        <meta property="og:title" content="SSDO Pakistan" />
         <meta property="og:description" content={description} />
-
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-
+        <meta property="og:image" content={image} />
+        <meta property="og:image:width" content="400" />
+        <meta property="og:image:height" content="300" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@ssdo" />
         <meta name="twitter:title" content={title} />
