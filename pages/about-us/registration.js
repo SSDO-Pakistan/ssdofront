@@ -3,8 +3,6 @@ import { API_URL } from "@/config/index";
 import Link from "next/link";
 import Layout from "@/components/Layout";
 const Registration = ({ data }) => {
-  // console.log("Registration data",data)
-  // return false;
   return (
     <Layout title="Registration details">
       <div class="container content-space-1 vh-100 p-4 mt-20">
@@ -23,7 +21,7 @@ const Registration = ({ data }) => {
                 className="card card-lg text-center mb-2  shadow"
                 style={{
                   width: "395px",
-                  height: "265px",
+                  height: "300px",
                   background: "rgb(15 80 138)",
                   color: "white",
                 }}
@@ -42,7 +40,7 @@ const Registration = ({ data }) => {
                     <span className="d-block">{reg.attributes.title}</span>
                   </div>
 
-                  <div className="d-grid mb-3 text-white">
+                  <div className="">
                     <Link
                       className="btn btn-white text-white"
                       // href="mailto:support@site.com"
@@ -50,7 +48,11 @@ const Registration = ({ data }) => {
                       style={{ textDecoration: "underline", cursor: "pointer" }}
                       target="_blank"
                     >
-                      <i className="bi-envelope-open me-2"></i>View Document
+                      <i
+                        className="bi-envelope-open"
+                        style={{ paddingBo: "5px" }}
+                      ></i>
+                      View Document
                     </Link>
                   </div>
 
