@@ -22,14 +22,12 @@ const Layout = ({ children, title, description, keywords, image }) => {
         <title>{title}</title>
         <meta name="description" content={description} />
         <meta name="keywords" content={keywords} />
-        <meta
-          property="og:secure_url"
-          content={`https://ssdo.org.pk${asPath}`}
-        />
+        <meta property="og:url" content={`https://ssdo.org.pk${asPath}`} />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="SSDO Pakistan" />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={image} />
+        <meta property="og:image:secure_url" content={image} />
         <meta property="og:image:width" content="400" />
         <meta property="og:image:height" content="300" />
         <meta name="twitter:card" content="summary_large_image" />
