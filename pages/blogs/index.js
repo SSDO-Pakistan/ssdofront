@@ -50,7 +50,7 @@ const Blog = () => {
     setItems(publicationFromServer);
   };
   return (
-    <Layout title="Highlights">
+    <Layout title="Blogs">
       <div className="wrapper ">
         {/* main content */}
         <main id="content">
