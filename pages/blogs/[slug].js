@@ -9,12 +9,8 @@ const BlogDetails = ({ data }) => {
   //consl
   return (
     <Layout
-      title={data.data[0].attributes.title}
-      image={
-        data.data[0].attributes.image.length > 0
-          ? data.data[0].attributes.image.data[0]?.attributes.url
-          : ""
-      }
+      title="Blog"
+      image={data.data[0].attributes.image.data[0]?.attributes.url}
       description={data.data[0].attributes.description}
     >
       <div className="wrapper ">
