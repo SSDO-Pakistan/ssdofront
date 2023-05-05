@@ -17,9 +17,17 @@ import AlbumsSlider from "./../components/AlbumsSlider";
 import MobileSidebar from "./../components/MobileSidebar";
 
 export default function Home({ data }) {
-  console.log("ThmaticData", data.ThematicAreas);
+  // console.log("ThmaticData", data.SliderHighlights);
+  // console.log(
+  //   data.SliderHighlights.data[0]?.attributes.image.data[0]?.attributes.url
+  // );
   return (
-    <Layout title="SSDO Pakistan">
+    <Layout
+      title="SSDO Pakistan"
+      image={
+        data.SliderHighlights.data[0]?.attributes.image.data[0]?.attributes.url
+      }
+    >
       <div className="wrapper ">
         {/* main content */}
         <main id="content">
@@ -69,7 +77,7 @@ export default function Home({ data }) {
               <aside className="col-md-4 end-sidebar-lg">
                 <div className="sticky">
                   <aside className="widget">
-                    <div className="small-post" >
+                    <div className="small-post">
                       {data && data.ThematicAreas && (
                         <ThematicAreas ThematicAreas={data.ThematicAreas} />
                       )}

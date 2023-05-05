@@ -4,7 +4,7 @@ import remarkGfm from "remark-gfm";
 
 import Layout from "@/components/Layout";
 const BlogDetails = ({ data }) => {
-  console.log(data.data[0].attributes.image.data[0]?.attributes.url);
+  //console.log(data.data[0].attributes.image.data[0]?.attributes.url);
   //return false;
   //consl
   return (
