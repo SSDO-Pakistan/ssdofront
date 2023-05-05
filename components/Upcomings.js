@@ -22,18 +22,21 @@ const Upcomings = ({ Upcomings }) => {
 
       <div className="col-10 col-sm-11 col-md-9 col-lg-10 ps-1 ps-md-2">
         <div className="breaking-box position-relative py-2">
-        <Marquee className="" speed={50} loop={5} gradient={false}  pauseOnHover={true}>
+          <Marquee
+            className=""
+            speed={50}
+            loop={5}
+            gradient={false}
+            pauseOnHover={true}
+          >
             {Upcomings.data.map((upc) => {
               return (
-                <div className="col-8 " key={upc.id}>
-                <a className="h6 fw-normal" href="#">
-                &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;
-                {upc.attributes.title}
+                <a className="h6 fw-normal" href="#" key={upc.id}>
+                  {upc.attributes.title}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </a>
-              </div>
-              )
-            })}  
-            </Marquee>
+              );
+            })}
+          </Marquee>
         </div>
       </div>
     </div>
