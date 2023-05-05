@@ -18,14 +18,14 @@ import MobileSidebar from "./../components/MobileSidebar";
 
 export default function Home({ data }) {
   // console.log("ThmaticData", data.SliderHighlights);
-  // console.log(
-  //   data.SliderHighlights.data[0]?.attributes.image.data[0]?.attributes.url
-  // );
+  console.log(
+    data.SliderHighlights.data[0].attributes.image.data[0]?.attributes.url
+  );
   return (
     <Layout
       title="SSDO Pakistan"
       image={
-        data.SliderHighlights.data[0]?.attributes.image.data[0]?.attributes.url
+        data.SliderHighlights.data[0].attributes.image.data[0]?.attributes.url
       }
     >
       <div className="wrapper ">
