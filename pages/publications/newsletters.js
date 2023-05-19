@@ -81,7 +81,7 @@ function Photosalbum(props) {
 
   const fetchPhotos = async (currentPage) => {
     const res = await fetch(
-      `${API_URL}/api/progress-reports?populate=*&populate[0]=Report&populate[1]=Report.cover&populate[2]=Report.file&sort=rank:asc&pagination[page]=${currentPage}&pagination[pageSize]=${limit}`
+      `${API_URL}/api/newsletters?populate=*&sort=rank:asc&pagination[page]=${currentPage}&pagination[pageSize]=${limit}`
     );
     const data = await res.json();
 
