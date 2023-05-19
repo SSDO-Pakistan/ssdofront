@@ -89,15 +89,15 @@ function Photosalbum(props) {
     data.data?.map((clip) => {
       mydata.push({
         url: clip.attributes.url,
-        src: clip.attributes.image.data.attributes.url,
-        width: clip.attributes.image.data.attributes.width,
-        height: clip.attributes.image.data.attributes.height,
+        src: clip.attributes.image.data?.attributes.url,
+        width: clip.attributes.image.data?.attributes.width,
+        height: clip.attributes.image.data?.attributes.height,
         images: [
           {
-            src: clip.attributes.image.data.attributes.formats.small.url,
+            src: clip.attributes.image.data?.attributes.formats.small.url,
           },
           {
-            src: clip.attributes.image.data.attributes.formats.thumbnail.url,
+            src: clip.attributes.image.data?.attributes.formats.thumbnail.url,
           },
         ],
       });
@@ -172,17 +172,18 @@ export async function getStaticProps() {
   const total = photos.meta.pagination.total;
   let mydata = new Array();
   photos.data?.map((clip) => {
+    clip.attributes.image.data?.attributes.url &&
     mydata.push({
       url: clip.attributes.url,
-      src: clip.attributes.image.data.attributes.url,
-      width: clip.attributes.image.data.attributes.width,
-      height: clip.attributes.image.data.attributes.height,
+      src: clip.attributes.image.data?.attributes.url,
+      width: clip.attributes.image.data?.attributes.width,
+      height: clip.attributes.image.data?.attributes.height,
       images: [
         {
-          src: clip.attributes.image.data.attributes.formats.thumbnail.url,
+          src: clip.attributes.image.data?.attributes.formats.thumbnail.url,
         },
         {
-          src: clip.attributes.image.data.attributes.formats.thumbnail.url,
+          src: clip.attributes.image.data?.attributes.formats.thumbnail.url,
         },
       ],
     });
@@ -195,6 +196,6 @@ export async function getStaticProps() {
     // Next.js will attempt to re-generate the page:
     // - When a request comes in
     // - At most once every 10 seconds
-    revalidate: 10, // In seconds
+    // revalidate: 10, // In seconds
   };
 }
