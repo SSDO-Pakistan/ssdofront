@@ -9,9 +9,9 @@ const UiNav = () => {
 
   const getNav = async () => {
     const navres = await fetch(`${API_URL}/api/navigation/render/1?type=TREE`);
-   
+
     const Navigation = await navres.json();
-   
+
     setNav(Navigation);
   };
 
@@ -88,10 +88,16 @@ const UiNav = () => {
                         )}
                       </li>
                     )}
-                   
                   </>
                 );
               })}
+              <Link
+                className="nav-link active text-dark fw-bold"
+                href="https://climateoptics.org.pk"
+                target="_blank"
+              >
+                CLIMATE OPTICS
+              </Link>
             </ul>
           </div>
         </nav>
