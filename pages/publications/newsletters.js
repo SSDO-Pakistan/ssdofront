@@ -12,7 +12,7 @@ import { API_URL } from "@/config/index";
 import Link from "next/link";
 import Layout from "@/components/Layout";
 function Photosalbum(props) {
-  console.log(props);
+  //console.log("newsletters", props.mydata);
 
   let limit = 10;
   const [items, setItems] = useState(props.mydata);
@@ -111,7 +111,7 @@ function Photosalbum(props) {
   };
 
   return (
-    <Layout title="Media Clippings">
+    <Layout title="NewsLetters" image={props.mydata[0].images[0].src}>
       <div className="wrapper ">
         {/* main content */}
         <main id="content">
@@ -173,20 +173,20 @@ export async function getStaticProps() {
   let mydata = new Array();
   photos.data?.map((clip) => {
     clip.attributes.image.data?.attributes.url &&
-    mydata.push({
-      url: clip.attributes.url,
-      src: clip.attributes.image.data?.attributes.url,
-      width: clip.attributes.image.data?.attributes.width,
-      height: clip.attributes.image.data?.attributes.height,
-      images: [
-        {
-          src: clip.attributes.image.data?.attributes.formats.thumbnail.url,
-        },
-        {
-          src: clip.attributes.image.data?.attributes.formats.thumbnail.url,
-        },
-      ],
-    });
+      mydata.push({
+        url: clip.attributes.url,
+        src: clip.attributes.image.data?.attributes.url,
+        width: clip.attributes.image.data?.attributes.width,
+        height: clip.attributes.image.data?.attributes.height,
+        images: [
+          {
+            src: clip.attributes.image.data?.attributes.formats.thumbnail.url,
+          },
+          {
+            src: clip.attributes.image.data?.attributes.formats.thumbnail.url,
+          },
+        ],
+      });
   });
   return {
     props: {
