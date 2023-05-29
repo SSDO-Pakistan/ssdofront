@@ -26,7 +26,7 @@ const Videos = () => {
   // console.log("items", items);
   const fetchVideos = async (currentPage) => {
     const res = await fetch(
-      `${API_URL}/api/videos?&sort=rank&pagination[page]=${currentPage}&pagination[pageSize]=${limit}`
+      `${API_URL}/api/videos?&sort=updatedAt:desc&pagination[page]=${currentPage}&pagination[pageSize]=${limit}`
       // `https://jsonplaceholder.typicode.com/comments?_page=${currentPage}&_limit=${limit}`
     );
     const data = await res.json();
@@ -47,7 +47,7 @@ const Videos = () => {
         {/* main content */}
         <main id="content">
           <div className="container">
-            <div className="row p-4 mt-20">
+            <div className="row p-4 mt-5">
               <div className="col-sm-12">
                 <div className="block-title-6 text-center">
                   <h4 className="h5 border-primary">

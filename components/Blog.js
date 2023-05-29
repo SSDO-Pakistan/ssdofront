@@ -41,7 +41,7 @@ const Blog = ({ Blogs }) => {
                       <p className="card-text" style={{ textAlign: "justify" }}>
                         <ReactMarkdown>
                           {blog.attributes.description
-                            .substring(0, 310)
+                            .substring(0, 325)
                             .concat("...")}
                         </ReactMarkdown>
                       </p>

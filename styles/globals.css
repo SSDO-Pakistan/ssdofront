@@ -213,16 +213,23 @@ box-shadow: 0 10px 40px -10px rgba(0,64,128,.09);
 }
 
 /***************************/
-.end-sidebar-lg::after {
-  margin-top: 2rem !important;
+
+.block-area, .widget {
   position: relative;
-  content: "";
-  padding: 2rem;
-  display: block;
+  clear: both;
+  margin-bottom: 0.5rem !important;
+}
+
+.end-sidebar-lg::after {
+    margin-top: 2rem !important;
+    position: relative;
+    content: "";
+    padding: 2rem;
+    display: block;
 }
 .main-nav .nav-link {
-font-size: 0.8rem !important;
-letter-spacing: 0.025rem !important;
--webkit-font-smoothing: antialiased;
-padding: 1rem;
+  font-size: 0.8rem !important;
+  letter-spacing: 0.025rem !important;
+  -webkit-font-smoothing: antialiased;
+  padding: 1rem;
 }

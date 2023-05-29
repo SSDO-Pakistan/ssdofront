@@ -17,10 +17,10 @@ import AlbumsSlider from "./../components/AlbumsSlider";
 import MobileSidebar from "./../components/MobileSidebar";
 
 export default function Home({ data }) {
-  // console.log("ThmaticData", data.SliderHighlights);
-  console.log(
-    data.SliderHighlights.data[0].attributes.image.data[0]?.attributes.url
-  );
+  //console.log("publication slider data", data.Publications);
+  //  console.log(
+  //   data.SliderHighlights.data[0].attributes.image.data[0]?.attributes.url
+  //);
   return (
     <Layout
       title="SSDO Pakistan"
@@ -116,7 +116,7 @@ export async function getServerSideProps() {
 
   //fetching publications
   const publicationsres = await fetch(
-    `${API_URL}/api/publications?pagination[limit]=4&filters[PublicationSlider][$eq]=true&populate=*&sort=createdAt:desc`
+    `${API_URL}/api/publication-slider?populate[research_reports][populate][Report][populate]=*&populate[event_reports][populate][Report][populate]=*&populate[progress_reports][populate][Report][populate]=*&populate[wacv_reports][populate][Report][populate]=*`
   );
   const Publications = await publicationsres.json();
 
