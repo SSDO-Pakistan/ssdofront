@@ -115,9 +115,6 @@ function Photosalbum(props) {
         height: clip.attributes.image.data[0].attributes.height,
         images: [
           {
-            src: clip.attributes.image.data[0].attributes.formats.small.url,
-          },
-          {
             src: clip.attributes.image.data[0].attributes.formats.thumbnail.url,
           },
         ],
@@ -209,7 +206,6 @@ export async function getStaticProps() {
       width: clip.attributes.image.data[0].attributes.width,
       height: clip.attributes.image.data[0].attributes.height,
       images: [
-        { src: clip.attributes.image.data[0].attributes.formats.small.url },
         { src: clip.attributes.image.data[0].attributes.formats.thumbnail.url },
       ],
     });
