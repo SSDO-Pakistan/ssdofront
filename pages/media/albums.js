@@ -91,9 +91,6 @@ function Photosalbum(props) {
           height: newClip.attributes.height,
           images: [
             {
-              src: newClip.attributes.formats.small.url,
-            },
-            {
               src: newClip.attributes.formats.thumbnail.url,
             },
           ],
