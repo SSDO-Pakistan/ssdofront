@@ -133,7 +133,7 @@ export async function getServerSideProps() {
   const Blogs = await blogsres.json();
 
   //fetching Gallery
-  const videos_res = await fetch(`${API_URL}/api/videos?sort=rank`);
+  const videos_res = await fetch(`${API_URL}/api/videos?sort=updatedAt:desc`);
   const Videos = await videos_res.json();
 
   //Getting thematic areas

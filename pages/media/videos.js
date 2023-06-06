@@ -10,7 +10,7 @@ const Videos = () => {
   useEffect(() => {
     const getVideos = async () => {
       const res = await fetch(
-        `${API_URL}/api/videos?&sort=rank&pagination[page]=1&pagination[pageSize]=${limit}`
+        `${API_URL}/api/videos?&&sort=updatedAt:desc&pagination[page]=1&pagination[pageSize]=${limit}`
         // `https://jsonplaceholder.typicode.com/comments?_page=1&_limit=${limit}`
       );
       const data = await res.json();
