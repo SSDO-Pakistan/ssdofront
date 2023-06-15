@@ -96,10 +96,10 @@ const UiNav = () => {
               <li>
                 <Link
                   className="nav-link active text-dark"
-                  href="https://climateoptics.org.pk"
+                  href="https://climateoptics.org"
                   target="_blank"
                 >
-                  climate Optics
+                  Climate Optics
                 </Link>
               </li>
             </ul>
