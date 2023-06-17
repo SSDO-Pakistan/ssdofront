@@ -234,6 +234,6 @@ box-shadow: 0 10px 40px -10px rgba(0,64,128,.09);
   padding: 1rem;
 }
 .navbar-uppercase>li>a {
-  text-transform: lowercase !important; 
+  text-transform: none !important; 
   font-weight: 700;
 }
