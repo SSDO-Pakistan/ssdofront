@@ -114,7 +114,7 @@ function Photosalbum(props) {
   };
 
   return (
-    <Layout title="Media Clippings">
+    <Layout title="Policy Brief">
       <div className="wrapper ">
         {/* main content */}
         <main id="content">
