@@ -228,8 +228,12 @@ box-shadow: 0 10px 40px -10px rgba(0,64,128,.09);
     display: block;
 }
 .main-nav .nav-link {
-  font-size: 0.8rem !important;
+  font-size: 0.9rem !important;
   letter-spacing: 0.025rem !important;
   -webkit-font-smoothing: antialiased;
   padding: 1rem;
+}
+.navbar-uppercase>li>a {
+  text-transform: lowercase !important; 
+  font-weight: 700;
 }
