@@ -114,7 +114,7 @@ function Photosalbum(props) {
   };
 
   return (
-    <Layout title="Policy Brief">
+    <Layout title="Policy Brief" image={props.mydata[0].images[0].src}>
       <div className="wrapper ">
         {/* main content */}
         <main id="content">
