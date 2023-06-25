@@ -14,7 +14,6 @@ import ThematicAreas from "@/components/ThematicAreas";
 import SocialNetworksSidebar from "./../components/SocialNetworksSidebar";
 import Blog from "./../components/Blog";
 import AlbumsSlider from "./../components/AlbumsSlider";
-import MobileSidebar from "./../components/MobileSidebar";
 
 export default function Home({ data }) {
   //console.log("publication slider data", data.Publications);
@@ -116,7 +115,7 @@ export async function getServerSideProps() {
 
   //fetching publications
   const publicationsres = await fetch(
-    `${API_URL}/api/publication-slider?populate[research_reports][populate][Report][populate]=*&populate[event_reports][populate][Report][populate]=*&populate[progress_reports][populate][Report][populate]=*&populate[wacv_reports][populate][Report][populate]=*`
+    `${API_URL}/api/publication-slider?populate=deep`
   );
   const Publications = await publicationsres.json();
 

@@ -15,6 +15,7 @@ const PublicationsSlider = ({ Publications }) => {
     Publications.data?.attributes.research_reports.data?.map((clip) => {
       reports_dataArray.push({
         file: clip.attributes.Report.file.data.attributes.url,
+        publishedAt: clip.attributes.publishedAt,
         images: [
           {
             src: clip.attributes.Report.cover.data.attributes.url,
@@ -30,6 +31,7 @@ const PublicationsSlider = ({ Publications }) => {
     Publications.data?.attributes.progress_reports.data?.map((clip) => {
       reports_dataArray.push({
         file: clip.attributes.Report.file.data.attributes.url,
+        publishedAt: clip.attributes.publishedAt,
         images: [
           {
             src: clip.attributes.Report.cover.data.attributes.url,
@@ -44,6 +46,7 @@ const PublicationsSlider = ({ Publications }) => {
     Publications.data?.attributes.event_reports?.data?.map((clip) => {
       reports_dataArray.push({
         file: clip.attributes.Report.file.data.attributes.url,
+        publishedAt: clip.attributes.publishedAt,
         images: [
           {
             src: clip.attributes.Report.cover.data.attributes.url,
@@ -59,6 +62,7 @@ const PublicationsSlider = ({ Publications }) => {
     Publications.data?.attributes.wacv_reports?.data?.map((clip) => {
       reports_dataArray.push({
         file: clip.attributes.Report.file.data.attributes.url,
+        publishedAt: clip.attributes.publishedAt,
         images: [
           {
             src: clip.attributes.Report.cover.data.attributes.url,
