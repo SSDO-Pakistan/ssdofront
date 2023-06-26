@@ -12,6 +12,7 @@ import { API_URL } from "@/config/index";
 import Link from "next/link";
 import Layout from "@/components/Layout";
 import Download from "yet-another-react-lightbox/plugins/download";
+import Share from "yet-another-react-lightbox/plugins/share";
 
 function Photosalbum(props) {
   let limit = 10;
@@ -155,7 +156,14 @@ function Photosalbum(props) {
                   index={index}
                   close={() => setIndex(-1)}
                   // enable optional lightbox plugins
-                  plugins={[Fullscreen, Slideshow, Thumbnails, Zoom, Download]}
+                  plugins={[
+                    Fullscreen,
+                    Slideshow,
+                    Thumbnails,
+                    Zoom,
+                    Download,
+                    Share,
+                  ]}
                 />
                 <ReactPaginate
                   previousLabel={"previous"}

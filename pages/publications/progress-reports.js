@@ -11,6 +11,8 @@ import ReactPaginate from "react-paginate";
 import { API_URL } from "@/config/index";
 import Link from "next/link";
 import Layout from "@/components/Layout";
+import Download from "yet-another-react-lightbox/plugins/download";
+import Share from "yet-another-react-lightbox/plugins/share";
 function Photosalbum(props) {
   let limit = 20;
   const [items, setItems] = useState(props.mydata);
@@ -141,12 +143,22 @@ function Photosalbum(props) {
                   onClick={({ photo: { File }, index }) => setIndex(index)}
                 />
                 <Lightbox
-                  slides={items}
+                  slides={items.map((slide) => ({
+                    ...slide,
+                    download: `${slide.file}?download`,
+                  }))}
                   open={index >= 0}
                   index={index}
                   close={() => setIndex(-1)}
                   // enable optional lightbox plugins
-                  plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
+                  plugins={[
+                    Fullscreen,
+                    Slideshow,
+                    Thumbnails,
+                    Zoom,
+                    Download,
+                    Share,
+                  ]}
                 />
                 <ReactPaginate
                   previousLabel={"previous"}
