@@ -114,7 +114,13 @@ function Photosalbum(props) {
   };
 
   return (
-    <Layout title="Policy Brief" image={props.mydata[0].images[0].src}>
+    <Layout
+      title="Policy Brief"
+      image={props.mydata[0].images[0].src}
+      width={props.mydata[0].width}
+      height={props.mydata[0].height}
+      filePath={props.mydata[0].file}
+    >
       <div className="wrapper ">
         {/* main content */}
         <main id="content">

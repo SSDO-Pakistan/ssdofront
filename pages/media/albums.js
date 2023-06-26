@@ -12,7 +12,7 @@ import Layout from "@/components/Layout";
 import { API_URL } from "@/config/index";
 function Photosalbum(props) {
   //console.log("new album data",props.mydata)
-  let limit = 20;
+  let limit = 10;
   const [items, setItems] = useState(props.mydata);
   let pageCount = Math.ceil(props.total / limit);
   const [open, setOpen] = useState(false);
