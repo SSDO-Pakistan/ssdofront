@@ -19,7 +19,6 @@ const Layout = ({
   image,
   width,
   height,
-  filePath,
 }) => {
   console.log(description);
   const router = useRouter();
@@ -31,7 +30,7 @@ const Layout = ({
         <title>{title}</title>
         <meta name="description" content={description} />
         <meta name="keywords" content={keywords} />
-        <meta property="og:url" content={`https://ssdo.org.pk${filePath}`} />
+        <meta property="og:url" content={`https://ssdo.org.pk${asPath}`} />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="SSDO Pakistan" />
         <meta property="og:description" content={description} />

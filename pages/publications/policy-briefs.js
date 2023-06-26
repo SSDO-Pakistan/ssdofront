@@ -13,12 +13,14 @@ import Link from "next/link";
 import Layout from "@/components/Layout";
 import Download from "yet-another-react-lightbox/plugins/download";
 import Share from "yet-another-react-lightbox/plugins/share";
-
+import { useRouter } from "next/router";
 function Photosalbum(props) {
   let limit = 10;
   const [items, setItems] = useState(props.mydata);
   let pageCount = Math.ceil(props.total / limit);
   const [index, setIndex] = useState(-1);
+  const { asPath, pathname } = useRouter();
+
   //rendering the container
   const renderContainer = ({ containerProps, children, containerRef }) => (
     <div
@@ -123,7 +125,6 @@ function Photosalbum(props) {
       image={props.mydata[0].images[0].src}
       width={props.mydata[0].width}
       height={props.mydata[0].height}
-      filePath={props.mydata[0].file}
     >
       <div className="wrapper ">
         {/* main content */}
@@ -151,6 +152,10 @@ function Photosalbum(props) {
                   slides={items.map((slide) => ({
                     ...slide,
                     download: `${slide.file}?download`,
+                    share: {
+                      url: `https://ssdo.org.pk${asPath}`,
+                      title: "SSDO",
+                    },
                   }))}
                   open={index >= 0}
                   index={index}
