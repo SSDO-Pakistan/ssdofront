@@ -12,7 +12,7 @@ import { API_URL } from "@/config/index";
 import Link from "next/link";
 import Layout from "@/components/Layout";
 function Photosalbum(props) {
-  let limit = 20;
+  let limit = 10;
   const [items, setItems] = useState(props.mydata);
   let pageCount = Math.ceil(props.total / limit);
   const [index, setIndex] = useState(-1);

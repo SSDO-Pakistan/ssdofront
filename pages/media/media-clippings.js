@@ -10,7 +10,7 @@ import "yet-another-react-lightbox/plugins/thumbnails.css";
 import ReactPaginate from "react-paginate";
 import Layout from "@/components/Layout";
 function Photosalbum(props) {
-  let limit = 20;
+  let limit = 10;
   const [items, setItems] = useState(props.mydata);
   let pageCount = Math.ceil(props.total / limit);
   const [index, setIndex] = useState(-1);

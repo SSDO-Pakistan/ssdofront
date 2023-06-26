@@ -81,7 +81,7 @@ function Photosalbum(props) {
 
   const fetchPhotos = async (currentPage) => {
     const res = await fetch(
-      `${API_URL}/api/newsletters?populate=*&sort=createdAt:desc&pagination[page]=${currentPage}&pagination[pageSize]=${limit}`
+      `${API_URL}/api/newsletters?populate=*&sort=publishedAt:desc&pagination[page]=${currentPage}&pagination[pageSize]=${limit}`
     );
     const data = await res.json();
 
@@ -165,7 +165,7 @@ function Photosalbum(props) {
 export default Photosalbum;
 export async function getStaticProps() {
   const res = await fetch(
-    `${API_URL}/api/newsletters?populate=*&sort=rank:asc&pagination[page]=1&pagination[pageSize]=10`
+    `${API_URL}/api/newsletters?populate=*&sort=publishedAt:desc&pagination[page]=1&pagination[pageSize]=10`
   );
 
   const photos = await res.json();

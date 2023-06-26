@@ -72,8 +72,20 @@ const PublicationsSlider = ({ Publications }) => {
         ],
       });
     });
-  console.log("reports", reports_dataArray);
+  // let my_reports = reports_dataArray.sort(
+  //   (a, b) =>
+  //     Date.parse(new Date(a.publishedAt.split("/").join("-"))) -
+  //     Date.parse(new Date(b.publishedAt.split("/").join("-")))
+  // );
+  //Here sorting the reports datewise-latest first
+
+  let mySortedReports = reports_dataArray.sort(
+    (a, b) =>
+      Date.parse(new Date(b.publishedAt.split("/").reverse().join("-"))) -
+      Date.parse(new Date(a.publishedAt.split("/").reverse().join("-")))
+  );
   //  const [showPublication, setshowPublication] = useState({});
+  // console.log("sorted Reports", sortedCars);
   return (
     <div className="col-12 mb-4  ">
       <div className="block-area p-4 border bg-light-black">
@@ -97,7 +109,7 @@ const PublicationsSlider = ({ Publications }) => {
           aria-label="My Favorite Images"
         >
           {Publications &&
-            reports_dataArray.map((publication, index) => {
+            mySortedReports.map((publication, index) => {
               console.log("My publication", publication);
               // return false;
               return (

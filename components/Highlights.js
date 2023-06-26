@@ -27,14 +27,18 @@ const Highlights = ({ Highlights }) => {
                 <div className="row">
                   <div className="col-sm-6 col-md-12 col-lg-6">
                     <div className="">
-                      <Image
-                        width={360}
-                        height={202}
-                        className="img-fluid"
-                        src={highlight.attributes.image.data[0].attributes.url}
-                        data-src="../../assets/img/360x202/img17.jpg"
-                        alt="Image description"
-                      />
+                      {highlight.attributes.image.data?.length > 0 && (
+                        <Image
+                          width={360}
+                          height={202}
+                          className="img-fluid"
+                          src={
+                            highlight.attributes.image.data[0].attributes.url
+                          }
+                          data-src="../../assets/img/360x202/img17.jpg"
+                          alt="Image description"
+                        />
+                      )}
                     </div>
                   </div>
                   <div className="col-sm-6 col-md-12 col-lg-6">

@@ -87,21 +87,24 @@ const HighLights = () => {
                           <div className="row">
                             <div className="col-sm-3">
                               <div>
-                                <Image
-                                  width={
-                                    highlight.attributes.image.data[0]
-                                      .attributes?.formats.thumbnail.width
-                                  }
-                                  height={
-                                    highlight.attributes.image.data[0]
-                                      .attributes?.formats.thumbnail.height
-                                  }
-                                  src={
-                                    highlight.attributes.image.data[0]
-                                      .attributes.url
-                                  }
-                                  alt="Image description"
-                                />
+                                {highlight.attributes.image.data?.length >
+                                  0 && (
+                                  <Image
+                                    width={
+                                      highlight.attributes.image.data[0]
+                                        .attributes?.formats.thumbnail.width
+                                    }
+                                    height={
+                                      highlight.attributes.image.data[0]
+                                        .attributes?.formats.thumbnail.height
+                                    }
+                                    src={
+                                      highlight.attributes.image.data[0]
+                                        .attributes.url
+                                    }
+                                    alt="Image description"
+                                  />
+                                )}
                               </div>
                             </div>
                             <div className="col-sm-9 mt-3">
