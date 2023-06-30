@@ -24,11 +24,15 @@ function MyApp({ Component, pageProps }) {
         // integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
         crossorigin="anonymous"
       />
-      <script
+      <Script
+        src="https://kit.fontawesome.com/8ee2813c35.js"
+        crossorigin="anonymous"
+      />
+      <Script
         defer
         data-domain="ssdo.org.pk"
         src="https://plausible.io/js/script.js"
-      ></script>
+      />
 
       <Script
         src="/js/sticky.js"
