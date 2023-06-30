@@ -47,7 +47,7 @@ const TheamticArea = ({ data }) => {
                           style={{
                             color: "white",
                             fontSize: "4rem",
-                            marginLeft: "7rem",
+                            marginLeft: "6.8rem",
                           }}
                         />
                         <p
