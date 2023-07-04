@@ -55,6 +55,9 @@ const Jobs = () => {
         <div className="d-flex flex-wrap">
           {items &&
             items.data?.map((job) => {
+              //console.log(job.attributes.Status);
+              const status = job.attributes.Status;
+
               return (
                 <Card
                   style={{ width: "30rem", margin: "20px" }}
@@ -63,8 +66,17 @@ const Jobs = () => {
                   <Card.Body>
                     <Card.Title>{job.attributes.title}</Card.Title>
                     <Card.Subtitle className="mb-2 text-muted">
-                      Job Status :{" "}
-                      {job.attributes.status == true ? "Open" : "Closed"}
+                      <span
+                        style={{
+                          backgroundColor:
+                            status === true ? "#60BE75" : "#DC3545",
+                          color: "white",
+                          padding: "5px",
+                          borderRadius: "5px",
+                        }}
+                      >
+                        {job.attributes.Status ? "Open" : "Closed"}
+                      </span>
                     </Card.Subtitle>
 
                     <Link href={`/join-us/${job.attributes.slug}`}>
