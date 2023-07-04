@@ -55,15 +55,17 @@ const Jobs = () => {
         <div className="d-flex flex-wrap">
           {items &&
             items.data?.map((job) => {
-              console.log("poster", job.attributes.poster.length);
+              console.log("poster", job.attributes.poster);
               const status = job.attributes.Status;
 
               return (
-                <Card style={{ margin: "20px" }} key={job.attributes.id}>
+                <Card style={{ margin: "10px" }} key={job.attributes.id}>
                   {job.attributes.poster.data != null ? (
                     <Card.Img
-                      variant="top"
-                      src={job.attributes.poster.data?.attributes.url}
+                      src={
+                        job.attributes.poster.data?.attributes.formats.large.url
+                      }
+                      fluid
                     />
                   ) : (
                     <Card.Body>
@@ -87,7 +89,6 @@ const Jobs = () => {
                       </Link>
                     </Card.Body>
                   )}
-                  ;
                 </Card>
               );
             })}
