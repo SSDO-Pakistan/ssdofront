@@ -55,34 +55,39 @@ const Jobs = () => {
         <div className="d-flex flex-wrap">
           {items &&
             items.data?.map((job) => {
-              //console.log(job.attributes.Status);
+              console.log("poster", job.attributes.poster.length);
               const status = job.attributes.Status;
 
               return (
-                <Card
-                  style={{ width: "30rem", margin: "20px" }}
-                  key={job.attributes.id}
-                >
-                  <Card.Body>
-                    <Card.Title>{job.attributes.title}</Card.Title>
-                    <Card.Subtitle className="mb-2 text-muted">
-                      <span
-                        style={{
-                          backgroundColor:
-                            status === true ? "#60BE75" : "#DC3545",
-                          color: "white",
-                          padding: "5px",
-                          borderRadius: "5px",
-                        }}
-                      >
-                        {job.attributes.Status ? "Open" : "Closed"}
-                      </span>
-                    </Card.Subtitle>
+                <Card style={{ margin: "20px" }} key={job.attributes.id}>
+                  {job.attributes.poster.data != null ? (
+                    <Card.Img
+                      variant="top"
+                      src={job.attributes.poster.data?.attributes.url}
+                    />
+                  ) : (
+                    <Card.Body>
+                      <Card.Title>{job.attributes.title}</Card.Title>
+                      <Card.Subtitle className="mb-2 text-muted">
+                        <span
+                          style={{
+                            backgroundColor:
+                              status === true ? "#60BE75" : "#DC3545",
+                            color: "white",
+                            padding: "5px",
+                            borderRadius: "5px",
+                          }}
+                        >
+                          {job.attributes.Status ? "Open" : "Closed"}
+                        </span>
+                      </Card.Subtitle>
 
-                    <Link href={`/join-us/${job.attributes.slug}`}>
-                      View Job
-                    </Link>
-                  </Card.Body>
+                      <Link href={`/join-us/${job.attributes.slug}`}>
+                        View Job
+                      </Link>
+                    </Card.Body>
+                  )}
+                  ;
                 </Card>
               );
             })}
