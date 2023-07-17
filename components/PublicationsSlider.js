@@ -72,6 +72,23 @@ const PublicationsSlider = ({ Publications }) => {
         ],
       });
     });
+
+  //Policy Briefs
+  Publications &&
+    Publications.data?.attributes.policy_briefs?.data?.map((clip) => {
+      reports_dataArray.push({
+        file: clip.attributes.Report.file.data.attributes.url,
+        publishedAt: clip.attributes.publishedAt,
+        images: [
+          {
+            src: clip.attributes.Report.cover.data.attributes.url,
+            width: clip.attributes.Report.cover.data.attributes.width,
+            height: clip.attributes.Report.cover.data.attributes.height,
+          },
+        ],
+      });
+    });
+
   // let my_reports = reports_dataArray.sort(
   //   (a, b) =>
   //     Date.parse(new Date(a.publishedAt.split("/").join("-"))) -
