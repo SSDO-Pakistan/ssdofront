@@ -17,9 +17,10 @@ const AboutUs = ({ data }) => {
         </div>
         <div className=" w-100 d-flex flex-column">
           <div className=" w-100 mb-3">
-            <p  style={{ textAlign: "justify" ,marginTop:"20px"}}>
-
-              <ReactMarkdown>{data.About.data.attributes.description}</ReactMarkdown>
+            <p style={{ textAlign: "justify", marginTop: "20px" }}>
+              <ReactMarkdown>
+                {data.About.data.attributes.description}
+              </ReactMarkdown>
             </p>
             {/* <img
             src="/uploads/plane.svg"
@@ -49,13 +50,44 @@ const AboutUs = ({ data }) => {
           style={{ background: "#dfdef69c", padding: "15px" }}
         >
           <h1 className="bg-primary p-2 w-25 text-white rounded text-center">
-            Our Mission
+            Mission
           </h1>
           <p>{data.About.data.attributes.mission}</p>
           <h1 className="bg-primary p-2 w-25 text-white rounded text-center">
-            Our Vison
+            Vison
           </h1>
           <p>{data.About.data.attributes.vision}</p>
+
+          <p>
+            <h1 className="bg-primary p-2 w-100 text-white rounded text-center">
+              SSDO Profile
+            </h1>
+            <div className=" w-100 d-flex flex-wrap align-items-center justify-items-center">
+              <Image
+                src={
+                  data.About.data.attributes.Profile.cover.data.attributes
+                    .formats.medium.url
+                }
+                width={400}
+                height={280}
+                style={{
+                  marginLeft: "7px",
+                  marginBottom: "20px",
+                }}
+                alt="About us Images"
+              />
+            </div>
+
+            <a
+              href={data.About.data.attributes.Profile.file.data.attributes.url}
+              class="btn btn-danger btn-md m-2"
+              role="button"
+              aria-disabled="true"
+              target="_blank"
+            >
+              Download SSDO Profile
+            </a>
+          </p>
         </div>
       </div>
     </Layout>
@@ -63,7 +95,7 @@ const AboutUs = ({ data }) => {
 };
 export async function getStaticProps({ params }) {
   //fetching about us page
-  const aboutusres = await fetch(`${API_URL}/api/about-us?populate=*`);
+  const aboutusres = await fetch(`${API_URL}/api/about-us?populate=deep`);
   const About = await aboutusres.json();
   //fetching Publications
   console.log("job", About);
