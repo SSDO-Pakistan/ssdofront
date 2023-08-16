@@ -4,13 +4,14 @@ import remarkGfm from "remark-gfm";
 
 import Layout from "@/components/Layout";
 const BlogDetails = ({ data }) => {
+  console.log("mydata", data.data[0]);
   //console.log(data.data[0].attributes.image.data[0]?.attributes.url);
   //return false;
   //consl
   return (
     <Layout
       title="Blog"
-      image={data.data[0].attributes.image.data[0]?.attributes.url}
+      image={data.data[0].attributes.image.data?.attributes.url}
       description={data.data[0].attributes.description}
     >
       <div className="wrapper ">
