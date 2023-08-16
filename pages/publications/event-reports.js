@@ -176,10 +176,8 @@ function Photosalbum(props) {
   );
 }
 export default Photosalbum;
-export async function getStaticProps() {
-  const res = await fetch(
-    `${API_URL}/api/event-reports?populate=*&populate[0]=Report&populate[1]=Report.cover&populate[2]=Report.file&sort=updatedAt:desc&pagination[page]=1&pagination[pageSize]=10`
-  );
+export async function getServerSideProps() {
+  const res = await fetch(`${API_URL}/api/event-reports?populate=deep,10`);
 
   const photos = await res.json();
   const total = photos.meta.pagination.total;
@@ -210,6 +208,6 @@ export async function getStaticProps() {
     // Next.js will attempt to re-generate the page:
     // - When a request comes in
     // - At most once every 10 seconds
-    revalidate: 10, // In seconds
+    // revalidate: 10, // In seconds
   };
 }
