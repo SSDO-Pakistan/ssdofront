@@ -99,7 +99,7 @@ export default Bod;
 export async function getServerSideProps() {
   //fetching profiles
   const profileres = await fetch(
-    `${API_URL}/api/board-of-directors?populate=*&populate[0]=Profile&populate[1]=Profile.image&populate[2]=Profile.sociallinks.iconClass&sort=rank:asc`
+    `${API_URL}/api/board-of-directors?populate=deep`
   );
   const Profiles = await profileres.json();
   //fetching profiles

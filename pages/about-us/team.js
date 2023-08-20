@@ -7,6 +7,7 @@ function Team({ data }) {
   console.log(data);
   const [showProfile, setshowProfile] = useState({});
   console.log(showProfile);
+  return false;
   const [modalShow, setmodalShow] = useState(false);
 
   return (
@@ -97,7 +98,8 @@ export default Team;
 export async function getServerSideProps() {
   //fetching profiles
   const profileres = await fetch(
-    `${API_URL}/api/teams?populate=*&populate[0]=Profile&populate[1]=Profile.image&populate[2]=Profile.sociallinks.iconClass&sort=rank:asc`
+    //`${API_URL}/api/teams?populate=*&populate[0]=Profile&populate[1]=Profile.image&populate[2]=Profile.sociallinks.iconClass&sort=rank:asc`
+    `${API_URL}/api/teams?populate=deep`
   );
   const Profiles = await profileres.json();
   //fetching profiles
