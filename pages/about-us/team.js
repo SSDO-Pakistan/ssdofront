@@ -6,8 +6,8 @@ import Image from "next/image";
 function Team({ data }) {
   console.log(data);
   const [showProfile, setshowProfile] = useState({});
-  console.log(showProfile);
-  return false;
+  // console.log(showProfile);
+  //  return false;
   const [modalShow, setmodalShow] = useState(false);
 
   return (

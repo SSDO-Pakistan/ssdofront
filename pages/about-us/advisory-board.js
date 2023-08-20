@@ -4,9 +4,9 @@ import { API_URL } from "@/config/index";
 import TeamModel from "../../components/TeamModal";
 import Image from "next/image";
 function AdvisoryBoard({ data }) {
-  console.log(data);
+  // console.log(data);
   const [showProfile, setshowProfile] = useState({});
-  console.log(showProfile);
+  //  console.log(showProfile);
   const [modalShow, setmodalShow] = useState(false);
 
   return (

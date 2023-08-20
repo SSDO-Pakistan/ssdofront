@@ -6,7 +6,7 @@ import Image from "next/image";
 function Bod({ data }) {
   console.log(data);
   const [showProfile, setshowProfile] = useState({});
-  console.log(showProfile);
+  // console.log(showProfile);
   const [modalShow, setmodalShow] = useState(false);
 
   return (
