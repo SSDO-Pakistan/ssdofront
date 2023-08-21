@@ -9,7 +9,10 @@ import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 import ReactPaginate from "react-paginate";
 import Layout from "@/components/Layout";
+import { API_URL } from "@/config/index";
 function Photosalbum(props) {
+  //console.log("Props", props);
+  //return false;
   let limit = 10;
   const [items, setItems] = useState(props.mydata);
   let pageCount = Math.ceil(props.total / limit);
@@ -81,7 +84,7 @@ function Photosalbum(props) {
 
   const fetchPhotos = async (currentPage) => {
     const res = await fetch(
-      `https://strapi-production-9f68.up.railway.app/api/media-clipings?populate=*&sort=createdAt:desc&pagination[page]=${currentPage}&pagination[pageSize]=${limit}`
+      `${API_URL}/api/media-clipings?populate=*&sort=createdAt:desc&pagination[page]=${currentPage}&pagination[pageSize]=${limit}`
     );
     const data = await res.json();
     let mydata = new Array();
@@ -92,7 +95,7 @@ function Photosalbum(props) {
         height: clip.attributes.image.data.attributes.height,
         images: [
           {
-            src: clip.attributes.image.data.attributes.formats.small.url,
+            src: clip.attributes.image.data.attributes.formats.thumbnail.url,
           },
           {
             src: clip.attributes.image.data.attributes.formats.thumbnail.url,
@@ -172,7 +175,7 @@ function Photosalbum(props) {
 export default Photosalbum;
 export async function getStaticProps() {
   const res = await fetch(
-    "https://strapi-production-9f68.up.railway.app/api/media-clipings?populate=*&sort=createdAt:desc&pagination[page]=1&pagination[pageSize]=10"
+    `${API_URL}/api/media-clipings?populate=*&sort=createdAt:desc&pagination[page]=1&pagination[pageSize]=10`
   );
 
   const photos = await res.json();
@@ -184,7 +187,7 @@ export async function getStaticProps() {
       width: clip.attributes.image.data.attributes.width,
       height: clip.attributes.image.data.attributes.height,
       images: [
-        { src: clip.attributes.image.data.attributes.formats.small.url },
+        { src: clip.attributes.image.data.attributes.formats.thumbnail.url },
         { src: clip.attributes.image.data.attributes.formats.thumbnail.url },
       ],
     });
