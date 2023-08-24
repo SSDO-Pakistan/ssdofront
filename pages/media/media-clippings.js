@@ -187,7 +187,7 @@ export async function getStaticProps() {
       width: clip.attributes.image.data.attributes.width,
       height: clip.attributes.image.data.attributes.height,
       images: [
-        { src: clip.attributes.image.data.attributes.formats.thumbnail.url },
+        { src: clip.attributes.image.data.attributes.formats.thumbnails.url },
         { src: clip.attributes.image.data.attributes.formats.thumbnail.url },
       ],
     });
