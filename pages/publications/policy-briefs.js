@@ -199,7 +199,9 @@ function Photosalbum(props) {
 }
 export default Photosalbum;
 export async function getServerSideProps() {
-  const res = await fetch(`${API_URL}/api/policy-briefs?populate=deep,10`);
+  const res = await fetch(
+    `${API_URL}/api/policy-briefs?populate=deep&sort=rank:asc`
+  );
 
   const photos = await res.json();
   const total = photos.meta.pagination.total;
