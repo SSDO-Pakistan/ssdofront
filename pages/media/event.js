@@ -5,8 +5,8 @@ import Layout from "@/components/Layout";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 const MyEvent = ({ data }) => {
-  console.log("event", data);
-  //return false;
+  // console.log("event", data);
+  // return false;
   return (
     <Layout title="About Us">
       <div class="container p-4 mt-20">
@@ -49,7 +49,7 @@ const MyEvent = ({ data }) => {
     </Layout>
   );
 };
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
   //fetching about us page
   const aboutevents = await fetch(`${API_URL}/api/event?populate=deep`);
   const Events = await aboutevents.json();
