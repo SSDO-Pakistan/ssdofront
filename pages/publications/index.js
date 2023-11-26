@@ -17,6 +17,7 @@ function Photosalbum(props) {
   let limit = 10;
   const [items, setItems] = useState(props.mydata);
   let pageCount = Math.ceil(props.total / limit);
+  const [index, setIndex] = useState(-1);
 
   const renderContainer = ({ containerProps, children, containerRef }) => (
     <div
@@ -144,8 +145,16 @@ function Photosalbum(props) {
                   targetRowHeight={200}
                   renderContainer={renderContainer}
                   renderPhoto={renderPhoto}
+                  onClick={({ photo: { File }, index }) => setIndex(index)}
                 />
-
+                <Lightbox
+                  slides={items}
+                  open={index >= 0}
+                  index={index}
+                  close={() => setIndex(-1)}
+                  // enable optional lightbox plugins
+                  plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
+                />
                 <ReactPaginate
                   previousLabel={"previous"}
                   nextLabel={"next"}
