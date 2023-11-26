@@ -8,15 +8,16 @@ import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 import ReactPaginate from "react-paginate";
+import Layout from "@/components/Layout";
 import { API_URL } from "@/config/index";
 import Link from "next/link";
-import Layout from "@/components/Layout";
 function Photosalbum(props) {
+  // console.log("new album data", props.mydata);
+  //return false;
   let limit = 10;
   const [items, setItems] = useState(props.mydata);
   let pageCount = Math.ceil(props.total / limit);
-  const [index, setIndex] = useState(-1);
-  //rendering the container
+
   const renderContainer = ({ containerProps, children, containerRef }) => (
     <div
       className="shadow-sm"
@@ -24,7 +25,7 @@ function Photosalbum(props) {
         border: "2px solid #eee",
         borderRadius: "10px",
         padding: "20px",
-        background: "beige",
+        background: "#E5E5CC",
       }}
     >
       <div ref={containerRef} {...containerProps}>
@@ -37,7 +38,7 @@ function Photosalbum(props) {
     layout,
     layoutOptions,
     imageProps: { alt, style, ...restImageProps },
-    photo: { file, tags },
+    photo: { src, tags, title, file },
   }) => (
     <div
       className="shadow-sm"
@@ -82,8 +83,9 @@ function Photosalbum(props) {
   );
 
   const fetchPhotos = async (currentPage) => {
+    console.log("I m here on click event");
     const res = await fetch(
-      `${API_URL}/api/research-reports?populate=*&populate[0]=Report&populate[1]=Report.cover&populate[2]=Report.file&sort=updatedAt:desc&pagination[page]=${currentPage}&pagination[pageSize]=${limit}`
+      `${API_URL}/api/research-reports?populate[0]=Report&populate[1]=Report.cover&populate[2]=Report.file&sort=updatedAt:desc&pagination[page]=${currentPage}&pagination[pageSize]=${limit}`
     );
     const data = await res.json();
     let mydata = new Array();
@@ -95,7 +97,7 @@ function Photosalbum(props) {
         height: clip.attributes.Report.cover.data?.attributes.height,
         images: [
           {
-            src: clip.attributes.Report.cover.data?.attributes.formats.small
+            src: clip.attributes.Report.cover.data?.attributes.formats.thumbnail
               .url,
           },
           {
@@ -107,14 +109,19 @@ function Photosalbum(props) {
     });
     return mydata;
   };
+  //this is basically the pagination click
   const handlePageClick = async (data) => {
     let currentPage = data.selected + 1;
     const commentsFormServer = await fetchPhotos(currentPage);
     setItems(commentsFormServer);
   };
-
   return (
-    <Layout title="Research Reports" image={props.mydata[0].images[0].src}>
+    <Layout
+      title="Research Reports"
+      image={props.mydata[0].images[0].src}
+      width={props.mydata[0].width}
+      height={props.mydata[0].height}
+    >
       <div className="wrapper ">
         {/* main content */}
         <main id="content">
@@ -134,19 +141,11 @@ function Photosalbum(props) {
                   containerWidth={900}
                   spacing={20}
                   padding={20}
-                  targetRowHeight={230}
+                  targetRowHeight={200}
                   renderContainer={renderContainer}
                   renderPhoto={renderPhoto}
-                  onClick={({ photo: { File }, index }) => setIndex(index)}
                 />
-                <Lightbox
-                  slides={items}
-                  open={index >= 0}
-                  index={index}
-                  close={() => setIndex(-1)}
-                  // enable optional lightbox plugins
-                  plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
-                />
+
                 <ReactPaginate
                   previousLabel={"previous"}
                   nextLabel={"next"}
@@ -176,7 +175,9 @@ function Photosalbum(props) {
 }
 export default Photosalbum;
 export async function getServerSideProps() {
-  const res = await fetch(`${API_URL}/api/research-reports?populate=deep,10`);
+  const res = await fetch(
+    `${API_URL}/api/research-reports?populate[0]=Report&populate[1]=Report.cover&populate[2]=Report.file&sort=createdAt:desc&pagination[page]=1&pagination[pageSize]=10`
+  );
 
   const photos = await res.json();
   const total = photos.meta.pagination.total;
@@ -207,6 +208,6 @@ export async function getServerSideProps() {
     // Next.js will attempt to re-generate the page:
     // - When a request comes in
     // - At most once every 10 seconds
-    // revalidate: 10, // In seconds
+    //  revalidate: 10, // In seconds
   };
 }

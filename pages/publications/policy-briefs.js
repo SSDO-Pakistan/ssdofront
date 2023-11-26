@@ -89,7 +89,7 @@ function Photosalbum(props) {
 
   const fetchPhotos = async (currentPage) => {
     const res = await fetch(
-      `${API_URL}/api/policy-briefs?populate=*&populate[0]=Report&populate[1]=Report.cover&populate[2]=Report.file&sort=publishedAt:desc&pagination[page]=${currentPage}&pagination[pageSize]=${limit}`
+      `${API_URL}/api/policy-briefs?populate=*&populate[0]=Report&populate[1]=Report.cover&populate[2]=Report.file&sort=createdAt:desc&pagination[page]=${currentPage}&pagination[pageSize]=${limit}`
     );
     const data = await res.json();
     let mydata = new Array();
@@ -200,7 +200,7 @@ function Photosalbum(props) {
 export default Photosalbum;
 export async function getServerSideProps() {
   const res = await fetch(
-    `${API_URL}/api/policy-briefs?populate=deep&sort=rank:asc`
+    `${API_URL}/api/policy-briefs?populate[0]=Report&populate[1]=Report.cover&populate[2]=Report.file&sort=createdAt:desc&pagination[page]=1&pagination[pageSize]=10`
   );
 
   const photos = await res.json();
