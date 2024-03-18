@@ -69,7 +69,7 @@ const Registration = ({ data }) => {
   );
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   //fetching registraion-details
   const regres = await fetch(`${API_URL}/api/registrations?populate=*`);
   const Reg = await regres.json();
@@ -80,7 +80,7 @@ export async function getStaticProps() {
       data: {
         Reg,
       },
-      revalidate: 10, // In seconds
+    
     },
   };
 }
