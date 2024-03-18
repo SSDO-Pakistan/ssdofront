@@ -74,7 +74,7 @@ export async function getServerSideProps() {
   const regres = await fetch(`${API_URL}/api/registrations?populate=*`);
   const Reg = await regres.json();
   //fetching Publications
-  console.log("Reg", Reg);
+ // console.log("Reg", Reg);
   return {
     props: {
       data: {
