@@ -83,7 +83,7 @@ function Photosalbum(props) {
 
   const fetchPhotos = async (currentPage) => {
     const res = await fetch(
-      `${API_URL}/api/event-reports?populate=*&populate[0]=Report&populate[1]=Report.cover&populate[2]=Report.file&sort=updatedAt:desc&pagination[page]=${currentPage}&pagination[pageSize]=${limit}`
+      `${API_URL}/api/event-reports?populate=*&populate[0]=Report&populate[1]=Report.cover&populate[2]=Report.file&sort=createdAt:desc&pagination[page]=${currentPage}&pagination[pageSize]=${limit}`
     );
     const data = await res.json();
 
@@ -177,9 +177,10 @@ function Photosalbum(props) {
 }
 export default Photosalbum;
 export async function getServerSideProps() {
-  const res = await fetch(`${API_URL}/api/event-reports?populate=deep,10`);
-
+  const res = await fetch(`${API_URL}/api/event-reports?populate[0]=Report&populate[1]=Report.cover&populate[2]=Report.file&sort=createdAt:desc&pagination[page]=1&pagination[pageSize]=10`);
   const photos = await res.json();
+  // console.log("these are photos data",photos);
+  // return false;
   const total = photos.meta.pagination.total;
   let mydata = new Array();
   photos.data?.map((clip) => {
