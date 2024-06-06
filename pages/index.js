@@ -3,11 +3,12 @@ import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import Layout from "./../components/Layout";
 import HighlightsSlider from "./../components/HighlightsSlider";
-
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
 import Header from "../components/Header";
 import PublicationsSlider from "../components/PublicationsSlider";
 import { API_URL } from "@/config/index";
-
+import React, { useState, useEffect } from "react";
 import Upcomings from "../components/Upcomings";
 import Highlights from "@/components/Highlights";
 import ThematicAreas from "@/components/ThematicAreas";
@@ -20,6 +21,12 @@ export default function Home({ data }) {
   //  console.log(
   //   data.SliderHighlights.data[0].attributes.image.data[0]?.attributes.url
   //);
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  useEffect(() => {
+    setTimeout(() => setShow(true), 3000);
+  }, []);
   return (
     <Layout
       title="SSDO Pakistan"
@@ -31,6 +38,25 @@ export default function Home({ data }) {
         {/* main content */}
         <main id="content">
           <div className="container">
+            <Modal
+              show={show}
+              onHide={handleClose}
+              backdrop="static"
+              keyboard={false}
+            >
+              <Modal.Header closeButton>
+                <Modal.Title>WE HAVE RELOCATED</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+              <img src='/uploads/ssdo_loc.jpg' alt="G1s" width="1080"  className="img-fluid"/>
+              </Modal.Body>
+              <Modal.Footer>
+                <Button variant="secondary" onClick={handleClose}>
+                  Close
+                </Button>
+                <Button variant="primary" onClick={handleClose}>Understood</Button>
+              </Modal.Footer>
+            </Modal>
             <div className="row">
               <div className="col-12 mt-05">
                 {data && data.Upcomings && data.Upcomings.data && (
