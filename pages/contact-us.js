@@ -24,8 +24,7 @@ const ContactUs = () => {
 
                 <div class="mb-5">
                   <span class="d-block">
-                    Islamabad: Suit # 14, 3rd Floor, Al-Baber Centre, F-8 Markaz
-                    Islamabad
+                  901, Green Trust Tower, Jinnah Avenue, Islamabad
                   </span>
                 </div>
 
@@ -36,7 +35,7 @@ const ContactUs = () => {
                 </div>
 
                 <a class="btn btn-ghost-dark btn-sm" href="#">
-                  <i class="bi-telephone me-2"></i> +92-051-2287298
+                  <i class="bi-telephone me-2"></i> +92-051-8433431
                 </a>
               </div>
             </div>
@@ -85,15 +84,10 @@ const ContactUs = () => {
             </div>
           </div>
           <div class="col-4 mb-4 mb-lg-0">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13275.493038276814!2d73.0372902!3d33.7122283!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfbe52c5555555%3A0xb598d31787fafb36!2sSustainable%20Social%20Development%20Organization%20(SSDO)!5e0!3m2!1sen!2s!4v1680010412451!5m2!1sen!2s"
-              style={{ border: "0", width: "100%", height: "450px" }}
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              async
-              defer
-            ></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d658.4661391729564!2d73.07779765276199!3d33.72288263809345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfbf8308ecc255%3A0x7060e58f1e852b66!2sGreen%20Trust%20Tower!5e0!3m2!1sen!2s!4v1718029562610!5m2!1sen!2s"
+           width="450"
+          height="450" 
+           style={{border:"0px"}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
       </div>
