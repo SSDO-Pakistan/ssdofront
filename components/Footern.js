@@ -23,15 +23,15 @@ const Footern = () => {
                 >
                   <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
                 </svg>
-                Suit # 14, 3rd Floor, Al-Baber Centre
-                <br />
-                Islamabad, Islamabad Capital Territory 44000
+                901, Green Trust Tower, Jinnah Avenue, Islamabad
+              
+               
               </address>
             </li>
             <li>
               <div className="footer-info">
                 <i class="bi bi-geo-alt-fill"></i>
-                (051) 2287298
+                +92 51 8433431
               </div>
             </li>
           </ul>
