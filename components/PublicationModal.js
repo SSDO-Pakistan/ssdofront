@@ -8,7 +8,7 @@ import Link from "next/link";
 import Image from 'next/image'
 const PublicationModal = (props) => {
 
-  console.log("publication id is", props);
+ // console.log("publication id is", props);
  // return false;
   const responsive = {
     desktop: {

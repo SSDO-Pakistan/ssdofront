@@ -84,7 +84,7 @@ function Photosalbum(props) {
   );
 
   const fetchPhotos = async (currentPage) => {
-    console.log("I m here on click event");
+   // console.log("I m here on click event");
     const res = await fetch(
       `${API_URL}/api/research-reports?populate[0]=Report&populate[1]=Report.cover&populate[2]=Report.file&sort=updatedAt:desc&pagination[page]=${currentPage}&pagination[pageSize]=${limit}`
     );

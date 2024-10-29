@@ -127,7 +127,7 @@ const PublicationsSlider = ({ Publications }) => {
         >
           {Publications &&
             mySortedReports.map((publication, index) => {
-              console.log("My publication", publication);
+          //    console.log("My publication", publication);
               // return false;
               return (
                 <SplideSlide key={index}>

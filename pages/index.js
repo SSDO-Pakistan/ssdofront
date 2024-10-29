@@ -22,8 +22,8 @@ export default function Home({ data }) {
   //   data.SliderHighlights.data[0].attributes.image.data[0]?.attributes.url
   //);
   const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  // const handleClose = () => setShow(false);
+  // const handleShow = () => setShow(true);
   useEffect(() => {
     setTimeout(() => setShow(true), 3000);
   }, []);
@@ -38,7 +38,7 @@ export default function Home({ data }) {
         {/* main content */}
         <main id="content">
           <div className="container">
-            <Modal
+            {/* <Modal
               show={show}
               onHide={handleClose}
               backdrop="static"
@@ -56,7 +56,7 @@ export default function Home({ data }) {
                 </Button>
                 <Button variant="primary" onClick={handleClose}>Understood</Button>
               </Modal.Footer>
-            </Modal>
+            </Modal> */}
             <div className="row">
               <div className="col-12 mt-05">
                 {data && data.Upcomings && data.Upcomings.data && (
