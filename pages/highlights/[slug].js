@@ -20,12 +20,12 @@ const Highlightsdetails = ({ data }) => {
   let gallerydata = new Array();
   data.data[0].attributes.image.data.map((clip) => {
     gallerydata.push({
-      src: clip.attributes.url,
-      width: clip.attributes.width,
-      height: clip.attributes.height,
+      src: clip?.attributes.url,
+      width: clip?.attributes.width,
+      height: clip?.attributes.height,
       images: [
         {
-          src: clip.attributes.formats.thumbnail.url,
+          src: clip?.attributes.formats.thumbnail.url,
         },
       ],
     });
