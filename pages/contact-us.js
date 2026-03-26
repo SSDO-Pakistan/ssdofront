@@ -24,7 +24,7 @@ const ContactUs = () => {
 
                 <div class="mb-5">
                   <span class="d-block">
-                  901, Green Trust Tower, Jinnah Avenue, Islamabad
+                  1102, 11th Floor, Green Trust Tower, Jinnah Avenue, Islamabad
                   </span>
                 </div>
 
