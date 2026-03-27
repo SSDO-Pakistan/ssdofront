@@ -24,7 +24,7 @@ const ContactUs = () => {
 
                 <div class="mb-5">
                   <span class="d-block">
-                  1102, 11th Floor, Green Trust Tower, Jinnah Avenue, Islamabad
+                   1102, 11th Floor, Green Trust Tower, Jinnah Avenue, Islamabad
                   </span>
                 </div>
 
@@ -52,12 +52,7 @@ const ContactUs = () => {
                   <h4 className="fw-bold">Sub Offices</h4>
                 </div>
 
-                <div class="mb-5">
-                  <span class="d-block">
-                    Lahore: Office # 504, 5th Floor, Land Mark Plaza, Jail Road,
-                    Lahore
-                  </span>
-                </div>
+        
 
                 <div class="mb-5">
                   <span class="d-block">
